@@ -1,0 +1,3524 @@
+# Health Check plugin translation (pt_BR)
+msgid ""
+msgstr ""
+"Project-Id-Version: Health Check\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, php-format
+msgid "%"
+msgstr "%"
+
+#, php-format
+msgid "% livre"
+msgstr "% livre"
+
+#, php-format
+msgid "%1$d de %2$d documento(s) verificado(s) sem arquivo físico."
+msgstr "%1$d de %2$d documento(s) verificado(s) sem arquivo físico."
+
+#, php-format
+msgid "%1$d de %2$d servidor(es) de e-mail inacessível(is) a partir do servidor do GLPI."
+msgstr "%1$d de %2$d servidor(es) de e-mail inacessível(is) a partir do servidor do GLPI."
+
+#, php-format
+msgid "%1$d dia(s) %2$d h"
+msgstr "%1$d dia(s) %2$d h"
+
+#, php-format
+msgid "%1$d h %2$d min"
+msgstr "%1$d h %2$d min"
+
+#, php-format
+msgid "%1$d mensagem(ns) pendente(s) na fila, %2$d em retentativa e %3$d rejeitada(s) definitivamente em 7 dias; a mais antiga aguarda há %4$s."
+msgstr "%1$d mensagem(ns) pendente(s) na fila, %2$d em retentativa e %3$d rejeitada(s) definitivamente em 7 dias; a mais antiga aguarda há %4$s."
+
+#, php-format
+msgid "%1$d plugin(s) registrado(s), %2$d ativo(s), nenhum em estado anormal."
+msgstr "%1$d plugin(s) registrado(s), %2$d ativo(s), nenhum em estado anormal."
+
+#, php-format
+msgid "%1$d requisito(s) não atendido(s), sendo %2$d obrigatório(s)."
+msgstr "%1$d requisito(s) não atendido(s), sendo %2$d obrigatório(s)."
+
+#, php-format
+msgid "%1$d tarefa(s) terminaram com erro nos últimos %2$d dias (%3$d com 3 ou mais falhas)."
+msgstr "%1$d tarefa(s) terminaram com erro nos últimos %2$d dias (%3$d com 3 ou mais falhas)."
+
+#, php-format
+msgid "%1$s %2$s está fora do período de suporte do fornecedor desde %3$s."
+msgstr "%1$s %2$s está fora do período de suporte do fornecedor desde %3$s."
+
+#, php-format
+msgid "%1$s %2$s é compatível com o GLPI."
+msgstr "%1$s %2$s é compatível com o GLPI."
+
+#, php-format
+msgid "%1$s de %2$s ativo(s) sem nenhum responsável (usuário, grupo, técnico ou grupo técnico)."
+msgstr "%1$s de %2$s ativo(s) sem nenhum responsável (usuário, grupo, técnico ou grupo técnico)."
+
+#, php-format
+msgid "%1$s de %2$s itens exibidos."
+msgstr "%1$s de %2$s itens exibidos."
+
+#, php-format
+msgid "%1$s registro(s) órfão(s) em %2$d relacionamento(s)."
+msgstr "%1$s registro(s) órfão(s) em %2$d relacionamento(s)."
+
+#, php-format
+msgid "%1$s registrou %2$d %3$s nas últimas 24 horas."
+msgstr "%1$s registrou %2$d %3$s nas últimas 24 horas."
+
+#, php-format
+msgid "%d arquivo(s) ou diretório(s) sensível(is) encontrado(s) no diretório da aplicação."
+msgstr "%d arquivo(s) ou diretório(s) sensível(is) encontrado(s) no diretório da aplicação."
+
+#, php-format
+msgid "%d ação(ões) automática(s) ativa(s) em modo GLPI (dependem de usuários navegando)."
+msgstr "%d ação(ões) automática(s) ativa(s) em modo GLPI (dependem de usuários navegando)."
+
+#, php-format
+msgid "%d ação(ões) automática(s) com execuções acima de 5 minutos."
+msgstr "%d ação(ões) automática(s) com execuções acima de 5 minutos."
+
+#, php-format
+msgid "%d coletor(es) ativo(s) funcionando sem erros."
+msgstr "%d coletor(es) ativo(s) funcionando sem erros."
+
+#, php-format
+msgid "%d configuração(ões) do PHP afetam o desempenho."
+msgstr "%d configuração(ões) do PHP afetam o desempenho."
+
+#, php-format
+msgid "%d configuração(ões) do servidor de banco requer(em) atenção."
+msgstr "%d configuração(ões) do servidor de banco requer(em) atenção."
+
+#, php-format
+msgid "%d configuração(ões) insegura(s) encontrada(s)."
+msgstr "%d configuração(ões) insegura(s) encontrada(s)."
+
+#, php-format
+msgid "%d conta(s) padrão ainda utilizam a senha de instalação: %s."
+msgstr "%d conta(s) padrão ainda utilizam a senha de instalação: %s."
+
+#, php-format
+msgid "%d de %d itens exibidos."
+msgstr "%d de %d itens exibidos."
+
+#, php-format
+msgid "%d dias"
+msgstr "%d dias"
+
+#, php-format
+msgid "%d diretório(s) com problema de acesso."
+msgstr "%d diretório(s) com problema de acesso."
+
+#, php-format
+msgid "%d e-mail(s) recebido(s) não foram importados nos últimos 7 dias."
+msgstr "%d e-mail(s) recebido(s) não foram importados nos últimos 7 dias."
+
+#, php-format
+msgid "%d erro(s) de conexão/autenticação registrados"
+msgstr "%d erro(s) de conexão/autenticação registrados"
+
+#, php-format
+msgid "%d falha(s) de envio de e-mail registrada(s) nos últimos 7 dias."
+msgstr "%d falha(s) de envio de e-mail registrada(s) nos últimos 7 dias."
+
+#, php-format
+msgid "%d inconsistência(s) na árvore de entidades."
+msgstr "%d inconsistência(s) na árvore de entidades."
+
+#, php-format
+msgid "%d indicador(es) de desempenho do banco requer(em) atenção."
+msgstr "%d indicador(es) de desempenho do banco requer(em) atenção."
+
+#, php-format
+msgid "%d min"
+msgstr "%d min"
+
+#, php-format
+msgid "%d permissão(ões) excessivamente aberta(s)."
+msgstr "%d permissão(ões) excessivamente aberta(s)."
+
+#, php-format
+msgid "%d plugin(s) com atualização disponível."
+msgstr "%d plugin(s) com atualização disponível."
+
+#, php-format
+msgid "%d plugin(s) em estado anormal."
+msgstr "%d plugin(s) em estado anormal."
+
+#, php-format
+msgid "%d ponto(s) de atenção na configuração da API REST."
+msgstr "%d ponto(s) de atenção na configuração da API REST."
+
+#, php-format
+msgid "%d problema(s) encontrado(s) nas tabelas do banco."
+msgstr "%d problema(s) encontrado(s) nas tabelas do banco."
+
+#, php-format
+msgid "%d problema(s) na configuração de envio de e-mails."
+msgstr "%d problema(s) na configuração de envio de e-mails."
+
+#, php-format
+msgid "%d regra(s) ativa(s) com configuração incompleta."
+msgstr "%d regra(s) ativa(s) com configuração incompleta."
+
+#, php-format
+msgid "%d s"
+msgstr "%d s"
+
+#, php-format
+msgid "%d tabela(s) com fragmentação relevante."
+msgstr "%d tabela(s) com fragmentação relevante."
+
+#, php-format
+msgid "%d tabela(s) diferem do esquema de referência do GLPI."
+msgstr "%d tabela(s) diferem do esquema de referência do GLPI."
+
+#, php-format
+msgid "%d tarefa(s) atrasada(s) ou nunca executada(s), embora o cron esteja funcionando."
+msgstr "%d tarefa(s) atrasada(s) ou nunca executada(s), embora o cron esteja funcionando."
+
+#, php-format
+msgid "%d tarefa(s) essencial(is) ou de manutenção desativada(s)."
+msgstr "%d tarefa(s) essencial(is) ou de manutenção desativada(s)."
+
+#, php-format
+msgid "%d tarefa(s) presa(s) no estado \"Em execução\" há mais de 1 hora."
+msgstr "%d tarefa(s) presa(s) no estado \"Em execução\" há mais de 1 hora."
+
+#, php-format
+msgid "%d tipo(s) de migração estrutural pendente(s) no banco de dados."
+msgstr "%d tipo(s) de migração estrutural pendente(s) no banco de dados."
+
+#, php-format
+msgid "%d usuário(s) com acesso administrativo à configuração."
+msgstr "%d usuário(s) com acesso administrativo à configuração."
+
+#, php-format
+msgid "%d usuários ativos podem alterar a configuração geral do GLPI."
+msgstr "%d usuários ativos podem alterar a configuração geral do GLPI."
+
+#, php-format
+msgid "%d índice(s) esperado(s) ausente(s)."
+msgstr "%d índice(s) esperado(s) ausente(s)."
+
+#, php-format
+msgid "%s%% do valor máximo utilizado; novas inserções falharão ao atingir o limite."
+msgstr "%s%% do valor máximo utilizado; novas inserções falharão ao atingir o limite."
+
+msgid "(OPcache e limites web só são avaliados em execução pelo navegador.)"
+msgstr "(OPcache e limites web só são avaliados em execução pelo navegador.)"
+
+msgid "(não definido)"
+msgstr "(não definido)"
+
+msgid "A API REST está desativada."
+msgstr "A API REST está desativada."
+
+msgid "A API REST está habilitada com clientes restritos."
+msgstr "A API REST está habilitada com clientes restritos."
+
+#, php-format
+msgid "A URL configurada (%1$s) difere da URL usada para acessar o GLPI (%2$s): links das notificações e de documentos podem apontar para o endereço errado. Ignore se o acesso passar por um proxy reverso com outro endereço."
+msgstr "A URL configurada (%1$s) difere da URL usada para acessar o GLPI (%2$s): links das notificações e de documentos podem apontar para o endereço errado. Ignore se o acesso passar por um proxy reverso com outro endereço."
+
+msgid "A URL configurada usa HTTPS, mas esta página foi acessada por HTTP: falta redirecionamento HTTP → HTTPS."
+msgstr "A URL configurada usa HTTPS, mas esta página foi acessada por HTTP: falta redirecionamento HTTP → HTTPS."
+
+msgid "A configuração de envio de e-mails está adequada."
+msgstr "A configuração de envio de e-mails está adequada."
+
+msgid "A configuração dos cookies de sessão do PHP não segue as recomendações de segurança."
+msgstr "A configuração dos cookies de sessão do PHP não segue as recomendações de segurança."
+
+msgid "A consulta externa de versões está desativada e a ação automática \"checkupdate\" do GLPI não registrou nenhuma versão nova."
+msgstr "A consulta externa de versões está desativada e a ação automática \"checkupdate\" do GLPI não registrou nenhuma versão nova."
+
+msgid "A conta padrão \"glpi\" (super-administrador, login conhecido) está ativa."
+msgstr "A conta padrão \"glpi\" (super-administrador, login conhecido) está ativa."
+
+msgid "A evolução aparece a partir do segundo diagnóstico."
+msgstr "A evolução aparece a partir do segundo diagnóstico."
+
+msgid "A instalação não recebeu as últimas correções publicadas."
+msgstr "A instalação não recebeu as últimas correções publicadas."
+
+msgid "A política de segurança de senhas está desativada: qualquer senha é aceita."
+msgstr "A política de segurança de senhas está desativada: qualquer senha é aceita."
+
+msgid "A política de senhas locais está ativa e adequada."
+msgstr "A política de senhas locais está ativa e adequada."
+
+msgid "A raiz do servidor web aponta para o diretório \"public/\": arquivos internos não são acessíveis."
+msgstr "A raiz do servidor web aponta para o diretório \"public/\": arquivos internos não são acessíveis."
+
+msgid "A raiz do servidor web não aponta para \"public/\" e os diretórios de dados/configuração estão dentro da área acessível pela web."
+msgstr "A raiz do servidor web não aponta para \"public/\" e os diretórios de dados/configuração estão dentro da área acessível pela web."
+
+msgid "A raiz do servidor web não aponta para \"public/\", permitindo acesso direto a arquivos internos da aplicação."
+msgstr "A raiz do servidor web não aponta para \"public/\", permitindo acesso direto a arquivos internos da aplicação."
+
+msgid "A validação do certificado do servidor SMTP está desativada, permitindo interceptação."
+msgstr "A validação do certificado do servidor SMTP está desativada, permitindo interceptação."
+
+#, php-format
+msgid "A verificação de integridade não é suportada para a versão de esquema \"%s\"."
+msgstr "A verificação de integridade não é suportada para a versão de esquema \"%s\"."
+
+#, php-format
+msgid "A verificação não pôde ser concluída: %s"
+msgstr "A verificação não pôde ser concluída: %s"
+
+msgid "A versão do PHP foi alterada no servidor sem considerar os requisitos do GLPI."
+msgstr "A versão do PHP foi alterada no servidor sem considerar os requisitos do GLPI."
+
+msgid "A versão do banco de dados não corresponde à versão dos arquivos do GLPI."
+msgstr "A versão do banco de dados não corresponde à versão dos arquivos do GLPI."
+
+msgid "A versão do esquema não está registrada na configuração."
+msgstr "A versão do esquema não está registrada na configuração."
+
+#, php-format
+msgid "A versão instalada (%1$s) é a mais recente do seu ramo. Existe uma versão principal mais nova: %2$s."
+msgstr "A versão instalada (%1$s) é a mais recente do seu ramo. Existe uma versão principal mais nova: %2$s."
+
+#, php-format
+msgid "A versão instalada (%s) não é uma versão estável."
+msgstr "A versão instalada (%s) não é uma versão estável."
+
+msgid "A árvore de entidades está consistente."
+msgstr "A árvore de entidades está consistente."
+
+msgid "API habilitada"
+msgstr "API habilitada"
+
+msgid "API habilitada sem HTTPS: tokens de acesso trafegam sem criptografia."
+msgstr "API habilitada sem HTTPS: tokens de acesso trafegam sem criptografia."
+
+msgid "AUTO_INCREMENT próximo do limite"
+msgstr "AUTO_INCREMENT próximo do limite"
+
+msgid "Abra cada cliente listado e defina a faixa de IPs permitida e um App-Token."
+msgstr "Abra cada cliente listado e defina a faixa de IPs permitida e um App-Token."
+
+msgid "Abra cada tarefa listada e altere o status para \"Agendada\"."
+msgstr "Abra cada tarefa listada e altere o status para \"Agendada\"."
+
+msgid "Abre apenas uma conexão TCP com os servidores configurados (sem autenticação e sem envio de dados)."
+msgstr "Abre apenas uma conexão TCP com os servidores configurados (sem autenticação e sem envio de dados)."
+
+msgid "Abrir diagnóstico"
+msgstr "Abrir diagnóstico"
+
+msgid "Acertos no buffer pool"
+msgstr "Acertos no buffer pool"
+
+msgid "Acesse Administração > E-mails não importados (ou Configurar > Coletores > E-mails não importados)."
+msgstr "Acesse Administração > E-mails não importados (ou Configurar > Coletores > E-mails não importados)."
+
+msgid "Acesse Administração > Regras e abra o tipo de regra indicado."
+msgstr "Acesse Administração > Regras e abra o tipo de regra indicado."
+
+msgid "Acesse Administração > Usuários e abra cada conta listada."
+msgstr "Acesse Administração > Usuários e abra cada conta listada."
+
+msgid "Acesse Configurar > Ações automáticas."
+msgstr "Acesse Configurar > Ações automáticas."
+
+msgid "Acesse Configurar > Coletores e abra o coletor indicado."
+msgstr "Acesse Configurar > Coletores e abra o coletor indicado."
+
+msgid "Acesse Configurar > Geral > API."
+msgstr "Acesse Configurar > Geral > API."
+
+msgid "Acesse Configurar > Geral > Segurança."
+msgstr "Acesse Configurar > Geral > Segurança."
+
+msgid "Acesse Configurar > Notificações > Configuração das notificações por e-mail."
+msgstr "Acesse Configurar > Notificações > Configuração das notificações por e-mail."
+
+msgid "Acesse Configurar > Plugins e use o botão de atualização do Marketplace."
+msgstr "Acesse Configurar > Plugins e use o botão de atualização do Marketplace."
+
+msgid "Acesse Configurar > Plugins."
+msgstr "Acesse Configurar > Plugins."
+
+msgid "Acesso administrativo"
+msgstr "Acesso administrativo"
+
+msgid "Acesso aos diretórios do GLPI"
+msgstr "Acesso aos diretórios do GLPI"
+
+msgid "Acesso atual"
+msgstr "Acesso atual"
+
+msgid "Acessível"
+msgstr "Acessível"
+
+msgid "Acompanhamentos de chamados inexistentes"
+msgstr "Acompanhamentos de chamados inexistentes"
+
+#, php-format
+msgid "Adicione a linha: \"* * * * * php %s/front/cron.php\""
+msgstr "Adicione a linha: \"* * * * * php %s/front/cron.php\""
+
+msgid "Agendadas para o futuro"
+msgstr "Agendadas para o futuro"
+
+msgid "Agendamento"
+msgstr "Agendamento"
+
+#, php-format
+msgid "Agende \"php %s/front/cron.php\" para executar a cada minuto no sistema operacional."
+msgstr "Agende \"php %s/front/cron.php\" para executar a cada minuto no sistema operacional."
+
+msgid "Ainda não há diagnóstico anterior do mesmo tipo para comparar."
+msgstr "Ainda não há diagnóstico anterior do mesmo tipo para comparar."
+
+msgid "Ajuste as diretivas de sessão no php.ini (ou no pool do PHP-FPM) e reinicie o serviço."
+msgstr "Ajuste as diretivas de sessão no php.ini (ou no pool do PHP-FPM) e reinicie o serviço."
+
+msgid "Ajuste dono e permissões para que o usuário do servidor web tenha leitura e escrita nos diretórios de dados."
+msgstr "Ajuste dono e permissões para que o usuário do servidor web tenha leitura e escrita nos diretórios de dados."
+
+msgid "Ajuste memory_limit no php.ini (web e CLI) e avalie aumentar a memória do servidor."
+msgstr "Ajuste memory_limit no php.ini (web e CLI) e avalie aumentar a memória do servidor."
+
+msgid "Ajuste o tempo de retenção dos logs nas ações automáticas (\"logs\", \"queuednotificationclean\") e em Configurar > Geral > Logs."
+msgstr "Ajuste o tempo de retenção dos logs nas ações automáticas (\"logs\", \"queuednotificationclean\") e em Configurar > Geral > Logs."
+
+msgid "Ajuste os parâmetros do servidor de banco conforme a memória disponível e analise as consultas lentas."
+msgstr "Ajuste os parâmetros do servidor de banco conforme a memória disponível e analise as consultas lentas."
+
+msgid "Ajuste os parâmetros no arquivo de configuração do servidor de banco (my.cnf / server.cnf) e reinicie o serviço em janela de manutenção."
+msgstr "Ajuste os parâmetros no arquivo de configuração do servidor de banco (my.cnf / server.cnf) e reinicie o serviço em janela de manutenção."
+
+msgid "Ajuste os parâmetros no php.ini usado pelo servidor web e reinicie o serviço."
+msgstr "Ajuste os parâmetros no php.ini usado pelo servidor web e reinicie o serviço."
+
+msgid "Alerta"
+msgstr "Alerta"
+
+msgid "Alerta com mensagens pendentes na fila a partir de"
+msgstr "Alerta com mensagens pendentes na fila a partir de"
+
+#, php-format
+msgid "Alerta de disco livre abaixo de (%)"
+msgstr "Alerta de disco livre abaixo de (%)"
+
+msgid "Alertas"
+msgstr "Alertas"
+
+msgid "Alta"
+msgstr "Alta"
+
+msgid "Alterações diretas no banco, importações ou exclusões interrompidas."
+msgstr "Alterações diretas no banco, importações ou exclusões interrompidas."
+
+msgid "Alterações manuais no banco, atualização interrompida, restauração parcial de backup ou tabelas deixadas por plugins removidos."
+msgstr "Alterações manuais no banco, atualização interrompida, restauração parcial de backup ou tabelas deixadas por plugins removidos."
+
+msgid "Alterações manuais no banco, migrações incompletas ou restauração de estrutura antiga."
+msgstr "Alterações manuais no banco, migrações incompletas ou restauração de estrutura antiga."
+
+msgid "Altere imediatamente as senhas ou desative/exclua as contas não utilizadas."
+msgstr "Altere imediatamente as senhas ou desative/exclua as contas não utilizadas."
+
+msgid "Ambiente saudável"
+msgstr "Ambiente saudável"
+
+msgid "Amplie o volume ou mova files/ para um volume maior."
+msgstr "Amplie o volume ou mova files/ para um volume maior."
+
+msgid "Analise cada diferença antes de qualquer correção. Tabelas desconhecidas normalmente são restos de plugins ou customizações."
+msgstr "Analise cada diferença antes de qualquer correção. Tabelas desconhecidas normalmente são restos de plugins ou customizações."
+
+msgid "Analise o histórico de cada tarefa e os logs do GLPI no horário das falhas."
+msgstr "Analise o histórico de cada tarefa e os logs do GLPI no horário das falhas."
+
+msgid "Analise os erros recentes, ative a rotação de logs e configure a purga do histórico."
+msgstr "Analise os erros recentes, ative a rotação de logs e configure a purga do histórico."
+
+msgid "Analise os registros antes de qualquer limpeza; a correção deve ser feita com backup e preferencialmente em homologação."
+msgstr "Analise os registros antes de qualquer limpeza; a correção deve ser feita com backup e preferencialmente em homologação."
+
+msgid "Antes"
+msgstr "Antes"
+
+msgid "Antes de atualizar o GLPI, desative os plugins sem versão compatível com a nova versão."
+msgstr "Antes de atualizar o GLPI, desative os plugins sem versão compatível com a nova versão."
+
+msgid "Anuncia a versão do PHP nos cabeçalhos HTTP, facilitando a escolha de ataques."
+msgstr "Anuncia a versão do PHP nos cabeçalhos HTTP, facilitando a escolha de ataques."
+
+#, php-format
+msgid "Apache: \"DocumentRoot %s/public\" com AllowOverride All (ou as regras de rewrite da documentação)."
+msgstr "Apache: \"DocumentRoot %s/public\" com AllowOverride All (ou as regras de rewrite da documentação)."
+
+msgid "Aplicação"
+msgstr "Aplicação"
+
+msgid "Aplique o princípio do menor privilégio e use contas nominais para administração."
+msgstr "Aplique o princípio do menor privilégio e use contas nominais para administração."
+
+msgid "Aponte o servidor web (PHP-FPM/módulo) e o cron para o mesmo binário PHP."
+msgstr "Aponte o servidor web (PHP-FPM/módulo) e o cron para o mesmo binário PHP."
+
+msgid "Aprovadas"
+msgstr "Aprovadas"
+
+msgid "Aprovado"
+msgstr "Aprovado"
+
+msgid "Aproxime o banco do servidor de aplicação, use IP em vez de nome de host e verifique a carga do servidor de banco."
+msgstr "Aproxime o banco do servidor de aplicação, use IP em vez de nome de host e verifique a carga do servidor de banco."
+
+msgid "Após backup, execute \"OPTIMIZE TABLE nome_da_tabela\" para as tabelas fragmentadas (bloqueia a tabela durante a execução)."
+msgstr "Após backup, execute \"OPTIMIZE TABLE nome_da_tabela\" para as tabelas fragmentadas (bloqueia a tabela durante a execução)."
+
+msgid "Após corrigir, o contador de erros é zerado na próxima coleta bem-sucedida."
+msgstr "Após corrigir, o contador de erros é zerado na próxima coleta bem-sucedida."
+
+msgid "Após essa data o PHP deixará de receber correções de segurança."
+msgstr "Após essa data o PHP deixará de receber correções de segurança."
+
+msgid "Após o HTTPS, ative session.cookie_secure no PHP."
+msgstr "Após o HTTPS, ative session.cookie_secure no PHP."
+
+msgid "Arquivo"
+msgstr "Arquivo"
+
+#, php-format
+msgid "Arquivo .htaccess de proteção ausente em %s"
+msgstr "Arquivo .htaccess de proteção ausente em %s"
+
+msgid "Arquivos atualizados, aguardando atualização (plugin desativado até concluir)"
+msgstr "Arquivos atualizados, aguardando atualização (plugin desativado até concluir)"
+
+msgid "Arquivos ausentes"
+msgstr "Arquivos ausentes"
+
+msgid "Arquivos de log"
+msgstr "Arquivos de log"
+
+msgid "Arquivos de plugins"
+msgstr "Arquivos de plugins"
+
+msgid "Arquivos deixados após instalação, testes, backups manuais ou deploy via repositório."
+msgstr "Arquivos deixados após instalação, testes, backups manuais ou deploy via repositório."
+
+msgid "Arquivos e diretórios sensíveis expostos"
+msgstr "Arquivos e diretórios sensíveis expostos"
+
+msgid "Arquivos e documentos"
+msgstr "Arquivos e documentos"
+
+msgid "Arquivos esquecidos podem permitir reinstalação, revelar a configuração do servidor ou vazar dados e credenciais."
+msgstr "Arquivos esquecidos podem permitir reinstalação, revelar a configuração do servidor ou vazar dados e credenciais."
+
+msgid "As ações automáticas do plugin não foram encontradas. Reinstale o plugin para registrá-las."
+msgstr "As ações automáticas do plugin não foram encontradas. Reinstale o plugin para registrá-las."
+
+msgid "As ações automáticas estão sendo executadas regularmente."
+msgstr "As ações automáticas estão sendo executadas regularmente."
+
+msgid "As configurações críticas do servidor de banco estão adequadas."
+msgstr "As configurações críticas do servidor de banco estão adequadas."
+
+msgid "As configurações de desempenho do PHP estão adequadas."
+msgstr "As configurações de desempenho do PHP estão adequadas."
+
+msgid "As funções dessas tarefas (alertas, limpezas, SLAs, notificações) não estão sendo processadas no prazo."
+msgstr "As funções dessas tarefas (alertas, limpezas, SLAs, notificações) não estão sendo processadas no prazo."
+
+msgid "As senhas das contas criadas pela instalação nunca foram alteradas."
+msgstr "As senhas das contas criadas pela instalação nunca foram alteradas."
+
+msgid "As tarefas com falha não concluem seu trabalho: notificações, coletas, limpezas ou cálculos de SLA podem estar incompletos."
+msgstr "As tarefas com falha não concluem seu trabalho: notificações, coletas, limpezas ou cálculos de SLA podem estar incompletos."
+
+msgid "As tarefas em modo GLPI nunca foram executadas."
+msgstr "As tarefas em modo GLPI nunca foram executadas."
+
+msgid "As tarefas essenciais e de limpeza estão ativas."
+msgstr "As tarefas essenciais e de limpeza estão ativas."
+
+msgid "Atenção necessária"
+msgstr "Atenção necessária"
+
+msgid "Atenção: diagnóstico executado em CLI; o usuário do cron pode ser diferente do usuário do servidor web."
+msgstr "Atenção: diagnóstico executado em CLI; o usuário do cron pode ser diferente do usuário do servidor web."
+
+msgid "Ativas em modo CLI"
+msgstr "Ativas em modo CLI"
+
+msgid "Ativas em modo GLPI"
+msgstr "Ativas em modo GLPI"
+
+msgid "Ative \"Política de segurança de senha\" e defina o tamanho mínimo."
+msgstr "Ative \"Política de segurança de senha\" e defina o tamanho mínimo."
+
+msgid "Ative a ação automática \"circularlogs\" (rotação dos arquivos de log)."
+msgstr "Ative a ação automática \"circularlogs\" (rotação dos arquivos de log)."
+
+msgid "Ative a política de senhas com no mínimo 12 caracteres, ou centralize a autenticação em LDAP/SSO."
+msgstr "Ative a política de senhas com no mínimo 12 caracteres, ou centralize a autenticação em LDAP/SSO."
+
+msgid "Ative o slow query log (slow_query_log=ON, long_query_time=2) para identificar consultas lentas."
+msgstr "Ative o slow query log (slow_query_log=ON, long_query_time=2) para identificar consultas lentas."
+
+msgid "Ativo"
+msgstr "Ativo"
+
+msgid "Ativos"
+msgstr "Ativos"
+
+msgid "Ativos analisados"
+msgstr "Ativos analisados"
+
+msgid "Ativos criados por inventário automático sem regras de atribuição, ou cadastros incompletos."
+msgstr "Ativos criados por inventário automático sem regras de atribuição, ou cadastros incompletos."
+
+msgid "Ativos sem autorização"
+msgstr "Ativos sem autorização"
+
+msgid "Ativos sem responsáveis"
+msgstr "Ativos sem responsáveis"
+
+msgid "Atores de chamados inexistentes"
+msgstr "Atores de chamados inexistentes"
+
+msgid "Atraso"
+msgstr "Atraso"
+
+msgid "Atribua um perfil aos usuários ativos sem autorização ou desative-os."
+msgstr "Atribua um perfil aos usuários ativos sem autorização ou desative-os."
+
+msgid "Atualização do GLPI ou do PHP sem atualizar os plugins, ou plugins abandonados pelos autores."
+msgstr "Atualização do GLPI ou do PHP sem atualizar os plugins, ou plugins abandonados pelos autores."
+
+msgid "Atualização dos arquivos sem executar a atualização do plugin, ou remoção do diretório sem desinstalar."
+msgstr "Atualização dos arquivos sem executar a atualização do plugin, ou remoção do diretório sem desinstalar."
+
+msgid "Atualização e requisitos"
+msgstr "Atualização e requisitos"
+
+msgid "Atualizações de plugins disponíveis"
+msgstr "Atualizações de plugins disponíveis"
+
+msgid "Atualize \"URL da aplicação\" em Configurar > Geral > Configuração geral."
+msgstr "Atualize \"URL da aplicação\" em Configurar > Geral > Configuração geral."
+
+msgid "Atualize a senha/credenciais e prefira IMAP com SSL (porta 993)."
+msgstr "Atualize a senha/credenciais e prefira IMAP com SSL (porta 993)."
+
+msgid "Atualize o servidor MySQL/MariaDB seguindo a documentação do fornecedor."
+msgstr "Atualize o servidor MySQL/MariaDB seguindo a documentação do fornecedor."
+
+msgid "Atualize o servidor de banco para uma versão suportada (MySQL >= 5.7 ou MariaDB >= 10.2, preferencialmente uma versão LTS atual)."
+msgstr "Atualize o servidor de banco para uma versão suportada (MySQL >= 5.7 ou MariaDB >= 10.2, preferencialmente uma versão LTS atual)."
+
+msgid "Atualize os plugins para versões compatíveis antes de atualizar o GLPI; desative os que não tiverem versão compatível."
+msgstr "Atualize os plugins para versões compatíveis antes de atualizar o GLPI; desative os que não tiverem versão compatível."
+
+msgid "Atualize para um ramo do PHP com suporte ativo e compatível com o GLPI instalado."
+msgstr "Atualize para um ramo do PHP com suporte ativo e compatível com o GLPI instalado."
+
+msgid "Atualize pelo Marketplace ou substituindo o diretório do plugin, e execute a atualização em Configurar > Plugins."
+msgstr "Atualize pelo Marketplace ou substituindo o diretório do plugin, e execute a atualização em Configurar > Plugins."
+
+msgid "Ausência de acessos à interface ou tarefas sem permissão de execução."
+msgstr "Ausência de acessos à interface ou tarefas sem permissão de execução."
+
+msgid "Autenticação SMTP sem SSL/TLS obrigatório: as credenciais podem trafegar sem criptografia."
+msgstr "Autenticação SMTP sem SSL/TLS obrigatório: as credenciais podem trafegar sem criptografia."
+
+msgid "Automático (cron)"
+msgstr "Automático (cron)"
+
+msgid "Autorizações com perfil inexistente"
+msgstr "Autorizações com perfil inexistente"
+
+msgid "Autorizações de usuários inexistentes"
+msgstr "Autorizações de usuários inexistentes"
+
+msgid "Autorizações em entidade inexistente"
+msgstr "Autorizações em entidade inexistente"
+
+msgid "Ação automática"
+msgstr "Ação automática"
+
+msgid "Ação automática \"checkupdate\" do GLPI"
+msgstr "Ação automática \"checkupdate\" do GLPI"
+
+msgid "Ação automática \"queuednotification\" parada ou atrasada, cron do sistema inativo, falha de autenticação/conexão SMTP ou volume de envio acima da capacidade."
+msgstr "Ação automática \"queuednotification\" parada ou atrasada, cron do sistema inativo, falha de autenticação/conexão SMTP ou volume de envio acima da capacidade."
+
+msgid "Ações automáticas lentas"
+msgstr "Ações automáticas lentas"
+
+msgid "Ações de regras inexistentes"
+msgstr "Ações de regras inexistentes"
+
+msgid "Backend do cache"
+msgstr "Backend do cache"
+
+msgid "Backup ou dump no diretório da aplicação: pode ser baixado se estiver ao alcance do servidor web."
+msgstr "Backup ou dump no diretório da aplicação: pode ser baixado se estiver ao alcance do servidor web."
+
+msgid "Baixa"
+msgstr "Baixa"
+
+msgid "Baixe a versão estável mais recente na página oficial de releases."
+msgstr "Baixe a versão estável mais recente na página oficial de releases."
+
+#, php-format
+msgid "Banco com %s sem fragmentação relevante."
+msgstr "Banco com %s sem fragmentação relevante."
+
+msgid "Banco de dados"
+msgstr "Banco de dados"
+
+msgid "Banco em servidor remoto com rede lenta, servidor sobrecarregado ou resolução de nomes (DNS) lenta."
+msgstr "Banco em servidor remoto com rede lenta, servidor sobrecarregado ou resolução de nomes (DNS) lenta."
+
+msgid "Banco subdimensionado deixa listas, buscas e painéis lentos e pode recusar conexões em horários de pico."
+msgstr "Banco subdimensionado deixa listas, buscas e painéis lentos e pode recusar conexões em horários de pico."
+
+msgid "Base"
+msgstr "Base"
+
+msgid "Base de dados"
+msgstr "Base de dados"
+
+msgid "Bloqueios (lock)"
+msgstr "Bloqueios (lock)"
+
+msgid "CLI (cron do sistema)"
+msgstr "CLI (cron do sistema)"
+
+msgid "CLI permitido"
+msgstr "CLI permitido"
+
+msgid "CSV — lista de verificações"
+msgstr "CSV — lista de verificações"
+
+msgid "Cache"
+msgstr "Cache"
+
+#, php-format
+msgid "Cache em sistema de arquivos em uma instalação com %d usuários ativos."
+msgstr "Cache em sistema de arquivos em uma instalação com %d usuários ativos."
+
+#, php-format
+msgid "Cache operacional (%s)."
+msgstr "Cache operacional (%s)."
+
+msgid "Cada página do GLPI executa dezenas de consultas; latência alta torna a aplicação lenta."
+msgstr "Cada página do GLPI executa dezenas de consultas; latência alta torna a aplicação lenta."
+
+msgid "Caminho"
+msgstr "Caminho"
+
+msgid "Caminho esperado"
+msgstr "Caminho esperado"
+
+msgid "Canal"
+msgstr "Canal"
+
+msgid "Carga média (1/5/15 min)"
+msgstr "Carga média (1/5/15 min)"
+
+msgid "Categoria"
+msgstr "Categoria"
+
+msgid "Certificado TLS não configurado no servidor web ou URL da aplicação não atualizada após habilitar HTTPS."
+msgstr "Certificado TLS não configurado no servidor web ou URL da aplicação não atualizada após habilitar HTTPS."
+
+msgid "Chamados com grupo inexistente"
+msgstr "Chamados com grupo inexistente"
+
+msgid "Chamados com usuário ator inexistente"
+msgstr "Chamados com usuário ator inexistente"
+
+msgid "Chamados em entidade inexistente"
+msgstr "Chamados em entidade inexistente"
+
+msgid "Chave"
+msgstr "Chave"
+
+msgid "Chaves primárias/estrangeiras com inteiros com sinal"
+msgstr "Chaves primárias/estrangeiras com inteiros com sinal"
+
+msgid "Ciclo na árvore de entidades"
+msgstr "Ciclo na árvore de entidades"
+
+msgid "Cliente"
+msgstr "Cliente"
+
+msgid "Cliente padrão \"full access from localhost\" alterado ou clientes criados sem restrições."
+msgstr "Cliente padrão \"full access from localhost\" alterado ou clientes criados sem restrições."
+
+msgid "Clientes da API ativos"
+msgstr "Clientes da API ativos"
+
+msgid "Clique em \"Enviar um e-mail de teste ao administrador\" e verifique a entrega."
+msgstr "Clique em \"Enviar um e-mail de teste ao administrador\" e verifique a entrega."
+
+msgid "Coleta de e-mails (criação de chamados)"
+msgstr "Coleta de e-mails (criação de chamados)"
+
+msgid "Coletor"
+msgstr "Coletor"
+
+msgid "Coletores ativos"
+msgstr "Coletores ativos"
+
+msgid "Coletores configurados"
+msgstr "Coletores configurados"
+
+msgid "Coletores de e-mail (Receivers)"
+msgstr "Coletores de e-mail (Receivers)"
+
+msgid "Coloque o GLPI em modo de manutenção."
+msgstr "Coloque o GLPI em modo de manutenção."
+
+msgid "Colunas"
+msgstr "Colunas"
+
+msgid "Colunas do tipo datetime (sem suporte a fuso horário)"
+msgstr "Colunas do tipo datetime (sem suporte a fuso horário)"
+
+msgid "Com OFF, o espaço liberado por limpezas nunca é devolvido ao disco. Recomendado ON."
+msgstr "Com OFF, o espaço liberado por limpezas nunca é devolvido ao disco. Recomendado ON."
+
+msgid "Com o disco cheio o GLPI não grava documentos, sessões, cache nem logs; usuários são desconectados e o banco pode parar se estiver no mesmo volume."
+msgstr "Com o disco cheio o GLPI não grava documentos, sessões, cache nem logs; usuários são desconectados e o banco pode parar se estiver no mesmo volume."
+
+msgid "Comando"
+msgstr "Comando"
+
+msgid "Comece por aqui"
+msgstr "Comece por aqui"
+
+msgid "Compacte ou remova arquivos de log antigos já analisados."
+msgstr "Compacte ou remova arquivos de log antigos já analisados."
+
+msgid "Compara a versão instalada com as versões estáveis conhecidas."
+msgstr "Compara a versão instalada com as versões estáveis conhecidas."
+
+msgid "Compara tabelas, colunas e índices do banco com o esquema de referência da versão instalada."
+msgstr "Compara tabelas, colunas e índices do banco com o esquema de referência da versão instalada."
+
+msgid "Comparado"
+msgstr "Comparado"
+
+msgid "Comparar"
+msgstr "Comparar"
+
+msgid "Comparar selecionados"
+msgstr "Comparar selecionados"
+
+msgid "Compare com a verificação de integridade do esquema e recrie os índices ausentes em janela de manutenção, após backup."
+msgstr "Compare com a verificação de integridade do esquema e recrie os índices ausentes em janela de manutenção, após backup."
+
+msgid "Compare com um backup recente para identificar a origem da alteração."
+msgstr "Compare com um backup recente para identificar a origem da alteração."
+
+msgid "Compatibilidade da versão do PHP"
+msgstr "Compatibilidade da versão do PHP"
+
+msgid "Compatibilidade dos plugins"
+msgstr "Compatibilidade dos plugins"
+
+#, php-format
+msgid "Compatível com %s"
+msgstr "Compatível com %s"
+
+msgid "Completo"
+msgstr "Completo"
+
+msgid "Completos"
+msgstr "Completos"
+
+msgid "Comportamentos imprevisíveis, erros fatais e falhas durante atualizações."
+msgstr "Comportamentos imprevisíveis, erros fatais e falhas durante atualizações."
+
+msgid "Computadores"
+msgstr "Computadores"
+
+msgid "Computadores em entidade inexistente"
+msgstr "Computadores em entidade inexistente"
+
+msgid "Conclua a atualização do banco de dados."
+msgstr "Conclua a atualização do banco de dados."
+
+msgid "Conclua a atualização ou desinstale corretamente os plugins listados."
+msgstr "Conclua a atualização ou desinstale corretamente os plugins listados."
+
+msgid "Conexão com o banco de dados"
+msgstr "Conexão com o banco de dados"
+
+msgid "Conexão com o banco de dados ativa e com boa latência."
+msgstr "Conexão com o banco de dados ativa e com boa latência."
+
+msgid "Conexão com servidores SMTP e IMAP/POP"
+msgstr "Conexão com servidores SMTP e IMAP/POP"
+
+msgid "Conexão sem SSL/TLS (senha trafega sem criptografia)"
+msgstr "Conexão sem SSL/TLS (senha trafega sem criptografia)"
+
+msgid "Conexões"
+msgstr "Conexões"
+
+msgid "Conexões: pico / máximo"
+msgstr "Conexões: pico / máximo"
+
+msgid "Configurada com HTTP: senhas e cookies de sessão trafegam sem criptografia e os links das notificações usam HTTP."
+msgstr "Configurada com HTTP: senhas e cookies de sessão trafegam sem criptografia e os links das notificações usam HTTP."
+
+msgid "Configurar"
+msgstr "Configurar"
+
+msgid "Configuração"
+msgstr "Configuração"
+
+msgid "Configuração de envio de e-mails"
+msgstr "Configuração de envio de e-mails"
+
+msgid "Configuração e funcionamento do cache"
+msgstr "Configuração e funcionamento do cache"
+
+msgid "Configuração geral"
+msgstr "Configuração geral"
+
+msgid "Configuração incompleta ou valores padrão mantidos após a instalação."
+msgstr "Configuração incompleta ou valores padrão mantidos após a instalação."
+
+msgid "Configuração padrão da instalação."
+msgstr "Configuração padrão da instalação."
+
+msgid "Configuração padrão do MySQL/MariaDB, crescimento da base ou consultas sem índice."
+msgstr "Configuração padrão do MySQL/MariaDB, crescimento da base ou consultas sem índice."
+
+msgid "Configurações"
+msgstr "Configurações"
+
+msgid "Configurações críticas do banco"
+msgstr "Configurações críticas do banco"
+
+msgid "Configurações de desempenho do PHP"
+msgstr "Configurações de desempenho do PHP"
+
+msgid "Configurações de desenvolvimento em produção facilitam ataques e expõem informações internas."
+msgstr "Configurações de desenvolvimento em produção facilitam ataques e expõem informações internas."
+
+msgid "Configurações inadequadas do banco causam falhas intermitentes e problemas de desempenho."
+msgstr "Configurações inadequadas do banco causam falhas intermitentes e problemas de desempenho."
+
+msgid "Configurações padrão inseguras"
+msgstr "Configurações padrão inseguras"
+
+msgid "Configurações salvas."
+msgstr "Configurações salvas."
+
+msgid "Configure a purga do histórico em Configurar > Geral > Logs (ação automática \"PurgeLogs\")."
+msgstr "Configure a purga do histórico em Configurar > Geral > Logs (ação automática \"PurgeLogs\")."
+
+msgid "Configure o DocumentRoot/root do servidor web para o diretório \"public/\" do GLPI, com regravação de URLs para index.php."
+msgstr "Configure o DocumentRoot/root do servidor web para o diretório \"public/\" do GLPI, com regravação de URLs para index.php."
+
+msgid "Configure o cron do sistema e altere as tarefas para o modo CLI."
+msgstr "Configure o cron do sistema e altere as tarefas para o modo CLI."
+
+msgid "Configure o cron do sistema para executar o GLPI a cada minuto."
+msgstr "Configure o cron do sistema para executar o GLPI a cada minuto."
+
+msgid "Configure o redirecionamento permanente de HTTP para HTTPS no servidor web."
+msgstr "Configure o redirecionamento permanente de HTTP para HTTPS no servidor web."
+
+msgid "Configure o servidor web com a raiz em \"public/\" (GLPI 10.0.7+), o que bloqueia o acesso direto aos demais arquivos."
+msgstr "Configure o servidor web com a raiz em \"public/\" (GLPI 10.0.7+), o que bloqueia o acesso direto aos demais arquivos."
+
+msgid "Configure regras de negócio para ativos para atribuição automática."
+msgstr "Configure regras de negócio para ativos para atribuição automática."
+
+msgid "Configure: \"php bin/console cache:configure --dsn=redis://127.0.0.1:6379\"."
+msgstr "Configure: \"php bin/console cache:configure --dsn=redis://127.0.0.1:6379\"."
+
+msgid "Confirme após alguns minutos que a coluna \"Última execução\" está sendo atualizada."
+msgstr "Confirme após alguns minutos que a coluna \"Última execução\" está sendo atualizada."
+
+msgid "Confirme que a ação automática \"mailgate\" está ativa."
+msgstr "Confirme que a ação automática \"mailgate\" está ativa."
+
+msgid "Confirme servidor e porta na configuração do GLPI."
+msgstr "Confirme servidor e porta na configuração do GLPI."
+
+msgid "Considere um cache em memória (Redis ou Memcached)."
+msgstr "Considere um cache em memória (Redis ou Memcached)."
+
+msgid "Consistência das entidades"
+msgstr "Consistência das entidades"
+
+msgid "Consulta anônima (GET) da lista pública de versões do GLPI no GitHub, com cache de 24h, e do catálogo do Marketplace do GLPI para atualizações de plugins (usa a chave GLPI Network já configurada). Usa o proxy configurado no GLPI."
+msgstr "Consulta anônima (GET) da lista pública de versões do GLPI no GitHub, com cache de 24h, e do catálogo do Marketplace do GLPI para atualizações de plugins (usa a chave GLPI Network já configurada). Usa o proxy configurado no GLPI."
+
+msgid "Consulta externa (releases públicas do GLPI no GitHub)"
+msgstr "Consulta externa (releases públicas do GLPI no GitHub)"
+
+msgid "Consulta externa desativada nas configurações do plugin. Verifique atualizações em Configurar > Plugins > Marketplace."
+msgstr "Consulta externa desativada nas configurações do plugin. Verifique atualizações em Configurar > Plugins > Marketplace."
+
+msgid "Consultado em"
+msgstr "Consultado em"
+
+msgid "Consultas lentas"
+msgstr "Consultas lentas"
+
+msgid "Consultas lentas desde o início"
+msgstr "Consultas lentas desde o início"
+
+msgid "Consultas sobre essas colunas fazem varredura completa da tabela, deixando listas, buscas e relatórios lentos."
+msgstr "Consultas sobre essas colunas fazem varredura completa da tabela, deixando listas, buscas e relatórios lentos."
+
+msgid "Consulte a página de pré-requisitos da sua versão do GLPI."
+msgstr "Consulte a página de pré-requisitos da sua versão do GLPI."
+
+msgid "Consulte a página/repositório de cada plugin e verifique a matriz de compatibilidade."
+msgstr "Consulte a página/repositório de cada plugin e verifique a matriz de compatibilidade."
+
+msgid "Consulte as mensagens em Administração > Fila de notificações."
+msgstr "Consulte as mensagens em Administração > Fila de notificações."
+
+msgid "Consulte files/_log/cron.log e php-errors.log."
+msgstr "Consulte files/_log/cron.log e php-errors.log."
+
+msgid "Consulte files/_log/mail-error.log para ver o erro retornado pelo servidor SMTP."
+msgstr "Consulte files/_log/mail-error.log para ver o erro retornado pelo servidor SMTP."
+
+msgid "Consulte files/_log/php-errors.log e cron.log próximo do horário indicado."
+msgstr "Consulte files/_log/php-errors.log e cron.log próximo do horário indicado."
+
+msgid "Consulte files/_log/php-errors.log, cron.log e sql-errors.log."
+msgstr "Consulte files/_log/php-errors.log, cron.log e sql-errors.log."
+
+msgid "Conta padrão \"glpi\" ativa"
+msgstr "Conta padrão \"glpi\" ativa"
+
+msgid "Contas padrão com senha padrão"
+msgstr "Contas padrão com senha padrão"
+
+msgid "Contexto"
+msgstr "Contexto"
+
+msgid "Cookies de sessão podem ser roubados por scripts (XSS), enviados por HTTP sem criptografia ou usados em requisições de outros sites (CSRF)."
+msgstr "Cookies de sessão podem ser roubados por scripts (XSS), enviados por HTTP sem criptografia ou usados em requisições de outros sites (CSRF)."
+
+msgid "Corrija a configuração SMTP e envie um e-mail de teste."
+msgstr "Corrija a configuração SMTP e envie um e-mail de teste."
+
+msgid "Corrija a entidade pai pela interface e, após backup, regenere os caches da árvore."
+msgstr "Corrija a entidade pai pela interface e, após backup, regenere os caches da árvore."
+
+msgid "Corrija as diferenças em ambiente de homologação antes de aplicá-las em produção."
+msgstr "Corrija as diferenças em ambiente de homologação antes de aplicá-las em produção."
+
+msgid "Credenciais, cookies de sessão e dados de chamados podem ser interceptados na rede."
+msgstr "Credenciais, cookies de sessão e dados de chamados podem ser interceptados na rede."
+
+msgid "Crescimento de documentos anexados, logs sem rotação, arquivos temporários ou backups acumulados."
+msgstr "Crescimento de documentos anexados, logs sem rotação, arquivos temporários ou backups acumulados."
+
+msgid "Criado em"
+msgstr "Criado em"
+
+msgid "Crie os índices ausentes (ALTER TABLE ... ADD KEY ...) conforme o esquema de referência em install/mysql/glpi-empty.sql."
+msgstr "Crie os índices ausentes (ALTER TABLE ... ADD KEY ...) conforme o esquema de referência em install/mysql/glpi-empty.sql."
+
+msgid "Crie uma conta nominal de administrador e desative a conta \"glpi\"."
+msgstr "Crie uma conta nominal de administrador e desative a conta \"glpi\"."
+
+msgid "Criptografia SMTP"
+msgstr "Criptografia SMTP"
+
+msgid "Criticidade"
+msgstr "Criticidade"
+
+msgid "Critérios de regras inexistentes"
+msgstr "Critérios de regras inexistentes"
+
+msgid "Cron"
+msgstr "Cron"
+
+msgid "Cron e ações automáticas"
+msgstr "Cron e ações automáticas"
+
+msgid "Crítica"
+msgstr "Crítica"
+
+msgid "Crítica para operação"
+msgstr "Crítica para operação"
+
+msgid "Crítico"
+msgstr "Crítico"
+
+msgid "Crítico com mensagens pendentes na fila a partir de"
+msgstr "Crítico com mensagens pendentes na fila a partir de"
+
+#, php-format
+msgid "Crítico de disco livre abaixo de (%)"
+msgstr "Crítico de disco livre abaixo de (%)"
+
+msgid "Críticos"
+msgstr "Críticos"
+
+#, php-format
+msgid "Código da aplicação (%s)"
+msgstr "Código da aplicação (%s)"
+
+msgid "Código: mantenha src, inc e vendor pertencentes a root (somente leitura para o servidor web)."
+msgstr "Código: mantenha src, inc e vendor pertencentes a root (somente leitura para o servidor web)."
+
+msgid "Cópia de arquivo de configuração: pode conter credenciais."
+msgstr "Cópia de arquivo de configuração: pode conter credenciais."
+
+msgid "Dados"
+msgstr "Dados"
+
+msgid "Dados e documentos"
+msgstr "Dados e documentos"
+
+msgid "Dados fora da raiz da aplicação"
+msgstr "Dados fora da raiz da aplicação"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Data da análise"
+msgstr "Data da análise"
+
+msgid "Data e horário"
+msgstr "Data e horário"
+
+msgid "Defina responsáveis em massa ou por regras de importação/negócio."
+msgstr "Defina responsáveis em massa ou por regras de importação/negócio."
+
+msgid "Defina uma senha forte ou desmarque \"Ativo\"."
+msgstr "Defina uma senha forte ou desmarque \"Ativo\"."
+
+msgid "Depois"
+msgstr "Depois"
+
+msgid "Depois de atualizar os arquivos, execute a atualização do plugin e reative-o."
+msgstr "Depois de atualizar os arquivos, execute a atualização do plugin e reative-o."
+
+msgid "Desativada"
+msgstr "Desativada"
+
+msgid "Desative \"Habilitar login com credenciais\" se não for necessário."
+msgstr "Desative \"Habilitar login com credenciais\" se não for necessário."
+
+msgid "Desbloqueio de objetos bloqueados"
+msgstr "Desbloqueio de objetos bloqueados"
+
+msgid "Desconhecida"
+msgstr "Desconhecida"
+
+msgid "Desconhecido"
+msgstr "Desconhecido"
+
+msgid "Descrição"
+msgstr "Descrição"
+
+msgid "Desde o diagnóstico anterior"
+msgstr "Desde o diagnóstico anterior"
+
+msgid "Desempenho"
+msgstr "Desempenho"
+
+msgid "Desligamento abrupto do servidor, falha de disco, tabelas MyISAM ou volume muito alto de inserções (ex.: logs)."
+msgstr "Desligamento abrupto do servidor, falha de disco, tabelas MyISAM ou volume muito alto de inserções (ex.: logs)."
+
+msgid "Detalhes"
+msgstr "Detalhes"
+
+msgid "Diagnóstico"
+msgstr "Diagnóstico"
+
+msgid "Diagnóstico a comparar"
+msgstr "Diagnóstico a comparar"
+
+msgid "Diagnóstico concluído."
+msgstr "Diagnóstico concluído."
+
+msgid "Diagnóstico de referência"
+msgstr "Diagnóstico de referência"
+
+msgid "Diagnóstico de saúde da instalação GLPI"
+msgstr "Diagnóstico de saúde da instalação GLPI"
+
+msgid "Diagnóstico ou formato de exportação inválido."
+msgstr "Diagnóstico ou formato de exportação inválido."
+
+msgid "Diagnóstico removido do histórico."
+msgstr "Diagnóstico removido do histórico."
+
+msgid "Diferença de relógio (s)"
+msgstr "Diferença de relógio (s)"
+
+msgid "Diferença de relógio PHP x banco"
+msgstr "Diferença de relógio PHP x banco"
+
+msgid "Diferenças (resumo)"
+msgstr "Diferenças (resumo)"
+
+msgid "Diferenças de esquema podem causar erros de SQL e fazer falhar futuras atualizações do GLPI."
+msgstr "Diferenças de esquema podem causar erros de SQL e fazer falhar futuras atualizações do GLPI."
+
+#, php-format
+msgid "Dimensione innodb_buffer_pool_size para conter a maior parte dos dados (até ~70% da RAM em servidor dedicado)."
+msgstr "Dimensione innodb_buffer_pool_size para conter a maior parte dos dados (até ~70% da RAM em servidor dedicado)."
+
+msgid "Diretório"
+msgstr "Diretório"
+
+msgid "Diretório de configuração"
+msgstr "Diretório de configuração"
+
+msgid "Diretório de dados (GLPI_VAR_DIR)"
+msgstr "Diretório de dados (GLPI_VAR_DIR)"
+
+msgid "Diretório do plugin não encontrado"
+msgstr "Diretório do plugin não encontrado"
+
+msgid "Diretório do plugin não encontrado; registro a ser limpo"
+msgstr "Diretório do plugin não encontrado; registro a ser limpo"
+
+msgid "Diretório files/_cache sem permissão de escrita, servidor Redis/Memcached indisponível ou configuração inválida em config/cache.php."
+msgstr "Diretório files/_cache sem permissão de escrita, servidor Redis/Memcached indisponível ou configuração inválida em config/cache.php."
+
+msgid "Diretório inexistente"
+msgstr "Diretório inexistente"
+
+msgid "Diretórios e permissões"
+msgstr "Diretórios e permissões"
+
+msgid "Diretórios: \"find /caminho/do/glpi -type d -perm -0002 -exec chmod o-w {} \\;\"."
+msgstr "Diretórios: \"find /caminho/do/glpi -type d -perm -0002 -exec chmod o-w {} \\;\"."
+
+msgid "Disponível"
+msgstr "Disponível"
+
+msgid "Dispositivos"
+msgstr "Dispositivos"
+
+msgid "Documentação"
+msgstr "Documentação"
+
+msgid "Documentação oficial"
+msgstr "Documentação oficial"
+
+msgid "Documento"
+msgstr "Documento"
+
+msgid "Documentos anexados, logs, sessões e até config_db.php podem ser baixados diretamente pela URL se o servidor web não bloquear o acesso (ex.: Nginx ignora .htaccess)."
+msgstr "Documentos anexados, logs, sessões e até config_db.php podem ser baixados diretamente pela URL se o servidor web não bloquear o acesso (ex.: Nginx ignora .htaccess)."
+
+msgid "Documentos com arquivo"
+msgstr "Documentos com arquivo"
+
+msgid "Documentos sem arquivo físico"
+msgstr "Documentos sem arquivo físico"
+
+msgid "Dono"
+msgstr "Dono"
+
+msgid "Dumps"
+msgstr "Dumps"
+
+msgid "Duração máxima"
+msgstr "Duração máxima"
+
+msgid "Duração média"
+msgstr "Duração média"
+
+msgid "E-mail do administrador"
+msgstr "E-mail do administrador"
+
+msgid "E-mail do remetente"
+msgstr "E-mail do remetente"
+
+msgid "E-mail e notificações"
+msgstr "E-mail e notificações"
+
+msgid "E-mail em mais de um usuário ativo"
+msgstr "E-mail em mais de um usuário ativo"
+
+msgid "E-mails compartilhados"
+msgstr "E-mails compartilhados"
+
+msgid "E-mails compartilhados fazem o coletor associar chamados ao usuário errado; logins duplicados geram confusão de permissões e de histórico."
+msgstr "E-mails compartilhados fazem o coletor associar chamados ao usuário errado; logins duplicados geram confusão de permissões e de histórico."
+
+msgid "E-mails de usuários inexistentes"
+msgstr "E-mails de usuários inexistentes"
+
+msgid "E-mails enviados pelos usuários não viram chamados ou acompanhamentos; solicitações podem ser perdidas."
+msgstr "E-mails enviados pelos usuários não viram chamados ou acompanhamentos; solicitações podem ser perdidas."
+
+msgid "E-mails recebidos e não importados"
+msgstr "E-mails recebidos e não importados"
+
+msgid "Em Administração > Entidades, abra cada entidade listada e redefina a entidade pai."
+msgstr "Em Administração > Entidades, abra cada entidade listada e redefina a entidade pai."
+
+msgid "Em Administração > Usuários, pesquise pelo login/e-mail listado."
+msgstr "Em Administração > Usuários, pesquise pelo login/e-mail listado."
+
+msgid "Em Configurar > Ações automáticas, abra a tarefa e altere o status para \"Agendada\" (ou use \"php bin/console task:unlock --all\")."
+msgstr "Em Configurar > Ações automáticas, abra a tarefa e altere o status para \"Agendada\" (ou use \"php bin/console task:unlock --all\")."
+
+msgid "Em Configurar > Ações automáticas, abra a tarefa e consulte a aba \"Histórico\"."
+msgstr "Em Configurar > Ações automáticas, abra a tarefa e consulte a aba \"Histórico\"."
+
+msgid "Em Configurar > Ações automáticas, abra cada tarefa listada e altere \"Modo de execução\" para CLI."
+msgstr "Em Configurar > Ações automáticas, abra cada tarefa listada e altere \"Modo de execução\" para CLI."
+
+msgid "Em Configurar > Ações automáticas, altere o \"Modo de execução\" das tarefas para CLI."
+msgstr "Em Configurar > Ações automáticas, altere o \"Modo de execução\" das tarefas para CLI."
+
+msgid "Em Configurar > Ações automáticas, confirme que \"queuednotification\" está ativa e executando."
+msgstr "Em Configurar > Ações automáticas, confirme que \"queuednotification\" está ativa e executando."
+
+msgid "Em estado anormal"
+msgstr "Em estado anormal"
+
+msgid "Em execução há"
+msgstr "Em execução há"
+
+msgid "Em instalações maiores o cache em disco gera muita E/S e não é compartilhado entre servidores."
+msgstr "Em instalações maiores o cache em disco gera muita E/S e não é compartilhado entre servidores."
+
+msgid "Em retentativa"
+msgstr "Em retentativa"
+
+msgid "Endereço inválido."
+msgstr "Endereço inválido."
+
+msgid "Entidade"
+msgstr "Entidade"
+
+msgid "Entidade pai inexistente ou inválida"
+msgstr "Entidade pai inexistente ou inválida"
+
+msgid "Entidades"
+msgstr "Entidades"
+
+msgid "Entidades inconsistentes provocam erros de visibilidade (itens que somem ou aparecem para quem não deveria) e falhas em regras e relatórios."
+msgstr "Entidades inconsistentes provocam erros de visibilidade (itens que somem ou aparecem para quem não deveria) e falhas em regras e relatórios."
+
+msgid "Enviadas nas últimas 24h"
+msgstr "Enviadas nas últimas 24h"
+
+msgid "Envie um e-mail de teste ao administrador."
+msgstr "Envie um e-mail de teste ao administrador."
+
+msgid "Envie um e-mail de teste em Configurar > Notificações > Configuração das notificações por e-mail."
+msgstr "Envie um e-mail de teste em Configurar > Notificações > Configuração das notificações por e-mail."
+
+msgid "Envio da fila de notificações"
+msgstr "Envio da fila de notificações"
+
+msgid "Envio de notificações"
+msgstr "Envio de notificações"
+
+msgid "Equipamentos de rede"
+msgstr "Equipamentos de rede"
+
+msgid "Erro"
+msgstr "Erro"
+
+#, php-format
+msgid "Erro %d"
+msgstr "Erro %d"
+
+msgid "Erro na verificação"
+msgstr "Erro na verificação"
+
+msgid "Erros"
+msgstr "Erros"
+
+msgid "Erros de PHP nas últimas 24h"
+msgstr "Erros de PHP nas últimas 24h"
+
+msgid "Erros de PHP, falta de memória, tempo de execução excedido, falha de conexão com serviços externos (LDAP, SMTP, IMAP) ou bug de plugin."
+msgstr "Erros de PHP, falta de memória, tempo de execução excedido, falha de conexão com serviços externos (LDAP, SMTP, IMAP) ou bug de plugin."
+
+msgid "Erros de SQL nas últimas 24h"
+msgstr "Erros de SQL nas últimas 24h"
+
+msgid "Erros do PHP exibidos aos usuários revelam caminhos, consultas e detalhes internos."
+msgstr "Erros do PHP exibidos aos usuários revelam caminhos, consultas e detalhes internos."
+
+msgid "Escalonamento de OLA"
+msgstr "Escalonamento de OLA"
+
+msgid "Escalonamento de SLA"
+msgstr "Escalonamento de SLA"
+
+msgid "Escrita"
+msgstr "Escrita"
+
+msgid "Escrita necessária"
+msgstr "Escrita necessária"
+
+msgid "Espaço disponível em disco"
+msgstr "Espaço disponível em disco"
+
+msgid "Espaço em disco baixo em volume(s) utilizado(s) pelo GLPI."
+msgstr "Espaço em disco baixo em volume(s) utilizado(s) pelo GLPI."
+
+msgid "Espaço livre"
+msgstr "Espaço livre"
+
+msgid "Espaço livre não recuperado"
+msgstr "Espaço livre não recuperado"
+
+msgid "Esta verificação depende do contexto web e não pode ser avaliada quando o diagnóstico é executado pelo cron (CLI). Execute o diagnóstico manualmente pelo navegador."
+msgstr "Esta verificação depende do contexto web e não pode ser avaliada quando o diagnóstico é executado pelo cron (CLI). Execute o diagnóstico manualmente pelo navegador."
+
+msgid "Estado das tabelas"
+msgstr "Estado das tabelas"
+
+msgid "Estrutura diferente"
+msgstr "Estrutura diferente"
+
+msgid "Evolução do indicador"
+msgstr "Evolução do indicador"
+
+msgid "Evolução do indicador de saúde"
+msgstr "Evolução do indicador de saúde"
+
+msgid "Exclusões diretas no banco, falhas durante exclusões, plugins removidos ou restauração parcial de dados."
+msgstr "Exclusões diretas no banco, falhas durante exclusões, plugins removidos ou restauração parcial de dados."
+
+msgid "Executando o diagnóstico…"
+msgstr "Executando o diagnóstico…"
+
+msgid "Executar diagnóstico completo"
+msgstr "Executar diagnóstico completo"
+
+msgid "Executar diagnóstico leve"
+msgstr "Executar diagnóstico leve"
+
+msgid "Execute \"mysql_upgrade\"/\"mariadb-upgrade\" quando aplicável."
+msgstr "Execute \"mysql_upgrade\"/\"mariadb-upgrade\" quando aplicável."
+
+msgid "Execute \"php bin/console cache:debug\" para ver a configuração."
+msgstr "Execute \"php bin/console cache:debug\" para ver a configuração."
+
+msgid "Execute \"php bin/console database:check_schema_integrity\" para confirmar as diferenças."
+msgstr "Execute \"php bin/console database:check_schema_integrity\" para confirmar as diferenças."
+
+msgid "Execute \"php bin/console database:check_schema_integrity\" para ver o diff completo."
+msgstr "Execute \"php bin/console database:check_schema_integrity\" para ver o diff completo."
+
+msgid "Execute \"php bin/console db:update\" e valide o acesso."
+msgstr "Execute \"php bin/console db:update\" e valide o acesso."
+
+msgid "Execute \"php bin/console db:update\" no diretório do GLPI."
+msgstr "Execute \"php bin/console db:update\" no diretório do GLPI."
+
+msgid "Execute \"php bin/console diagnostic:check_documents_integrity\" para uma verificação completa."
+msgstr "Execute \"php bin/console diagnostic:check_documents_integrity\" para uma verificação completa."
+
+msgid "Execute \"php bin/console system:check_requirements\" para ver o detalhamento."
+msgstr "Execute \"php bin/console system:check_requirements\" para ver o detalhamento."
+
+msgid "Execute \"php front/cron.php\" manualmente e observe a saída."
+msgstr "Execute \"php front/cron.php\" manualmente e observe a saída."
+
+msgid "Execute a tarefa manualmente em linha de comando: \"php front/cron.php --force NOME_DA_TAREFA\"."
+msgstr "Execute a tarefa manualmente em linha de comando: \"php front/cron.php --force NOME_DA_TAREFA\"."
+
+msgid "Execute a tarefa manualmente: \"php front/cron.php --force NOME_DA_TAREFA\" (ou o botão \"Executar\")."
+msgstr "Execute a tarefa manualmente: \"php front/cron.php --force NOME_DA_TAREFA\" (ou o botão \"Executar\")."
+
+msgid "Execute as migrações indicadas, em janela de manutenção, após backup completo."
+msgstr "Execute as migrações indicadas, em janela de manutenção, após backup completo."
+
+msgid "Execute cada comando listado na tabela, a partir do diretório raiz do GLPI."
+msgstr "Execute cada comando listado na tabela, a partir do diretório raiz do GLPI."
+
+msgid "Execute este diagnóstico novamente para confirmar."
+msgstr "Execute este diagnóstico novamente para confirmar."
+
+msgid "Execute o cron com o mesmo usuário do servidor web."
+msgstr "Execute o cron com o mesmo usuário do servidor web."
+
+msgid "Execuções"
+msgstr "Execuções"
+
+msgid "Exige letra maiúscula"
+msgstr "Exige letra maiúscula"
+
+msgid "Exige letra minúscula"
+msgstr "Exige letra minúscula"
+
+msgid "Exige número"
+msgstr "Exige número"
+
+msgid "Exige símbolo"
+msgstr "Exige símbolo"
+
+msgid "Existe"
+msgstr "Existe"
+
+msgid "Existência, leitura e escrita dos diretórios de dados, cache, sessões, logs, plugins, marketplace e configuração."
+msgstr "Existência, leitura e escrita dos diretórios de dados, cache, sessões, logs, plugins, marketplace e configuração."
+
+msgid "Exportar relatório"
+msgstr "Exportar relatório"
+
+msgid "Exposição da API REST"
+msgstr "Exposição da API REST"
+
+msgid "Exposição de diretórios pelo servidor web"
+msgstr "Exposição de diretórios pelo servidor web"
+
+msgid "Extensões PHP não instaladas/habilitadas ou configurações do PHP e do banco abaixo do recomendado."
+msgstr "Extensões PHP não instaladas/habilitadas ou configurações do PHP e do banco abaixo do recomendado."
+
+msgid "Extensões PHP, limite de memória, driver do banco, fusos horários e demais requisitos verificados pelo instalador do GLPI."
+msgstr "Extensões PHP, limite de memória, driver do banco, fusos horários e demais requisitos verificados pelo instalador do GLPI."
+
+msgid "Falha ao criar o chamado"
+msgstr "Falha ao criar o chamado"
+
+#, php-format
+msgid "Falha na consulta externa: %s"
+msgstr "Falha na consulta externa: %s"
+
+msgid "Falhas"
+msgstr "Falhas"
+
+msgid "Falhas ao anexar documentos, gerar cache, gravar sessões (usuários deslogados), registrar logs ou executar o cron."
+msgstr "Falhas ao anexar documentos, gerar cache, gravar sessões (usuários deslogados), registrar logs ou executar o cron."
+
+msgid "Falhas de autenticação"
+msgstr "Falhas de autenticação"
+
+msgid "Falhas de conexão/criptografia"
+msgstr "Falhas de conexão/criptografia"
+
+msgid "Falhas de envio e autenticação SMTP"
+msgstr "Falhas de envio e autenticação SMTP"
+
+msgid "Falhas registradas (7 dias)"
+msgstr "Falhas registradas (7 dias)"
+
+msgid "Falhou"
+msgstr "Falhou"
+
+msgid "Falta de memória causa erros \"Allowed memory size exhausted\", páginas em branco e lentidão."
+msgstr "Falta de memória causa erros \"Allowed memory size exhausted\", páginas em branco e lentidão."
+
+msgid "Faça backup completo (dump) do banco de dados."
+msgstr "Faça backup completo (dump) do banco de dados."
+
+msgid "Faça backup completo do banco de dados e dos diretórios de dados e configuração."
+msgstr "Faça backup completo do banco de dados e dos diretórios de dados e configuração."
+
+msgid "Faça backup completo do banco de dados e dos diretórios de dados."
+msgstr "Faça backup completo do banco de dados e dos diretórios de dados."
+
+msgid "Faça backup completo do banco de dados."
+msgstr "Faça backup completo do banco de dados."
+
+msgid "Faça backup do banco de dados."
+msgstr "Faça backup do banco de dados."
+
+msgid "Faça backup imediatamente e analise as tabelas indicadas."
+msgstr "Faça backup imediatamente e analise as tabelas indicadas."
+
+msgid "Faça um dump completo do banco de dados."
+msgstr "Faça um dump completo do banco de dados."
+
+msgid "Fila de notificações"
+msgstr "Fila de notificações"
+
+#, php-format
+msgid "Fila de notificações saudável: %d mensagem(ns) pendente(s)."
+msgstr "Fila de notificações saudável: %d mensagem(ns) pendente(s)."
+
+msgid "Fim do suporte da versão"
+msgstr "Fim do suporte da versão"
+
+msgid "Fim do suporte de segurança do PHP"
+msgstr "Fim do suporte de segurança do PHP"
+
+msgid "Fonte da informação"
+msgstr "Fonte da informação"
+
+msgid "Frequência"
+msgstr "Frequência"
+
+msgid "Funcionamento do cron"
+msgstr "Funcionamento do cron"
+
+msgid "Função"
+msgstr "Função"
+
+msgid "GLPI (interno)"
+msgstr "GLPI (interno)"
+
+msgid "GLPI suportado (mín – máx exclusivo)"
+msgstr "GLPI suportado (mín – máx exclusivo)"
+
+msgid "Grande volume de dados a processar, consultas lentas, servidores externos lentos (LDAP, e-mail) ou falta de índices."
+msgstr "Grande volume de dados a processar, consultas lentas, servidores externos lentos (LDAP, e-mail) ou falta de índices."
+
+msgid "Gravável pelo usuário do PHP: uma invasão poderia alterar o código do GLPI"
+msgstr "Gravável pelo usuário do PHP: uma invasão poderia alterar o código do GLPI"
+
+msgid "Gravável por qualquer usuário do sistema (o+w)"
+msgstr "Gravável por qualquer usuário do sistema (o+w)"
+
+msgid "Grupos de chamados inexistentes"
+msgstr "Grupos de chamados inexistentes"
+
+msgid "Gráficos"
+msgstr "Gráficos"
+
+msgid "HTTPS e URL da aplicação"
+msgstr "HTTPS e URL da aplicação"
+
+msgid "Habilite HTTPS no servidor web, redirecione HTTP para HTTPS e atualize a URL da aplicação."
+msgstr "Habilite HTTPS no servidor web, redirecione HTTP para HTTPS e atualize a URL da aplicação."
+
+msgid "Health Check"
+msgstr "Health Check"
+
+msgid "Health Check: diagnóstico completo periódico"
+msgstr "Health Check: diagnóstico completo periódico"
+
+msgid "Health Check: diagnóstico leve periódico"
+msgstr "Health Check: diagnóstico leve periódico"
+
+msgid "Histórico"
+msgstr "Histórico"
+
+msgid "Histórico de diagnósticos"
+msgstr "Histórico de diagnósticos"
+
+msgid "Há coletores de e-mail com erros, sem coleta recente ou com configuração insegura."
+msgstr "Há coletores de e-mail com erros, sem coleta recente ou com configuração insegura."
+
+msgid "Há espaço em disco suficiente em todos os volumes usados pelo GLPI."
+msgstr "Há espaço em disco suficiente em todos os volumes usados pelo GLPI."
+
+msgid "Há plugins incompatíveis com a versão instalada do GLPI ou do PHP, ou com versão inconsistente."
+msgstr "Há plugins incompatíveis com a versão instalada do GLPI ou do PHP, ou com versão inconsistente."
+
+#, php-format
+msgid "Há uma versão de manutenção disponível para o ramo %1$s: %2$s (instalada: %3$s)."
+msgstr "Há uma versão de manutenção disponível para o ramo %1$s: %2$s (instalada: %3$s)."
+
+msgid "Há usuários duplicados ou inconsistentes."
+msgstr "Há usuários duplicados ou inconsistentes."
+
+msgid "Identificação do ambiente"
+msgstr "Identificação do ambiente"
+
+msgid "Identifique o usuário do servidor web (ex.: www-data, apache, nginx)."
+msgstr "Identifique o usuário do servidor web (ex.: www-data, apache, nginx)."
+
+msgid "Identifique os maiores diretórios (ex.: \"du -sh files/*\")."
+msgstr "Identifique os maiores diretórios (ex.: \"du -sh files/*\")."
+
+msgid "Ilimitado"
+msgstr "Ilimitado"
+
+msgid "Imagens"
+msgstr "Imagens"
+
+msgid "Impacto"
+msgstr "Impacto"
+
+msgid "Impacto operacional"
+msgstr "Impacto operacional"
+
+msgid "Importe manualmente as mensagens legítimas usando as ações em massa."
+msgstr "Importe manualmente as mensagens legítimas usando as ações em massa."
+
+msgid "Impressoras"
+msgstr "Impressoras"
+
+msgid "Inacessível"
+msgstr "Inacessível"
+
+msgid "Inativos / não instalados"
+msgstr "Inativos / não instalados"
+
+msgid "Inclua a atualização do PHP no planejamento dos próximos meses."
+msgstr "Inclua a atualização do PHP no planejamento dos próximos meses."
+
+#, php-format
+msgid "Incompatível com o GLPI %s"
+msgstr "Incompatível com o GLPI %s"
+
+#, php-format
+msgid "Incompatível com o PHP %s"
+msgstr "Incompatível com o PHP %s"
+
+msgid "Indicador"
+msgstr "Indicador"
+
+#, php-format
+msgid "Indicador de saúde %s de 100:"
+msgstr "Indicador de saúde %s de 100:"
+
+msgid "Indicador de saúde dos últimos diagnósticos"
+msgstr "Indicador de saúde dos últimos diagnósticos"
+
+msgid "Indicadores de desempenho do banco"
+msgstr "Indicadores de desempenho do banco"
+
+msgid "Indicadores de memória requerem atenção."
+msgstr "Indicadores de memória requerem atenção."
+
+msgid "Indisponível"
+msgstr "Indisponível"
+
+msgid "Informativo"
+msgstr "Informativo"
+
+msgid "Informativos"
+msgstr "Informativos"
+
+msgid "Informe e-mails válidos do administrador e do remetente, de um domínio autorizado (SPF/DKIM)."
+msgstr "Informe e-mails válidos do administrador e do remetente, de um domínio autorizado (SPF/DKIM)."
+
+msgid "Iniciada em"
+msgstr "Iniciada em"
+
+msgid "Instalada"
+msgstr "Instalada"
+
+msgid "Instalado e desativado (suspenso)"
+msgstr "Instalado e desativado (suspenso)"
+
+msgid "Instalado mas não configurado"
+msgstr "Instalado mas não configurado"
+
+msgid "Instalação anterior ao GLPI 10.0.7 ou servidor web configurado com a raiz no diretório principal do GLPI."
+msgstr "Instalação anterior ao GLPI 10.0.7 ou servidor web configurado com a raiz no diretório principal do GLPI."
+
+msgid "Instalação de um pacote de pré-lançamento ou do código-fonte de desenvolvimento."
+msgstr "Instalação de um pacote de pré-lançamento ou do código-fonte de desenvolvimento."
+
+msgid "Instale a versão do PHP adequada e as extensões exigidas."
+msgstr "Instale a versão do PHP adequada e as extensões exigidas."
+
+msgid "Instale as extensões ausentes pelo gerenciador de pacotes do sistema (ex.: php-intl, php-gd)."
+msgstr "Instale as extensões ausentes pelo gerenciador de pacotes do sistema (ex.: php-intl, php-gd)."
+
+msgid "Instale as extensões e ajuste as configurações indicadas, depois reinicie o servidor web/PHP-FPM."
+msgstr "Instale as extensões e ajuste as configurações indicadas, depois reinicie o servidor web/PHP-FPM."
+
+msgid "Instale o Redis e a extensão PHP \"redis\"."
+msgstr "Instale o Redis e a extensão PHP \"redis\"."
+
+msgid "Instale um certificado TLS válido (ex.: Let's Encrypt ou certificado interno)."
+msgstr "Instale um certificado TLS válido (ex.: Let's Encrypt ou certificado interno)."
+
+msgid "Instale uma versão do PHP dentro da faixa suportada pela versão do GLPI em uso."
+msgstr "Instale uma versão do PHP dentro da faixa suportada pela versão do GLPI em uso."
+
+msgid "Integridade do esquema do banco"
+msgstr "Integridade do esquema do banco"
+
+msgid "Integridade operacional"
+msgstr "Integridade operacional"
+
+msgid "Interface (SAPI)"
+msgstr "Interface (SAPI)"
+
+msgid "Interface PHP"
+msgstr "Interface PHP"
+
+msgid "Inventário"
+msgstr "Inventário"
+
+msgid "Item"
+msgstr "Item"
+
+msgid "Itens vinculados a chamados inexistentes"
+msgstr "Itens vinculados a chamados inexistentes"
+
+msgid "JSON — dados estruturados"
+msgstr "JSON — dados estruturados"
+
+#, php-format
+msgid "Latência elevada com o banco de dados: %s ms por consulta."
+msgstr "Latência elevada com o banco de dados: %s ms por consulta."
+
+msgid "Latência média (ms)"
+msgstr "Latência média (ms)"
+
+msgid "Legível por qualquer usuário do sistema (o+r): expõe credenciais do banco ou a chave de criptografia"
+msgstr "Legível por qualquer usuário do sistema (o+r): expõe credenciais do banco ou a chave de criptografia"
+
+msgid "Leia as mensagens completas em files/_log/mail-error.log."
+msgstr "Leia as mensagens completas em files/_log/mail-error.log."
+
+msgid "Leia as últimas linhas de php-errors.log e sql-errors.log para identificar a origem dos erros."
+msgstr "Leia as últimas linhas de php-errors.log e sql-errors.log para identificar a origem dos erros."
+
+msgid "Leia o changelog de cada plugin e atualize em janela de manutenção, após backup."
+msgstr "Leia o changelog de cada plugin e atualize em janela de manutenção, após backup."
+
+msgid "Leia o changelog e os avisos de segurança da versão."
+msgstr "Leia o changelog e os avisos de segurança da versão."
+
+msgid "Leitura"
+msgstr "Leitura"
+
+msgid "Leve"
+msgstr "Leve"
+
+msgid "Leves"
+msgstr "Leves"
+
+msgid "Libere espaço ou amplie o volume; ative as rotinas de limpeza do GLPI."
+msgstr "Libere espaço ou amplie o volume; ative as rotinas de limpeza do GLPI."
+
+msgid "Limite considerado lento"
+msgstr "Limite considerado lento"
+
+msgid "Limite crítico"
+msgstr "Limite crítico"
+
+msgid "Limite de alerta"
+msgstr "Limite de alerta"
+
+msgid "Limite de arquivos em cache quase atingido. Recomendado 20000 ou mais."
+msgstr "Limite de arquivos em cache quase atingido. Recomendado 20000 ou mais."
+
+msgid "Limite de memória do PHP baixo ou servidor subdimensionado para a carga."
+msgstr "Limite de memória do PHP baixo ou servidor subdimensionado para a carga."
+
+msgid "Limite de tarefas por execução (cron_limit)"
+msgstr "Limite de tarefas por execução (cron_limit)"
+
+msgid "Limite de tarefas por execução muito baixo, faixa de horário restritiva, erro recorrente na tarefa ou execução bloqueada."
+msgstr "Limite de tarefas por execução muito baixo, faixa de horário restritiva, erro recorrente na tarefa ou execução bloqueada."
+
+msgid "Limites e histórico"
+msgstr "Limites e histórico"
+
+msgid "Limpe o cache do GLPI: \"php bin/console cache:clear\"."
+msgstr "Limpe o cache do GLPI: \"php bin/console cache:clear\"."
+
+msgid "Limpe o cache: \"php bin/console cache:clear\"."
+msgstr "Limpe o cache: \"php bin/console cache:clear\"."
+
+msgid "Limpeza da fila de notificações"
+msgstr "Limpeza da fila de notificações"
+
+msgid "Limpeza de arquivos temporários"
+msgstr "Limpeza de arquivos temporários"
+
+msgid "Limpeza de sessões expiradas"
+msgstr "Limpeza de sessões expiradas"
+
+msgid "Limpeza do histórico das ações automáticas (desativada por padrão na instalação)"
+msgstr "Limpeza do histórico das ações automáticas (desativada por padrão na instalação)"
+
+msgid "Linhas (aprox.)"
+msgstr "Linhas (aprox.)"
+
+msgid "Linux: \"chown -R www-data:www-data /caminho/files\" e \"find /caminho/files -type d -exec chmod 755 {} \\;\"."
+msgstr "Linux: \"chown -R www-data:www-data /caminho/files\" e \"find /caminho/files -type d -exec chmod 755 {} \\;\"."
+
+msgid "Liste os registros com uma consulta LEFT JOIN semelhante à indicada na coluna \"Relacionamento\" e avalie se podem ser removidos."
+msgstr "Liste os registros com uma consulta LEFT JOIN semelhante à indicada na coluna \"Relacionamento\" e avalie se podem ser removidos."
+
+msgid "Livre"
+msgstr "Livre"
+
+msgid "Local"
+msgstr "Local"
+
+msgid "Log de consultas lentas"
+msgstr "Log de consultas lentas"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Login com usuário e senha pela API habilitado: prefira tokens pessoais."
+msgstr "Login com usuário e senha pela API habilitado: prefira tokens pessoais."
+
+msgid "Login duplicado"
+msgstr "Login duplicado"
+
+msgid "Logins (amostra)"
+msgstr "Logins (amostra)"
+
+msgid "Logins duplicados"
+msgstr "Logins duplicados"
+
+msgid "Logs"
+msgstr "Logs"
+
+msgid "Logs volumosos consomem disco e dificultam a análise de problemas; erros recentes podem indicar falhas em funcionalidades."
+msgstr "Logs volumosos consomem disco e dificultam a análise de problemas; erros recentes podem indicar falhas em funcionalidades."
+
+msgid "Mais antiga"
+msgstr "Mais antiga"
+
+#, php-format
+msgid "Mais de 1% das consultas são lentas: analise o slow query log."
+msgstr "Mais de 1% das consultas são lentas: analise o slow query log."
+
+msgid "Mantenha a conta da fonte de autenticação correta e desative as demais."
+msgstr "Mantenha a conta da fonte de autenticação correta e desative as demais."
+
+msgid "Manter histórico por (dias)"
+msgstr "Manter histórico por (dias)"
+
+msgid "Manual"
+msgstr "Manual"
+
+msgid "Mapa das verificações"
+msgstr "Mapa das verificações"
+
+msgid "Marketplace"
+msgstr "Marketplace"
+
+msgid "Melhorou"
+msgstr "Melhorou"
+
+msgid "Membros de grupo inexistentes"
+msgstr "Membros de grupo inexistentes"
+
+msgid "Memória disponível"
+msgstr "Memória disponível"
+
+msgid "Memória disponível no servidor"
+msgstr "Memória disponível no servidor"
+
+msgid "Memória do OPcache esgotada: scripts deixam de ser armazenados. Aumente para 256 MB ou mais."
+msgstr "Memória do OPcache esgotada: scripts deixam de ser armazenados. Aumente para 256 MB ou mais."
+
+msgid "Memória do servidor"
+msgstr "Memória do servidor"
+
+#, php-format
+msgid "Menor que metade dos dados InnoDB (%s): mais leituras em disco. Ajuste conforme a memória disponível do servidor."
+msgstr "Menor que metade dos dados InnoDB (%s): mais leituras em disco. Ajuste conforme a memória disponível do servidor."
+
+#, php-format
+msgid "Menor que o tamanho máximo de documento configurado no GLPI (%s): uploads maiores falharão."
+msgstr "Menor que o tamanho máximo de documento configurado no GLPI (%s): uploads maiores falharão."
+
+msgid "Menor que upload_max_filesize: formulários com anexos podem perder dados."
+msgstr "Menor que upload_max_filesize: formulários com anexos podem perder dados."
+
+msgid "Mensagem (últimas)"
+msgstr "Mensagem (últimas)"
+
+msgid "Mensagens pendentes de envio"
+msgstr "Mensagens pendentes de envio"
+
+msgid "Metadados de versionamento/ambiente no diretório da aplicação: podem expor código e segredos se acessíveis pela web."
+msgstr "Metadados de versionamento/ambiente no diretório da aplicação: podem expor código e segredos se acessíveis pela web."
+
+msgid "Migrações estruturais do banco disponibilizadas pelo GLPI e ainda não aplicadas (InnoDB, utf8mb4, timestamps, chaves sem sinal, formato de linha)."
+msgstr "Migrações estruturais do banco disponibilizadas pelo GLPI e ainda não aplicadas (InnoDB, utf8mb4, timestamps, chaves sem sinal, formato de linha)."
+
+msgid "Modificado em"
+msgstr "Modificado em"
+
+msgid "Modo"
+msgstr "Modo"
+
+msgid "Modo OAuth sem token de atualização: o envio falhará. Refaça a autorização OAuth."
+msgstr "Modo OAuth sem token de atualização: o envio falhará. Refaça a autorização OAuth."
+
+msgid "Modo SMTP selecionado sem servidor configurado: nenhum e-mail será enviado."
+msgstr "Modo SMTP selecionado sem servidor configurado: nenhum e-mail será enviado."
+
+msgid "Modo de envio"
+msgstr "Modo de envio"
+
+msgid "Modo de execução das ações automáticas"
+msgstr "Modo de execução das ações automáticas"
+
+msgid "Modo de manutenção"
+msgstr "Modo de manutenção"
+
+msgid "Modo debug do GLPI"
+msgstr "Modo debug do GLPI"
+
+msgid "Modo padrão definido na instalação, nunca alterado para CLI."
+msgstr "Modo padrão definido na instalação, nunca alterado para CLI."
+
+msgid "Monitores"
+msgstr "Monitores"
+
+msgid "Motivo"
+msgstr "Motivo"
+
+msgid "Motor de armazenamento indisponível"
+msgstr "Motor de armazenamento indisponível"
+
+msgid "Mova backups e dumps para um diretório fora da raiz web, com acesso restrito."
+msgstr "Mova backups e dumps para um diretório fora da raiz web, com acesso restrito."
+
+msgid "Mudança"
+msgstr "Mudança"
+
+msgid "Máximo suportado (exclusivo)"
+msgstr "Máximo suportado (exclusivo)"
+
+msgid "Média"
+msgstr "Média"
+
+msgid "Mínimo suportado pelo GLPI"
+msgstr "Mínimo suportado pelo GLPI"
+
+msgid "Na lista do tipo de ativo, filtre por \"Técnico responsável\" vazio e \"Usuário\" vazio."
+msgstr "Na lista do tipo de ativo, filtre por \"Técnico responsável\" vazio e \"Usuário\" vazio."
+
+msgid "Nenhum alerta ou problema crítico neste diagnóstico."
+msgstr "Nenhum alerta ou problema crítico neste diagnóstico."
+
+msgid "Nenhum alerta ou problema crítico."
+msgstr "Nenhum alerta ou problema crítico."
+
+msgid "Nenhum arquivo sensível esquecido foi encontrado no diretório da aplicação."
+msgstr "Nenhum arquivo sensível esquecido foi encontrado no diretório da aplicação."
+
+msgid "Nenhum ativo cadastrado."
+msgstr "Nenhum ativo cadastrado."
+
+msgid "Nenhum coletor de e-mail configurado."
+msgstr "Nenhum coletor de e-mail configurado."
+
+msgid "Nenhum diagnóstico executado ainda"
+msgstr "Nenhum diagnóstico executado ainda"
+
+msgid "Nenhum diagnóstico registrado."
+msgstr "Nenhum diagnóstico registrado."
+
+msgid "Nenhum documento com arquivo cadastrado."
+msgstr "Nenhum documento com arquivo cadastrado."
+
+msgid "Nenhum e-mail recusado pelos coletores nos últimos 7 dias."
+msgstr "Nenhum e-mail recusado pelos coletores nos últimos 7 dias."
+
+msgid "Nenhum plugin instalado além dos registros sem diretório."
+msgstr "Nenhum plugin instalado além dos registros sem diretório."
+
+msgid "Nenhum plugin instalado foi encontrado no catálogo do Marketplace (ou o catálogo está inacessível)."
+msgstr "Nenhum plugin instalado foi encontrado no catálogo do Marketplace (ou o catálogo está inacessível)."
+
+msgid "Nenhum registro de falha de envio de e-mail (mail-error.log inexistente)."
+msgstr "Nenhum registro de falha de envio de e-mail (mail-error.log inexistente)."
+
+msgid "Nenhum registro órfão encontrado nos relacionamentos verificados."
+msgstr "Nenhum registro órfão encontrado nos relacionamentos verificados."
+
+msgid "Nenhum servidor SMTP ou coletor de e-mail ativo para testar."
+msgstr "Nenhum servidor SMTP ou coletor de e-mail ativo para testar."
+
+msgid "Nenhum usuário ativo usa autenticação local; as senhas são gerenciadas por LDAP/SSO."
+msgstr "Nenhum usuário ativo usa autenticação local; as senhas são gerenciadas por LDAP/SSO."
+
+msgid "Nenhum usuário duplicado ou sem autorização encontrado."
+msgstr "Nenhum usuário duplicado ou sem autorização encontrado."
+
+msgid "Nenhum índice esperado está ausente nas tabelas do GLPI."
+msgstr "Nenhum índice esperado está ausente nas tabelas do GLPI."
+
+msgid "Nenhuma ação automática demorou mais de 5 minutos nos últimos 7 dias."
+msgstr "Nenhuma ação automática demorou mais de 5 minutos nos últimos 7 dias."
+
+msgid "Nenhuma ação automática está ativa."
+msgstr "Nenhuma ação automática está ativa."
+
+msgid "Nenhuma ação automática terminou com erro no período."
+msgstr "Nenhuma ação automática terminou com erro no período."
+
+msgid "Nenhuma configuração padrão insegura foi encontrada."
+msgstr "Nenhuma configuração padrão insegura foi encontrada."
+
+msgid "Nenhuma conta padrão ativa utiliza a senha padrão."
+msgstr "Nenhuma conta padrão ativa utiliza a senha padrão."
+
+msgid "Nenhuma falha de envio de e-mail registrada nos últimos 7 dias."
+msgstr "Nenhuma falha de envio de e-mail registrada nos últimos 7 dias."
+
+msgid "Nenhuma inconsistência encontrada nas tabelas."
+msgstr "Nenhuma inconsistência encontrada nas tabelas."
+
+msgid "Nenhuma migração estrutural pendente nas tabelas do GLPI."
+msgstr "Nenhuma migração estrutural pendente nas tabelas do GLPI."
+
+msgid "Nenhuma notificação está ativa: nenhum evento gerará e-mail."
+msgstr "Nenhuma notificação está ativa: nenhum evento gerará e-mail."
+
+msgid "Nenhuma permissão excessivamente aberta foi encontrada."
+msgstr "Nenhuma permissão excessivamente aberta foi encontrada."
+
+msgid "Nenhuma regra ativa sem critérios ou sem ações."
+msgstr "Nenhuma regra ativa sem critérios ou sem ações."
+
+msgid "Nenhuma regra de entidade correspondente"
+msgstr "Nenhuma regra de entidade correspondente"
+
+msgid "Nenhuma rotina de manutenção, notificação ou coleta é executada."
+msgstr "Nenhuma rotina de manutenção, notificação ou coleta é executada."
+
+msgid "Nenhuma tarefa ativa está atrasada."
+msgstr "Nenhuma tarefa ativa está atrasada."
+
+msgid "Nenhuma tarefa está travada em execução."
+msgstr "Nenhuma tarefa está travada em execução."
+
+msgid "Neste diagnóstico as consultas externas opcionais estavam ligadas."
+msgstr "Neste diagnóstico as consultas externas opcionais estavam ligadas."
+
+#, php-format
+msgid "Nginx: \"root %s/public;\" e \"location / { try_files $uri /index.php$is_args$args; }\"."
+msgstr "Nginx: \"root %s/public;\" e \"location / { try_files $uri /index.php$is_args$args; }\"."
+
+msgid "No Windows, crie uma tarefa agendada que execute \"php.exe front\\cron.php\" a cada minuto."
+msgstr "No Windows, crie uma tarefa agendada que execute \"php.exe front\\cron.php\" a cada minuto."
+
+msgid "No modo GLPI as tarefas só rodam durante acessos à interface, de forma irregular e consumindo tempo das requisições dos usuários. Notificações e coletas de e-mail podem atrasar."
+msgstr "No modo GLPI as tarefas só rodam durante acessos à interface, de forma irregular e consumindo tempo das requisições dos usuários. Notificações e coletas de e-mail podem atrasar."
+
+msgid "No modo GLPI, as tarefas só executam quando há usuários navegando. Em períodos sem acesso nada é processado."
+msgstr "No modo GLPI, as tarefas só executam quando há usuários navegando. Em períodos sem acesso nada é processado."
+
+msgid "No php.ini: display_errors = Off, expose_php = Off, allow_url_include = Off."
+msgstr "No php.ini: display_errors = Off, expose_php = Off, allow_url_include = Off."
+
+msgid "No servidor do GLPI, teste a porta: \"nc -vz servidor porta\" (Linux) ou \"Test-NetConnection servidor -Port porta\" (Windows)."
+msgstr "No servidor do GLPI, teste a porta: \"nc -vz servidor porta\" (Linux) ou \"Test-NetConnection servidor -Port porta\" (Windows)."
+
+msgid "No servidor, edite o crontab do usuário do servidor web (ex.: \"crontab -u www-data -e\")."
+msgstr "No servidor, edite o crontab do usuário do servidor web (ex.: \"crontab -u www-data -e\")."
+
+msgid "Nome completo duplicado"
+msgstr "Nome completo duplicado"
+
+msgid "Nome de servidor incorreto, falha de DNS, porta bloqueada por firewall/proxy, servidor fora do ar ou saída de rede bloqueada."
+msgstr "Nome de servidor incorreto, falha de DNS, porta bloqueada por firewall/proxy, servidor fora do ar ou saída de rede bloqueada."
+
+msgid "Notificações"
+msgstr "Notificações"
+
+msgid "Notificações ativas"
+msgstr "Notificações ativas"
+
+msgid "Notificações e e-mails podem deixar de ser processados e arquivos temporários, sessões e logs crescem sem limite, consumindo disco."
+msgstr "Notificações e e-mails podem deixar de ser processados e arquivos temporários, sessões e logs crescem sem limite, consumindo disco."
+
+msgid "Notificações habilitadas"
+msgstr "Notificações habilitadas"
+
+msgid "Notificações não entregues; após o número máximo de tentativas, o GLPI desiste da mensagem."
+msgstr "Notificações não entregues; após o número máximo de tentativas, o GLPI desiste da mensagem."
+
+msgid "Notificações não são enviadas, e-mails não são coletados, SLAs não são processados e as limpezas de manutenção não ocorrem."
+msgstr "Notificações não são enviadas, e-mails não são coletados, SLAs não são processados e as limpezas de manutenção não ocorrem."
+
+msgid "Notificações podem não ser entregues ou ser classificadas como SPAM."
+msgstr "Notificações podem não ser entregues ou ser classificadas como SPAM."
+
+msgid "Notificações por e-mail"
+msgstr "Notificações por e-mail"
+
+msgid "Novo problema"
+msgstr "Novo problema"
+
+msgid "Nunca"
+msgstr "Nunca"
+
+msgid "Nunca coletou mensagens"
+msgstr "Nunca coletou mensagens"
+
+msgid "Não"
+msgstr "Não"
+
+msgid "Não acessível"
+msgstr "Não acessível"
+
+msgid "Não avaliado (CLI)"
+msgstr "Não avaliado (CLI)"
+
+msgid "Não declara versão máxima do GLPI suportada"
+msgstr "Não declara versão máxima do GLPI suportada"
+
+msgid "Não declarado"
+msgstr "Não declarado"
+
+msgid "Não executada"
+msgstr "Não executada"
+
+msgid "Não foi possível ler as informações do plugin (setup.php)"
+msgstr "Não foi possível ler as informações do plugin (setup.php)"
+
+#, php-format
+msgid "Não foi possível ler as variáveis do servidor de banco: %s"
+msgstr "Não foi possível ler as variáveis do servidor de banco: %s"
+
+#, php-format
+msgid "Não foi possível ler os indicadores do servidor de banco: %s"
+msgstr "Não foi possível ler os indicadores do servidor de banco: %s"
+
+msgid "Não foi possível obter o espaço em disco (funções disk_free_space/disk_total_space indisponíveis ou bloqueadas por open_basedir)."
+msgstr "Não foi possível obter o espaço em disco (funções disk_free_space/disk_total_space indisponíveis ou bloqueadas por open_basedir)."
+
+msgid "Não há histórico de execução de ações automáticas nos últimos 7 dias para medir a duração."
+msgstr "Não há histórico de execução de ações automáticas nos últimos 7 dias para medir a duração."
+
+msgid "Não necessária"
+msgstr "Não necessária"
+
+msgid "Não registrada"
+msgstr "Não registrada"
+
+msgid "Não verificadas"
+msgstr "Não verificadas"
+
+msgid "Não verificado"
+msgstr "Não verificado"
+
+msgid "Não verificados"
+msgstr "Não verificados"
+
+#, php-format
+msgid "Nível %1$d inconsistente (esperado %2$d)"
+msgstr "Nível %1$d inconsistente (esperado %2$d)"
+
+msgid "Número máximo de diagnósticos no histórico"
+msgstr "Número máximo de diagnósticos no histórico"
+
+msgid "O GLPI bloqueia o acesso até que a atualização do banco seja concluída; dados podem ficar inconsistentes."
+msgstr "O GLPI bloqueia o acesso até que a atualização do banco seja concluída; dados podem ficar inconsistentes."
+
+msgid "O GLPI está configurado para HTTPS."
+msgstr "O GLPI está configurado para HTTPS."
+
+msgid "O GLPI está em manutenção: apenas super-administradores acessam a interface."
+msgstr "O GLPI está em manutenção: apenas super-administradores acessam a interface."
+
+#, php-format
+msgid "O GLPI está na versão mais recente conhecida (%s)."
+msgstr "O GLPI está na versão mais recente conhecida (%s)."
+
+msgid "O GLPI não funciona sem banco de dados."
+msgstr "O GLPI não funciona sem banco de dados."
+
+msgid "O Health Check só lê dados e não aplica correções. Tudo é processado neste servidor."
+msgstr "O Health Check só lê dados e não aplica correções. Tudo é processado neste servidor."
+
+#, php-format
+msgid "O PHP %1$s não recebe mais correções de segurança desde %2$s."
+msgstr "O PHP %1$s não recebe mais correções de segurança desde %2$s."
+
+#, php-format
+msgid "O PHP %1$s não é suportado por esta versão do GLPI (suportado: >= %2$s e < %3$s)."
+msgstr "O PHP %1$s não é suportado por esta versão do GLPI (suportado: >= %2$s e < %3$s)."
+
+#, php-format
+msgid "O PHP %s é compatível e possui suporte de segurança."
+msgstr "O PHP %s é compatível e possui suporte de segurança."
+
+msgid "O acesso ao GLPI não está protegido integralmente por HTTPS ou a URL da aplicação está incorreta."
+msgstr "O acesso ao GLPI não está protegido integralmente por HTTPS ou a URL da aplicação está incorreta."
+
+msgid "O agendamento de \"front/cron.php\" não foi configurado no sistema operacional."
+msgstr "O agendamento de \"front/cron.php\" não foi configurado no sistema operacional."
+
+msgid "O arquivo mail-error.log existe mas não pode ser lido pelo usuário do PHP."
+msgstr "O arquivo mail-error.log existe mas não pode ser lido pelo usuário do PHP."
+
+msgid "O banco foi criado por uma versão antiga do GLPI e as migrações opcionais nunca foram executadas."
+msgstr "O banco foi criado por uma versão antiga do GLPI e as migrações opcionais nunca foram executadas."
+
+msgid "O cache do GLPI não está gravando/lendo dados corretamente."
+msgstr "O cache do GLPI não está gravando/lendo dados corretamente."
+
+msgid "O catálogo do Marketplace exige uma chave de registro GLPI Network (gratuita) configurada em Configurar > Geral > GLPI Network."
+msgstr "O catálogo do Marketplace exige uma chave de registro GLPI Network (gratuita) configurada em Configurar > Geral > GLPI Network."
+
+msgid "O cron do sistema nunca executou as tarefas configuradas em modo CLI."
+msgstr "O cron do sistema nunca executou as tarefas configuradas em modo CLI."
+
+#, php-format
+msgid "O cron do sistema não executa há %s."
+msgstr "O cron do sistema não executa há %s."
+
+#, php-format
+msgid "O diagnóstico não pôde ser concluído: %s"
+msgstr "O diagnóstico não pôde ser concluído: %s"
+
+msgid "O diagnóstico só lê dados: nenhuma configuração, arquivo ou registro do GLPI é alterado. O completo leva cerca de um minuto."
+msgstr "O diagnóstico só lê dados: nenhuma configuração, arquivo ou registro do GLPI é alterado. O completo leva cerca de um minuto."
+
+msgid "O diretório de documentos não pode ser lido."
+msgstr "O diretório de documentos não pode ser lido."
+
+msgid "O diretório de logs não existe ou não pode ser lido."
+msgstr "O diretório de logs não existe ou não pode ser lido."
+
+msgid "O envio de notificações por e-mail está desativado."
+msgstr "O envio de notificações por e-mail está desativado."
+
+msgid "O esquema do banco corresponde ao esquema de referência."
+msgstr "O esquema do banco corresponde ao esquema de referência."
+
+msgid "O esquema do banco de dados está na versão esperada."
+msgstr "O esquema do banco de dados está na versão esperada."
+
+#, php-format
+msgid "O histórico de alterações (glpi_logs) tem cerca de %s registros e nenhuma purga automática está configurada."
+msgstr "O histórico de alterações (glpi_logs) tem cerca de %s registros e nenhuma purga automática está configurada."
+
+msgid "O pico de conexões chegou perto do limite: novas conexões podem ser recusadas (\"Too many connections\")."
+msgstr "O pico de conexões chegou perto do limite: novas conexões podem ser recusadas (\"Too many connections\")."
+
+msgid "O processo PHP foi interrompido (timeout, falta de memória, reinício do servidor) antes de concluir a tarefa."
+msgstr "O processo PHP foi interrompido (timeout, falta de memória, reinício do servidor) antes de concluir a tarefa."
+
+msgid "O servidor SMTP recusou a autenticação: senha alterada/expirada, conta bloqueada ou autenticação básica desabilitada pelo provedor."
+msgstr "O servidor SMTP recusou a autenticação: senha alterada/expirada, conta bloqueada ou autenticação básica desabilitada pelo provedor."
+
+msgid "O servidor de banco não foi atualizado junto com o sistema operacional."
+msgstr "O servidor de banco não foi atualizado junto com o sistema operacional."
+
+msgid "O sistema operacional ou o pacote do PHP não foi atualizado."
+msgstr "O sistema operacional ou o pacote do PHP não foi atualizado."
+
+#, php-format
+msgid "O suporte de segurança do PHP %1$s termina em %2$s."
+msgstr "O suporte de segurança do PHP %1$s termina em %2$s."
+
+msgid "Obrigatória"
+msgstr "Obrigatória"
+
+msgid "Obrigatório"
+msgstr "Obrigatório"
+
+msgid "Observação"
+msgstr "Observação"
+
+msgid "Observação: este diagnóstico foi executado em CLI. O PHP usado pelo servidor web pode ser diferente."
+msgstr "Observação: este diagnóstico foi executado em CLI. O PHP usado pelo servidor web pode ser diferente."
+
+msgid "Ocorrências"
+msgstr "Ocorrências"
+
+msgid "Opcional"
+msgstr "Opcional"
+
+msgid "Opcionalmente mova files/ e config/ para fora do diretório da aplicação (ex.: /var/lib/glpi e /etc/glpi) usando config/local_define.php e inc/downstream.php."
+msgstr "Opcionalmente mova files/ e config/ para fora do diretório da aplicação (ex.: /var/lib/glpi e /etc/glpi) usando config/local_define.php e inc/downstream.php."
+
+#, php-format
+msgid "Os %d documentos mais recentes possuem arquivo físico."
+msgstr "Os %d documentos mais recentes possuem arquivo físico."
+
+#, php-format
+msgid "Os arquivos de log ocupam %s."
+msgstr "Os arquivos de log ocupam %s."
+
+msgid "Os arquivos foram atualizados mas a migração do banco não foi executada (ou foi interrompida)."
+msgstr "Os arquivos foram atualizados mas a migração do banco não foi executada (ou foi interrompida)."
+
+msgid "Os cookies de sessão estão configurados de forma segura."
+msgstr "Os cookies de sessão estão configurados de forma segura."
+
+msgid "Os diagnósticos periódicos são ações automáticas do GLPI. Ajuste frequência, horário e modo em Configurar > Ações automáticas. O diagnóstico leve executa apenas verificações rápidas; o completo inclui comparação do esquema do banco, varreduras de integridade e testes de rede."
+msgstr "Os diagnósticos periódicos são ações automáticas do GLPI. Ajuste frequência, horário e modo em Configurar > Ações automáticas. O diagnóstico leve executa apenas verificações rápidas; o completo inclui comparação do esquema do banco, varreduras de integridade e testes de rede."
+
+msgid "Os diagnósticos são de tipos diferentes (leve x completo): verificações executadas apenas em um deles aparecem como \"Não executada\"."
+msgstr "Os diagnósticos são de tipos diferentes (leve x completo): verificações executadas apenas em um deles aparecem como \"Não executada\"."
+
+msgid "Os diretórios de dados estão dentro do diretório da aplicação. A configuração da raiz do servidor web só pode ser avaliada em uma execução pelo navegador."
+msgstr "Os diretórios de dados estão dentro do diretório da aplicação. A configuração da raiz do servidor web só pode ser avaliada em uma execução pelo navegador."
+
+msgid "Os diretórios de dados estão fora do diretório da aplicação."
+msgstr "Os diretórios de dados estão fora do diretório da aplicação."
+
+msgid "Os indicadores de desempenho do servidor de banco estão adequados."
+msgstr "Os indicadores de desempenho do servidor de banco estão adequados."
+
+msgid "Os indicadores de memória estão adequados."
+msgstr "Os indicadores de memória estão adequados."
+
+msgid "Os logs indicam pontos de atenção."
+msgstr "Os logs indicam pontos de atenção."
+
+msgid "Outros usuários ou processos do servidor podem ler credenciais, alterar arquivos ou injetar código no GLPI."
+msgstr "Outros usuários ou processos do servidor podem ler credenciais, alterar arquivos ou injetar código no GLPI."
+
+msgid "PDF — relatório completo"
+msgstr "PDF — relatório completo"
+
+msgid "PHP mail()"
+msgstr "PHP mail()"
+
+msgid "PHP mail() não autentica nem informa falhas de entrega; as mensagens tendem a ser marcadas como SPAM. Prefira SMTP autenticado com TLS."
+msgstr "PHP mail() não autentica nem informa falhas de entrega; as mensagens tendem a ser marcadas como SPAM. Prefira SMTP autenticado com TLS."
+
+msgid "Painel"
+msgstr "Painel"
+
+msgid "Para \"A atualizar\", clique em atualizar e depois ative o plugin."
+msgstr "Para \"A atualizar\", clique em atualizar e depois ative o plugin."
+
+msgid "Para \"Erro / a limpar\", use a ação de limpeza."
+msgstr "Para \"Erro / a limpar\", use a ação de limpeza."
+
+msgid "Para AUTO_INCREMENT próximo do limite, purgue registros antigos e avalie com o suporte da comunidade antes de alterar o tipo da coluna."
+msgstr "Para AUTO_INCREMENT próximo do limite, purgue registros antigos e avalie com o suporte da comunidade antes de alterar o tipo da coluna."
+
+msgid "Para Microsoft 365/Google, considere o modo SMTP+OAuth."
+msgstr "Para Microsoft 365/Google, considere o modo SMTP+OAuth."
+
+msgid "Para Redis/Memcached, verifique se o serviço está ativo e acessível."
+msgstr "Para Redis/Memcached, verifique se o serviço está ativo e acessível."
+
+msgid "Para executar diagnósticos é preciso o direito de alterar a configuração geral."
+msgstr "Para executar diagnósticos é preciso o direito de alterar a configuração geral."
+
+msgid "Para sair do modo de manutenção: \"php bin/console maintenance:disable\"."
+msgstr "Para sair do modo de manutenção: \"php bin/console maintenance:disable\"."
+
+msgid "Para tabelas corrompidas, execute \"CHECK TABLE nome_da_tabela\" e, se necessário, \"REPAIR TABLE\" (MyISAM) ou restaure do backup (InnoDB)."
+msgstr "Para tabelas corrompidas, execute \"CHECK TABLE nome_da_tabela\" e, se necessário, \"REPAIR TABLE\" (MyISAM) ou restaure do backup (InnoDB)."
+
+msgid "Para usuários em modo debug: Administração > Usuários > (usuário) > Configurações > Modo de uso \"Normal\"."
+msgstr "Para usuários em modo debug: Administração > Usuários > (usuário) > Configurações > Modo de uso \"Normal\"."
+
+msgid "Parâmetro"
+msgstr "Parâmetro"
+
+msgid "Passo a passo"
+msgstr "Passo a passo"
+
+msgid "Pendente mais antiga"
+msgstr "Pendente mais antiga"
+
+msgid "Pendentes"
+msgstr "Pendentes"
+
+msgid "Pendentes com falha anterior (em retentativa)"
+msgstr "Pendentes com falha anterior (em retentativa)"
+
+msgid "Pendência"
+msgstr "Pendência"
+
+msgid "Pendências para futuras atualizações"
+msgstr "Pendências para futuras atualizações"
+
+msgid "Perfil"
+msgstr "Perfil"
+
+msgid "Perfis administrativos atribuídos de forma ampla ou contas padrão mantidas após a instalação."
+msgstr "Perfis administrativos atribuídos de forma ampla ou contas padrão mantidas após a instalação."
+
+msgid "Perfis com direito de alterar a configuração"
+msgstr "Perfis com direito de alterar a configuração"
+
+msgid "Permissões"
+msgstr "Permissões"
+
+msgid "Permissões excessivamente abertas"
+msgstr "Permissões excessivamente abertas"
+
+msgid "Permite incluir código PHP remoto: risco grave de execução de código."
+msgstr "Permite incluir código PHP remoto: risco grave de execução de código."
+
+msgid "Permitir consultas externas opcionais"
+msgstr "Permitir consultas externas opcionais"
+
+msgid "Período analisado"
+msgstr "Período analisado"
+
+msgid "Pico desta execução"
+msgstr "Pico desta execução"
+
+msgid "Piorou"
+msgstr "Piorou"
+
+msgid "Planeje a atualização do PHP junto com a do sistema operacional, se necessário."
+msgstr "Planeje a atualização do PHP junto com a do sistema operacional, se necessário."
+
+msgid "Planeje a atualização para a última versão do mesmo ramo, que normalmente não exige mudanças de compatibilidade."
+msgstr "Planeje a atualização para a última versão do mesmo ramo, que normalmente não exige mudanças de compatibilidade."
+
+msgid "Planeje a atualização para uma versão LTS suportada."
+msgstr "Planeje a atualização para uma versão LTS suportada."
+
+msgid "Planeje a migração para o novo ramo após validar a compatibilidade dos plugins e os requisitos do sistema."
+msgstr "Planeje a migração para o novo ramo após validar a compatibilidade dos plugins e os requisitos do sistema."
+
+msgid "Plugin"
+msgstr "Plugin"
+
+msgid "Plugins"
+msgstr "Plugins"
+
+msgid "Plugins analisados"
+msgstr "Plugins analisados"
+
+msgid "Plugins ativos que bloqueiam a atualização"
+msgstr "Plugins ativos que bloqueiam a atualização"
+
+#, php-format
+msgid "Plugins compatíveis com a versão atual. %1$d plugin(s) ativo(s) ainda não declara(m) compatibilidade com o GLPI %2$s."
+msgstr "Plugins compatíveis com a versão atual. %1$d plugin(s) ativo(s) ainda não declara(m) compatibilidade com o GLPI %2$s."
+
+msgid "Plugins encontrados no Marketplace"
+msgstr "Plugins encontrados no Marketplace"
+
+msgid "Plugins incompatíveis podem causar erros fatais, telas em branco e impedir a atualização do GLPI."
+msgstr "Plugins incompatíveis podem causar erros fatais, telas em branco e impedir a atualização do GLPI."
+
+msgid "Plugins instalados e status"
+msgstr "Plugins instalados e status"
+
+msgid "Plugins pendentes de atualização ficam desativados (funcionalidades indisponíveis) e registros órfãos podem atrapalhar atualizações do GLPI."
+msgstr "Plugins pendentes de atualização ficam desativados (funcionalidades indisponíveis) e registros órfãos podem atrapalhar atualizações do GLPI."
+
+msgid "Plugins registrados"
+msgstr "Plugins registrados"
+
+msgid "Pode causar problemas de replicação e de desempenho."
+msgstr "Pode causar problemas de replicação e de desempenho."
+
+msgid "Política de senha ativa"
+msgstr "Política de senha ativa"
+
+msgid "Política de senhas locais"
+msgstr "Política de senhas locais"
+
+msgid "Por linha de comando: \"php bin/console plugin:install --force NOME\" e \"php bin/console plugin:activate NOME\"."
+msgstr "Por linha de comando: \"php bin/console plugin:install --force NOME\" e \"php bin/console plugin:activate NOME\"."
+
+msgid "Possível causa"
+msgstr "Possível causa"
+
+msgid "Pouca memória livre: o sistema pode usar swap, ficando lento, ou encerrar processos do banco/PHP."
+msgstr "Pouca memória livre: o sistema pode usar swap, ficando lento, ou encerrar processos do banco/PHP."
+
+msgid "Prefira SMTP com SSL/TLS e autenticação."
+msgstr "Prefira SMTP com SSL/TLS e autenticação."
+
+msgid "Prefira contas nominais para administradores, mantendo a conta \"glpi\" desativada."
+msgstr "Prefira contas nominais para administradores, mantendo a conta \"glpi\" desativada."
+
+msgid "Prefira o modo de execução CLI com o cron do sistema configurado."
+msgstr "Prefira o modo de execução CLI com o cron do sistema configurado."
+
+msgid "Privacidade e consultas externas"
+msgstr "Privacidade e consultas externas"
+
+msgid "Problema"
+msgstr "Problema"
+
+msgid "Problema crítico"
+msgstr "Problema crítico"
+
+msgid "Problemas"
+msgstr "Problemas"
+
+msgid "Problemas identificados e recomendações"
+msgstr "Problemas identificados e recomendações"
+
+msgid "Problemas por prioridade"
+msgstr "Problemas por prioridade"
+
+msgid "Problemas também aparecem na lista de prioridades acima."
+msgstr "Problemas também aparecem na lista de prioridades acima."
+
+msgid "Procura colunas de relacionamento sem índice, o que degrada consultas e buscas."
+msgstr "Procura colunas de relacionamento sem índice, o que degrada consultas e buscas."
+
+msgid "Proprietário ou permissões incorretos após cópia/restauração de arquivos, ou execução do cron com outro usuário (ex.: root), criando arquivos que o servidor web não consegue alterar."
+msgstr "Proprietário ou permissões incorretos após cópia/restauração de arquivos, ou execução do cron com outro usuário (ex.: root), criando arquivos que o servidor web não consegue alterar."
+
+msgid "Próxima versão"
+msgstr "Próxima versão"
+
+msgid "Próxima versão principal conhecida"
+msgstr "Próxima versão principal conhecida"
+
+msgid "Purga do histórico configurada"
+msgstr "Purga do histórico configurada"
+
+msgid "Purga do histórico de alterações (conforme configuração)"
+msgstr "Purga do histórico de alterações (conforme configuração)"
+
+msgid "Páginas lentas, uploads e exportações que falham."
+msgstr "Páginas lentas, uploads e exportações que falham."
+
+msgid "Qualquer pessoa que conheça o GLPI pode entrar com essas contas; a conta \"glpi\" é super-administradora."
+msgstr "Qualquer pessoa que conheça o GLPI pode entrar com essas contas; a conta \"glpi\" é super-administradora."
+
+msgid "Quantidade"
+msgstr "Quantidade"
+
+msgid "Quantidade (7 dias)"
+msgstr "Quantidade (7 dias)"
+
+msgid "Quanto mais contas administrativas (e quanto mais previsíveis seus logins), maior a superfície para uso indevido e ataques de força bruta."
+msgstr "Quanto mais contas administrativas (e quanto mais previsíveis seus logins), maior a superfície para uso indevido e ataques de força bruta."
+
+msgid "RSS"
+msgstr "RSS"
+
+msgid "Raiz da aplicação"
+msgstr "Raiz da aplicação"
+
+msgid "Raiz do servidor web em public/"
+msgstr "Raiz do servidor web em public/"
+
+msgid "Ramo"
+msgstr "Ramo"
+
+msgid "Ramos antigos deixam de receber correções em algum momento. Consulte o ciclo de suporte oficial do GLPI."
+msgstr "Ramos antigos deixam de receber correções em algum momento. Consulte o ciclo de suporte oficial do GLPI."
+
+msgid "Reative as ações automáticas essenciais em Configurar > Ações automáticas."
+msgstr "Reative as ações automáticas essenciais em Configurar > Ações automáticas."
+
+msgid "Reative as tarefas listadas."
+msgstr "Reative as tarefas listadas."
+
+msgid "Recomendado pelo menos 16 MB (64 MB ou mais se documentos forem grandes). Valores baixos causam falhas ao salvar textos longos e na importação de e-mails."
+msgstr "Recomendado pelo menos 16 MB (64 MB ou mais se documentos forem grandes). Valores baixos causam falhas ao salvar textos longos e na importação de e-mails."
+
+msgid "Recomendado pelo menos 256 MB para relatórios, exportações, inventário e ações em massa."
+msgstr "Recomendado pelo menos 256 MB para relatórios, exportações, inventário e ações em massa."
+
+msgid "Recomendado utf8mb4 para que novas tabelas (incluindo de plugins) suportem todos os caracteres."
+msgstr "Recomendado utf8mb4 para que novas tabelas (incluindo de plugins) suportem todos os caracteres."
+
+msgid "Recomendação"
+msgstr "Recomendação"
+
+msgid "Reduza a retenção de logs técnicos e reorganize as tabelas fragmentadas em janela de manutenção."
+msgstr "Reduza a retenção de logs técnicos e reorganize as tabelas fragmentadas em janela de manutenção."
+
+msgid "Reduza o volume processado por execução (parâmetro da tarefa), aumente a frequência e revise índices e desempenho do banco."
+msgstr "Reduza o volume processado por execução (parâmetro da tarefa), aumente a frequência e revise índices e desempenho do banco."
+
+msgid "Registros em glpi_logs (aprox.)"
+msgstr "Registros em glpi_logs (aprox.)"
+
+msgid "Registros órfãos"
+msgstr "Registros órfãos"
+
+msgid "Registros órfãos causam erros em listas e relatórios, contagens incorretas e podem falhar migrações de atualização."
+msgstr "Registros órfãos causam erros em listas e relatórios, contagens incorretas e podem falhar migrações de atualização."
+
+msgid "Regra"
+msgstr "Regra"
+
+msgid "Regra ativa sem ações (não produz efeito)"
+msgstr "Regra ativa sem ações (não produz efeito)"
+
+msgid "Regra ativa sem critérios (aplica-se a tudo ou nunca é avaliada)"
+msgstr "Regra ativa sem critérios (aplica-se a tudo ou nunca é avaliada)"
+
+msgid "Regras ativas"
+msgstr "Regras ativas"
+
+msgid "Regras com possíveis problemas"
+msgstr "Regras com possíveis problemas"
+
+msgid "Regras criadas e não concluídas, ou critérios/ações removidos."
+msgstr "Regras criadas e não concluídas, ou critérios/ações removidos."
+
+msgid "Regras incompletas podem atribuir chamados, entidades ou perfis de forma inesperada, ou simplesmente não funcionar."
+msgstr "Regras incompletas podem atribuir chamados, entidades ou perfis de forma inesperada, ou simplesmente não funcionar."
+
+msgid "Reinicie o servidor web ou o PHP-FPM e execute este diagnóstico novamente."
+msgstr "Reinicie o servidor web ou o PHP-FPM e execute este diagnóstico novamente."
+
+msgid "Reinicie o servidor web/PHP-FPM e execute o diagnóstico novamente."
+msgstr "Reinicie o servidor web/PHP-FPM e execute o diagnóstico novamente."
+
+msgid "Rejeitadas definitivamente nos últimos 7 dias"
+msgstr "Rejeitadas definitivamente nos últimos 7 dias"
+
+msgid "Relacionamento"
+msgstr "Relacionamento"
+
+msgid "Relacionamentos verificados"
+msgstr "Relacionamentos verificados"
+
+#, php-format
+msgid "Relatório Health Check — %s"
+msgstr "Relatório Health Check — %s"
+
+msgid "Relatório gerado localmente pelo plugin Health Check. O plugin é exclusivamente consultivo: nenhuma correção foi aplicada automaticamente."
+msgstr "Relatório gerado localmente pelo plugin Health Check. O plugin é exclusivamente consultivo: nenhuma correção foi aplicada automaticamente."
+
+msgid "Relógios dessincronizados afetam SLAs, ações automáticas e datas de chamados. Configure NTP nos dois servidores."
+msgstr "Relógios dessincronizados afetam SLAs, ações automáticas e datas de chamados. Configure NTP nos dois servidores."
+
+msgid "Remetente desconhecido"
+msgstr "Remetente desconhecido"
+
+msgid "Remetente sem permissão"
+msgstr "Remetente sem permissão"
+
+msgid "Remetentes não cadastrados quando a criação de chamados por desconhecidos está desativada, ausência de regras de entidade, permissões ou erros na criação do chamado."
+msgstr "Remetentes não cadastrados quando a criação de chamados por desconhecidos está desativada, ausência de regras de entidade, permissões ou erros na criação do chamado."
+
+msgid "Remova backups e dumps antigos de files/_dumps."
+msgstr "Remova backups e dumps antigos de files/_dumps."
+
+msgid "Remova install/install.php após concluir a instalação/atualização."
+msgstr "Remova install/install.php após concluir a instalação/atualização."
+
+msgid "Remova o perfil Super-Admin de quem não precisa dele (Administração > Usuários > Autorizações)."
+msgstr "Remova o perfil Super-Admin de quem não precisa dele (Administração > Usuários > Autorizações)."
+
+msgid "Remova os arquivos listados ou mova-os para fora do diretório servido pelo servidor web."
+msgstr "Remova os arquivos listados ou mova-os para fora do diretório servido pelo servidor web."
+
+msgid "Remover do histórico"
+msgstr "Remover do histórico"
+
+msgid "Remover este diagnóstico do histórico?"
+msgstr "Remover este diagnóstico do histórico?"
+
+msgid "Requisito"
+msgstr "Requisito"
+
+msgid "Requisitos mínimos do sistema"
+msgstr "Requisitos mínimos do sistema"
+
+msgid "Requisitos obrigatórios ausentes podem causar erros, perda de funcionalidades e impedir atualizações."
+msgstr "Requisitos obrigatórios ausentes podem causar erros, perda de funcionalidades e impedir atualizações."
+
+msgid "Requisitos opcionais ausentes desativam recursos ou reduzem segurança e desempenho."
+msgstr "Requisitos opcionais ausentes desativam recursos ou reduzem segurança e desempenho."
+
+msgid "Requisição atual em HTTPS"
+msgstr "Requisição atual em HTTPS"
+
+msgid "Resolva as migrações de banco de dados pendentes (verificação \"Pendências para futuras atualizações\")."
+msgstr "Resolva as migrações de banco de dados pendentes (verificação \"Pendências para futuras atualizações\")."
+
+msgid "Resolva os alertas desta página marcados como críticos antes de atualizar."
+msgstr "Resolva os alertas desta página marcados como críticos antes de atualizar."
+
+msgid "Resolvido"
+msgstr "Resolvido"
+
+msgid "Resposta inválida do serviço de versões."
+msgstr "Resposta inválida do serviço de versões."
+
+msgid "Resposta vazia do serviço de versões."
+msgstr "Resposta vazia do serviço de versões."
+
+msgid "Restauração do banco sem os arquivos, migração de servidor incompleta, limpeza manual de files/ ou disco cheio no momento do upload."
+msgstr "Restauração do banco sem os arquivos, migração de servidor incompleta, limpeza manual de files/ ou disco cheio no momento do upload."
+
+msgid "Restaure os arquivos ausentes a partir do backup do diretório de documentos."
+msgstr "Restaure os arquivos ausentes a partir do backup do diretório de documentos."
+
+msgid "Restaure os arquivos do backup para os caminhos indicados em files/."
+msgstr "Restaure os arquivos do backup para os caminhos indicados em files/."
+
+msgid "Restrinja as permissões: diretórios de dados 750/755, arquivos 640/644 e segredos 600/640, com dono correto."
+msgstr "Restrinja as permissões: diretórios de dados 750/755, arquivos 640/644 e segredos 600/640, com dono correto."
+
+msgid "Restrinja cada cliente da API por faixa de IP e exija App-Token."
+msgstr "Restrinja cada cliente da API por faixa de IP e exija App-Token."
+
+msgid "Resultado"
+msgstr "Resultado"
+
+msgid "Resultado atual"
+msgstr "Resultado atual"
+
+msgid "Resultado geral"
+msgstr "Resultado geral"
+
+msgid "Resumo das verificações"
+msgstr "Resumo das verificações"
+
+msgid "Revise a configuração de cada tarefa e o número máximo de tarefas por execução."
+msgstr "Revise a configuração de cada tarefa e o número máximo de tarefas por execução."
+
+msgid "Revise a configuração em Configurar > Notificações > Configuração das notificações por e-mail e use o botão de envio de teste."
+msgstr "Revise a configuração em Configurar > Notificações > Configuração das notificações por e-mail e use o botão de envio de teste."
+
+msgid "Revise a lista de e-mails não importados e ajuste regras, usuários ou permissões."
+msgstr "Revise a lista de e-mails não importados e ajuste regras, usuários ou permissões."
+
+msgid "Revise as regras de \"Regras para atribuição de um chamado aberto através de um coletor de e-mails\"."
+msgstr "Revise as regras de \"Regras para atribuição de um chamado aberto através de um coletor de e-mails\"."
+
+msgid "Revise as regras listadas: complete critérios e ações ou desative-as."
+msgstr "Revise as regras listadas: complete critérios e ações ou desative-as."
+
+msgid "Revise em Administração > Perfis quais perfis têm o direito \"Configurar > Geral\" com atualização."
+msgstr "Revise em Administração > Perfis quais perfis têm o direito \"Configurar > Geral\" com atualização."
+
+msgid "Revise servidor, porta, criptografia e credenciais em Configurar > Notificações > Configuração das notificações por e-mail."
+msgstr "Revise servidor, porta, criptografia e credenciais em Configurar > Notificações > Configuração das notificações por e-mail."
+
+msgid "Risco"
+msgstr "Risco"
+
+msgid "Rotação de logs desativada (ação \"circularlogs\"), modo debug, erros repetitivos de plugins ou ausência de purga do histórico."
+msgstr "Rotação de logs desativada (ação \"circularlogs\"), modo debug, erros repetitivos de plugins ou ausência de purga do histórico."
+
+msgid "Rotação dos arquivos de log (desativada por padrão na instalação)"
+msgstr "Rotação dos arquivos de log (desativada por padrão na instalação)"
+
+msgid "Rotinas de limpeza desativadas ou tempo de retenção muito longo, e grandes exclusões sem reorganização das tabelas."
+msgstr "Rotinas de limpeza desativadas ou tempo de retenção muito longo, e grandes exclusões sem reorganização das tabelas."
+
+msgid "Réplica SQL configurada"
+msgstr "Réplica SQL configurada"
+
+msgid "Salvar"
+msgstr "Salvar"
+
+msgid "Script de diagnóstico/administração acessível: pode revelar configuração do servidor ou dar acesso ao banco."
+msgstr "Script de diagnóstico/administração acessível: pode revelar configuração do servidor ou dar acesso ao banco."
+
+msgid "Script de instalação presente: o GLPI recomenda removê-lo após a instalação."
+msgstr "Script de instalação presente: o GLPI recomenda removê-lo após a instalação."
+
+msgid "Se chamados devem ser abertos por e-mail, configure um coletor em Configurar > Coletores."
+msgstr "Se chamados devem ser abertos por e-mail, configure um coletor em Configurar > Coletores."
+
+msgid "Se muitas tarefas estiverem atrasadas, aumente \"Número máximo de ações executadas por execução\" em Configurar > Geral > Sistema."
+msgstr "Se muitas tarefas estiverem atrasadas, aumente \"Número máximo de ações executadas por execução\" em Configurar > Geral > Sistema."
+
+msgid "Se o envio de e-mails for esperado, habilite-o em Configurar > Notificações."
+msgstr "Se o envio de e-mails for esperado, habilite-o em Configurar > Notificações."
+
+msgid "Se o problema se repetir, aumente memory_limit/max_execution_time do PHP CLI ou reduza o volume processado por execução."
+msgstr "Se o problema se repetir, aumente memory_limit/max_execution_time do PHP CLI ou reduza o volume processado por execução."
+
+msgid "Se o volume for alto, aumente o parâmetro (quantidade por execução) da tarefa \"queuednotification\"."
+msgstr "Se o volume for alto, aumente o parâmetro (quantidade por execução) da tarefa \"queuednotification\"."
+
+msgid "Segredos: \"chmod 640 config/config_db.php config/glpicrypt.key\" e \"chown root:www-data\" nesses arquivos."
+msgstr "Segredos: \"chmod 640 config/config_db.php config/glpicrypt.key\" e \"chown root:www-data\" nesses arquivos."
+
+msgid "Segurança"
+msgstr "Segurança"
+
+msgid "Segurança dos cookies de sessão"
+msgstr "Segurança dos cookies de sessão"
+
+msgid "Selecione dois diagnósticos diferentes para comparar."
+msgstr "Selecione dois diagnósticos diferentes para comparar."
+
+msgid "Sem App-Token (somente restrição de IP)."
+msgstr "Sem App-Token (somente restrição de IP)."
+
+msgid "Sem OPcache o PHP recompila o código a cada requisição: o GLPI fica várias vezes mais lento."
+msgstr "Sem OPcache o PHP recompila o código a cada requisição: o GLPI fica várias vezes mais lento."
+
+msgid "Sem alteração"
+msgstr "Sem alteração"
+
+msgid "Sem cache, cada página recalcula menus, direitos e traduções, deixando o GLPI lento; em casos extremos ocorrem erros."
+msgstr "Sem cache, cada página recalcula menus, direitos e traduções, deixando o GLPI lento; em casos extremos ocorrem erros."
+
+#, php-format
+msgid "Sem coleta há %s"
+msgstr "Sem coleta há %s"
+
+msgid "Sem conexão com o banco de dados."
+msgstr "Sem conexão com o banco de dados."
+
+msgid "Sem conexão não há envio de notificações nem coleta de e-mails."
+msgstr "Sem conexão não há envio de notificações nem coleta de e-mails."
+
+msgid "Sem correções de segurança e de bugs; versões futuras do GLPI podem deixar de suportar esta versão."
+msgstr "Sem correções de segurança e de bugs; versões futuras do GLPI podem deixar de suportar esta versão."
+
+msgid "Sem permissão de escrita (necessária)"
+msgstr "Sem permissão de escrita (necessária)"
+
+msgid "Sem permissão de escrita: instalação de plugins pelo marketplace indisponível"
+msgstr "Sem permissão de escrita: instalação de plugins pelo marketplace indisponível"
+
+msgid "Sem permissão de leitura"
+msgstr "Sem permissão de leitura"
+
+msgid "Sem responsável"
+msgstr "Sem responsável"
+
+msgid "Sem responsável, chamados sobre o ativo não são atribuídos automaticamente e o controle patrimonial fica comprometido."
+msgstr "Sem responsável, chamados sobre o ativo não são atribuídos automaticamente e o controle patrimonial fica comprometido."
+
+msgid "Sem restrição de IP e sem App-Token: aceita requisições de qualquer origem."
+msgstr "Sem restrição de IP e sem App-Token: aceita requisições de qualquer origem."
+
+msgid "Sem usuário, grupo, técnico ou grupo técnico"
+msgstr "Sem usuário, grupo, técnico ou grupo técnico"
+
+msgid "Senha alterada ou expirada, autenticação moderna (OAuth) exigida pelo provedor, servidor inacessível, certificado inválido ou ação automática \"mailgate\" parada."
+msgstr "Senha alterada ou expirada, autenticação moderna (OAuth) exigida pelo provedor, servidor inacessível, certificado inválido ou ação automática \"mailgate\" parada."
+
+msgid "Senhas fracas facilitam ataques de força bruta e reutilização de credenciais vazadas."
+msgstr "Senhas fracas facilitam ataques de força bruta e reutilização de credenciais vazadas."
+
+msgid "Servidor"
+msgstr "Servidor"
+
+msgid "Servidor SMTP"
+msgstr "Servidor SMTP"
+
+msgid "Servidor SMTP inacessível, porta bloqueada por firewall, problema de certificado ou destinatários inválidos."
+msgstr "Servidor SMTP inacessível, porta bloqueada por firewall, problema de certificado ou destinatários inválidos."
+
+msgid "Servidor Windows: as permissões são controladas por ACLs NTFS e não podem ser avaliadas pelos bits POSIX. Verifique manualmente que apenas o usuário do serviço web e administradores têm acesso de escrita."
+msgstr "Servidor Windows: as permissões são controladas por ACLs NTFS e não podem ser avaliadas pelos bits POSIX. Verifique manualmente que apenas o usuário do serviço web e administradores têm acesso de escrita."
+
+msgid "Servidor ou porta não informados."
+msgstr "Servidor ou porta não informados."
+
+msgid "Serviço"
+msgstr "Serviço"
+
+msgid "Serviço cron parado, entrada do crontab removida, erro fatal do PHP na linha de comando ou bloqueio de execução."
+msgstr "Serviço cron parado, entrada do crontab removida, erro fatal do PHP na linha de comando ou bloqueio de execução."
+
+msgid "Sessões"
+msgstr "Sessões"
+
+msgid "Siga o procedimento oficial de atualização."
+msgstr "Siga o procedimento oficial de atualização."
+
+msgid "Sim"
+msgstr "Sim"
+
+msgid "Sistema de arquivos (padrão)"
+msgstr "Sistema de arquivos (padrão)"
+
+msgid "Sistema operacional"
+msgstr "Sistema operacional"
+
+msgid "Situação"
+msgstr "Situação"
+
+msgid "Solicitações enviadas por e-mail podem não ter gerado chamados e não serão atendidas."
+msgstr "Solicitações enviadas por e-mail podem não ter gerado chamados e não serão atendidas."
+
+msgid "Solicite a liberação da porta no firewall de saída."
+msgstr "Solicite a liberação da porta no firewall de saída."
+
+msgid "Somente no diagnóstico completo. Abre apenas uma conexão TCP com os servidores SMTP/IMAP já configurados no GLPI, sem autenticar e sem enviar dados."
+msgstr "Somente no diagnóstico completo. Abre apenas uma conexão TCP com os servidores SMTP/IMAP já configurados no GLPI, sem autenticar e sem enviar dados."
+
+msgid "Somente verificações rápidas: sem comparação de esquema, varreduras de dados e testes de rede"
+msgstr "Somente verificações rápidas: sem comparação de esquema, varreduras de dados e testes de rede"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Substitua os arquivos da aplicação preservando os diretórios config, files, plugins e marketplace."
+msgstr "Substitua os arquivos da aplicação preservando os diretórios config, files, plugins e marketplace."
+
+msgid "Substituído por funcionalidade nativa ou outro plugin; pode ser desinstalado"
+msgstr "Substituído por funcionalidade nativa ou outro plugin; pode ser desinstalado"
+
+msgid "Sucesso"
+msgstr "Sucesso"
+
+msgid "Tabela"
+msgstr "Tabela"
+
+msgid "Tabela ausente"
+msgstr "Tabela ausente"
+
+msgid "Tabela desconhecida"
+msgstr "Tabela desconhecida"
+
+msgid "Tabela inacessível ou marcada como corrompida"
+msgstr "Tabela inacessível ou marcada como corrompida"
+
+msgid "Tabela sem chave primária"
+msgstr "Tabela sem chave primária"
+
+msgid "Tabelas"
+msgstr "Tabelas"
+
+msgid "Tabelas analisadas"
+msgstr "Tabelas analisadas"
+
+msgid "Tabelas com charset utf8mb3 (obsoleto)"
+msgstr "Tabelas com charset utf8mb3 (obsoleto)"
+
+msgid "Tabelas com diferenças"
+msgstr "Tabelas com diferenças"
+
+msgid "Tabelas com motor MyISAM (obsoleto)"
+msgstr "Tabelas com motor MyISAM (obsoleto)"
+
+msgid "Tabelas corrompidas causam perda de dados e erros; contadores esgotados impedem novos registros."
+msgstr "Tabelas corrompidas causam perda de dados e erros; contadores esgotados impedem novos registros."
+
+msgid "Tabelas de plugins ainda em utf8mb3"
+msgstr "Tabelas de plugins ainda em utf8mb3"
+
+msgid "Tabelas grandes e fragmentadas tornam backups, consultas e atualizações mais lentos."
+msgstr "Tabelas grandes e fragmentadas tornam backups, consultas e atualizações mais lentos."
+
+msgid "Tabelas inacessíveis ou marcadas como corrompidas, tabelas sem chave primária e contadores AUTO_INCREMENT próximos do limite."
+msgstr "Tabelas inacessíveis ou marcadas como corrompidas, tabelas sem chave primária e contadores AUTO_INCREMENT próximos do limite."
+
+msgid "Tabelas sem ROW_FORMAT=DYNAMIC"
+msgstr "Tabelas sem ROW_FORMAT=DYNAMIC"
+
+msgid "Tabelas temporárias em disco"
+msgstr "Tabelas temporárias em disco"
+
+#, php-format
+msgid "Tabelas técnicas muito volumosas: %s."
+msgstr "Tabelas técnicas muito volumosas: %s."
+
+msgid "Tamanho"
+msgstr "Tamanho"
+
+msgid "Tamanho InnoDB da base GLPI"
+msgstr "Tamanho InnoDB da base GLPI"
+
+msgid "Tamanho máximo de documento (GLPI)"
+msgstr "Tamanho máximo de documento (GLPI)"
+
+msgid "Tamanho mínimo"
+msgstr "Tamanho mínimo"
+
+#, php-format
+msgid "Tamanho mínimo de senha muito baixo (%d caracteres)."
+msgstr "Tamanho mínimo de senha muito baixo (%d caracteres)."
+
+msgid "Tamanho total de files/_log"
+msgstr "Tamanho total de files/_log"
+
+msgid "Tarefa"
+msgstr "Tarefa"
+
+msgid "Tarefas ativas analisadas"
+msgstr "Tarefas ativas analisadas"
+
+msgid "Tarefas ativas em modo CLI"
+msgstr "Tarefas ativas em modo CLI"
+
+msgid "Tarefas ativas em modo GLPI"
+msgstr "Tarefas ativas em modo GLPI"
+
+msgid "Tarefas atrasadas ou pendentes"
+msgstr "Tarefas atrasadas ou pendentes"
+
+msgid "Tarefas com falhas recorrentes"
+msgstr "Tarefas com falhas recorrentes"
+
+msgid "Tarefas com histórico no período"
+msgstr "Tarefas com histórico no período"
+
+msgid "Tarefas de chamados inexistentes"
+msgstr "Tarefas de chamados inexistentes"
+
+msgid "Tarefas desativadas manualmente (por exemplo durante uma migração) e não reativadas."
+msgstr "Tarefas desativadas manualmente (por exemplo durante uma migração) e não reativadas."
+
+msgid "Tarefas em modo GLPI não executam há mais de 24 horas."
+msgstr "Tarefas em modo GLPI não executam há mais de 24 horas."
+
+msgid "Tarefas essenciais e rotinas de limpeza"
+msgstr "Tarefas essenciais e rotinas de limpeza"
+
+msgid "Tarefas longas atrasam as demais tarefas do cron e podem ser interrompidas por limite de tempo, ficando travadas."
+msgstr "Tarefas longas atrasam as demais tarefas do cron e podem ser interrompidas por limite de tempo, ficando travadas."
+
+msgid "Tarefas travadas em execução"
+msgstr "Tarefas travadas em execução"
+
+#, php-format
+msgid "Taxa abaixo de 95% indica buffer pool pequeno para o volume de dados."
+msgstr "Taxa abaixo de 95% indica buffer pool pequeno para o volume de dados."
+
+msgid "Taxa de falha"
+msgstr "Taxa de falha"
+
+msgid "Telefones"
+msgstr "Telefones"
+
+msgid "Tempo"
+msgstr "Tempo"
+
+msgid "Tempo do teste"
+msgstr "Tempo do teste"
+
+msgid "Tempo no ar"
+msgstr "Tempo no ar"
+
+msgid "Temporário do sistema"
+msgstr "Temporário do sistema"
+
+msgid "Temporários"
+msgstr "Temporários"
+
+msgid "Tentativas máximas de envio"
+msgstr "Tentativas máximas de envio"
+
+msgid "Testar conexão com os servidores de e-mail configurados"
+msgstr "Testar conexão com os servidores de e-mail configurados"
+
+msgid "Teste a atualização em um ambiente de homologação antes da produção."
+msgstr "Teste a atualização em um ambiente de homologação antes da produção."
+
+msgid "Teste a conexão diretamente do servidor do GLPI e libere a porta necessária."
+msgstr "Teste a conexão diretamente do servidor do GLPI e libere a porta necessária."
+
+msgid "Teste acessando https://seu-glpi/files/_log/php-errors.log: o acesso deve ser negado."
+msgstr "Teste acessando https://seu-glpi/files/_log/php-errors.log: o acesso deve ser negado."
+
+msgid "Teste cada coletor e corrija servidor, credenciais e segurança da conexão."
+msgstr "Teste cada coletor e corrija servidor, credenciais e segurança da conexão."
+
+msgid "Teste de conectividade com servidores de e-mail desativado nas configurações do plugin."
+msgstr "Teste de conectividade com servidores de e-mail desativado nas configurações do plugin."
+
+msgid "Teste de escrita/leitura"
+msgstr "Teste de escrita/leitura"
+
+msgid "Tipo"
+msgstr "Tipo"
+
+msgid "Todas as ações automáticas ativas usam o cron do sistema (modo CLI)."
+msgstr "Todas as ações automáticas ativas usam o cron do sistema (modo CLI)."
+
+msgid "Todas as verificações"
+msgstr "Todas as verificações"
+
+msgid "Todas as verificações locais funcionam offline. Nenhum dado do ambiente, credencial, usuário ou chamado é enviado a servidores externos."
+msgstr "Todas as verificações locais funcionam offline. Nenhum dado do ambiente, credencial, usuário ou chamado é enviado a servidores externos."
+
+msgid "Todos"
+msgstr "Todos"
+
+#, php-format
+msgid "Todos os %d requisitos verificados estão atendidos."
+msgstr "Todos os %d requisitos verificados estão atendidos."
+
+#, php-format
+msgid "Todos os %d servidores de e-mail configurados estão acessíveis."
+msgstr "Todos os %d servidores de e-mail configurados estão acessíveis."
+
+msgid "Todos os ativos têm algum responsável definido."
+msgstr "Todos os ativos têm algum responsável definido."
+
+msgid "Todos os diretórios estão acessíveis com as permissões necessárias."
+msgstr "Todos os diretórios estão acessíveis com as permissões necessárias."
+
+msgid "Todos os plugins do Marketplace estão na versão mais recente."
+msgstr "Todos os plugins do Marketplace estão na versão mais recente."
+
+msgid "Todos os plugins são compatíveis com as versões atuais do GLPI e do PHP."
+msgstr "Todos os plugins são compatíveis com as versões atuais do GLPI e do PHP."
+
+msgid "Tolerância considerada"
+msgstr "Tolerância considerada"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Total registrado"
+msgstr "Total registrado"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "URL da API"
+msgstr "URL da API"
+
+msgid "URL da aplicação"
+msgstr "URL da aplicação"
+
+msgid "URL de acesso atual"
+msgstr "URL de acesso atual"
+
+msgid "Uma API aberta permite tentativas de autenticação e acesso automatizado a partir de qualquer rede."
+msgstr "Uma API aberta permite tentativas de autenticação e acesso automatizado a partir de qualquer rede."
+
+msgid "Uma tarefa marcada como em execução não é iniciada novamente até ser desbloqueada; sua função fica parada."
+msgstr "Uma tarefa marcada como em execução não é iniciada novamente até ser desbloqueada; sua função fica parada."
+
+msgid "Unifique as contas duplicadas e mantenha cada e-mail associado a um único usuário ativo."
+msgstr "Unifique as contas duplicadas e mantenha cada e-mail associado a um único usuário ativo."
+
+msgid "Uploads"
+msgstr "Uploads"
+
+msgid "Usa o valor padrão da instalação (@localhost); servidores de e-mail costumam rejeitar esse remetente."
+msgstr "Usa o valor padrão da instalação (@localhost); servidores de e-mail costumam rejeitar esse remetente."
+
+msgid "Use \"Testar\" para simular a regra antes de reativá-la."
+msgstr "Use \"Testar\" para simular a regra antes de reativá-la."
+
+msgid "Use a ação em massa \"Atualizar\" para definir o grupo técnico responsável."
+msgstr "Use a ação em massa \"Atualizar\" para definir o grupo técnico responsável."
+
+msgid "Use ferramentas como MySQLTuner para uma análise mais detalhada."
+msgstr "Use ferramentas como MySQLTuner para uma análise mais detalhada."
+
+msgid "Use o botão \"Testar\" (ou \"Obter e-mails agora\") e observe a mensagem de erro."
+msgstr "Use o botão \"Testar\" (ou \"Obter e-mails agora\") e observe a mensagem de erro."
+
+msgid "Use o php.ini de produção e desative recursos de depuração após o uso."
+msgstr "Use o php.ini de produção e desative recursos de depuração após o uso."
+
+msgid "Uso"
+msgstr "Uso"
+
+msgid "Uso de \"chmod 777\" ou \"chmod -R\" amplo para contornar problemas de permissão."
+msgstr "Uso de \"chmod 777\" ou \"chmod -R\" amplo para contornar problemas de permissão."
+
+msgid "Uso de memória"
+msgstr "Uso de memória"
+
+msgid "Usuário que executa o PHP"
+msgstr "Usuário que executa o PHP"
+
+msgid "Usuários ativos"
+msgstr "Usuários ativos"
+
+msgid "Usuários ativos com autenticação local"
+msgstr "Usuários ativos com autenticação local"
+
+msgid "Usuários ativos com esses perfis"
+msgstr "Usuários ativos com esses perfis"
+
+msgid "Usuários ativos sem nenhuma autorização (não conseguem entrar)"
+msgstr "Usuários ativos sem nenhuma autorização (não conseguem entrar)"
+
+msgid "Usuários com entidade padrão inexistente"
+msgstr "Usuários com entidade padrão inexistente"
+
+msgid "Usuários com modo debug ativo veem consultas SQL e dados internos, e as páginas ficam mais lentas."
+msgstr "Usuários com modo debug ativo veem consultas SQL e dados internos, e as páginas ficam mais lentas."
+
+msgid "Usuários duplicados ou inconsistentes"
+msgstr "Usuários duplicados ou inconsistentes"
+
+msgid "Usuários e técnicos não recebem e-mails sobre chamados, aprovações e alertas."
+msgstr "Usuários e técnicos não recebem e-mails sobre chamados, aprovações e alertas."
+
+msgid "Usuários e técnicos não recebem notificações de chamados no prazo."
+msgstr "Usuários e técnicos não recebem notificações de chamados no prazo."
+
+msgid "Usuários importados de mais de uma fonte (LDAP, CSV, criação manual) ou contas genéricas compartilhando o mesmo e-mail."
+msgstr "Usuários importados de mais de uma fonte (LDAP, CSV, criação manual) ou contas genéricas compartilhando o mesmo e-mail."
+
+msgid "Usuários recebem erro ao abrir anexos de chamados e ativos; pode indicar perda de dados."
+msgstr "Usuários recebem erro ao abrir anexos de chamados e ativos; pode indicar perda de dados."
+
+msgid "Utilize somente versões estáveis em produção."
+msgstr "Utilize somente versões estáveis em produção."
+
+msgid "Validação de certificado"
+msgstr "Validação de certificado"
+
+msgid "Validação de certificado desativada (/novalidate-cert)"
+msgstr "Validação de certificado desativada (/novalidate-cert)"
+
+msgid "Valor"
+msgstr "Valor"
+
+msgid "Valor atual"
+msgstr "Valor atual"
+
+msgid "Valor baixo interrompe exportações, relatórios e ações em massa. Recomendado 30 s ou mais na web."
+msgstr "Valor baixo interrompe exportações, relatórios e ações em massa. Recomendado 30 s ou mais na web."
+
+msgid "Valores muito baixos derrubam conexões de tarefas longas (cron, coleta de e-mails)."
+msgstr "Valores muito baixos derrubam conexões de tarefas longas (cron, coleta de e-mails)."
+
+msgid "Valores padrão do pacote MySQL/MariaDB ou ajustes não revisados."
+msgstr "Valores padrão do pacote MySQL/MariaDB ou ajustes não revisados."
+
+msgid "Valores padrão do php.ini não ajustados para o GLPI."
+msgstr "Valores padrão do php.ini não ajustados para o GLPI."
+
+msgid "Vazio ou inválido: mensagens podem ser rejeitadas pelos servidores de destino."
+msgstr "Vazio ou inválido: mensagens podem ser rejeitadas pelos servidores de destino."
+
+msgid "Ver comparação detalhada"
+msgstr "Ver comparação detalhada"
+
+msgid "Ver o mais recente"
+msgstr "Ver o mais recente"
+
+msgid "Verifica se a raiz do servidor web aponta para \"public/\" e se os diretórios de dados e configuração estão fora do alcance da web."
+msgstr "Verifica se a raiz do servidor web aponta para \"public/\" e se os diretórios de dados e configuração estão fora do alcance da web."
+
+msgid "Verifica se as ações automáticas estão sendo executadas, a partir da data da última execução."
+msgstr "Verifica se as ações automáticas estão sendo executadas, a partir da data da última execução."
+
+msgid "Verificados (mais recentes)"
+msgstr "Verificados (mais recentes)"
+
+msgid "Verificação"
+msgstr "Verificação"
+
+#, php-format
+msgid "Verificação externa inválida: %s"
+msgstr "Verificação externa inválida: %s"
+
+msgid "Verifique a faixa de versões aceita pelo GLPI (dados abaixo)."
+msgstr "Verifique a faixa de versões aceita pelo GLPI (dados abaixo)."
+
+msgid "Verifique a resolução DNS do nome do servidor."
+msgstr "Verifique a resolução DNS do nome do servidor."
+
+msgid "Verifique manualmente a página oficial de releases ou habilite a consulta externa opcional nas configurações do plugin."
+msgstr "Verifique manualmente a página oficial de releases ou habilite a consulta externa opcional nas configurações do plugin."
+
+msgid "Verifique na aba Plugins quais plugins não declaram compatibilidade com a nova versão."
+msgstr "Verifique na aba Plugins quais plugins não declaram compatibilidade com a nova versão."
+
+msgid "Verifique o agendamento e execute manualmente \"php front/cron.php\" para ver possíveis erros."
+msgstr "Verifique o agendamento e execute manualmente \"php front/cron.php\" para ver possíveis erros."
+
+msgid "Verifique o backend de cache e as permissões do diretório de cache."
+msgstr "Verifique o backend de cache e as permissões do diretório de cache."
+
+msgid "Verifique o cron, a ação automática \"queuednotification\" e o log files/_log/mail-error.log."
+msgstr "Verifique o cron, a ação automática \"queuednotification\" e o log files/_log/mail-error.log."
+
+msgid "Verifique o log files/_log/php-errors.log. As demais verificações não foram afetadas."
+msgstr "Verifique o log files/_log/php-errors.log. As demais verificações não foram afetadas."
+
+msgid "Verifique os logs do período e desbloqueie a tarefa."
+msgstr "Verifique os logs do período e desbloqueie a tarefa."
+
+msgid "Verifique os logs em files/_log caso a atualização falhe."
+msgstr "Verifique os logs em files/_log caso a atualização falhe."
+
+msgid "Verifique se a ação automática \"cleanorphans\" está ativa."
+msgstr "Verifique se a ação automática \"cleanorphans\" está ativa."
+
+msgid "Verifique se as ações automáticas \"temp\", \"circularlogs\" e \"session\" estão ativas."
+msgstr "Verifique se as ações automáticas \"temp\", \"circularlogs\" e \"session\" estão ativas."
+
+msgid "Verifique se o PHP de linha de comando é o mesmo usado pelo servidor web."
+msgstr "Verifique se o PHP de linha de comando é o mesmo usado pelo servidor web."
+
+msgid "Verifique se o serviço MySQL/MariaDB está ativo e se as credenciais em config/config_db.php estão corretas."
+msgstr "Verifique se o serviço MySQL/MariaDB está ativo e se as credenciais em config/config_db.php estão corretas."
+
+msgid "Versão"
+msgstr "Versão"
+
+msgid "Versão do GLPI"
+msgstr "Versão do GLPI"
+
+msgid "Versão do Health Check"
+msgstr "Versão do Health Check"
+
+msgid "Versão do PHP"
+msgstr "Versão do PHP"
+
+msgid "Versão do esquema do banco de dados"
+msgstr "Versão do esquema do banco de dados"
+
+msgid "Versão do esquema verificada"
+msgstr "Versão do esquema verificada"
+
+msgid "Versão do servidor"
+msgstr "Versão do servidor"
+
+msgid "Versão dos arquivos"
+msgstr "Versão dos arquivos"
+
+#, php-format
+msgid "Versão dos arquivos (%1$s) difere da versão instalada no banco (%2$s)"
+msgstr "Versão dos arquivos (%1$s) difere da versão instalada no banco (%2$s)"
+
+msgid "Versão e compatibilidade do MySQL/MariaDB"
+msgstr "Versão e compatibilidade do MySQL/MariaDB"
+
+msgid "Versão esperada do esquema"
+msgstr "Versão esperada do esquema"
+
+msgid "Versão instalada"
+msgstr "Versão instalada"
+
+#, php-format
+msgid "Versão instalada: %s. Não foi possível determinar se existe versão mais recente."
+msgstr "Versão instalada: %s. Não foi possível determinar se existe versão mais recente."
+
+msgid "Versão registrada no banco"
+msgstr "Versão registrada no banco"
+
+msgid "Versões de banco não suportadas causam erros de SQL e impedem atualizações do GLPI."
+msgstr "Versões de banco não suportadas causam erros de SQL e impedem atualizações do GLPI."
+
+msgid "Versões de desenvolvimento, alpha, beta ou RC podem conter falhas e não têm caminho de atualização garantido."
+msgstr "Versões de desenvolvimento, alpha, beta ou RC podem conter falhas e não têm caminho de atualização garantido."
+
+msgid "Versões de manutenção corrigem falhas de segurança e bugs. Permanecer desatualizado expõe o ambiente a vulnerabilidades conhecidas e publicadas."
+msgstr "Versões de manutenção corrigem falhas de segurança e bugs. Permanecer desatualizado expõe o ambiente a vulnerabilidades conhecidas e publicadas."
+
+msgid "Versões futuras do GLPI podem exigir essas migrações antes da atualização. Tabelas MyISAM não são transacionais e podem corromper dados em caso de falha; utf8mb3 não armazena emojis e alguns caracteres."
+msgstr "Versões futuras do GLPI podem exigir essas migrações antes da atualização. Tabelas MyISAM não são transacionais e podem corromper dados em caso de falha; utf8mb3 não armazena emojis e alguns caracteres."
+
+msgid "Versões novas de plugins trazem correções de segurança e compatibilidade com versões futuras do GLPI."
+msgstr "Versões novas de plugins trazem correções de segurança e compatibilidade com versões futuras do GLPI."
+
+#, php-format
+msgid "Você está vendo o diagnóstico #%s, que não é o mais recente."
+msgstr "Você está vendo o diagnóstico #%s, que não é o mais recente."
+
+msgid "Volume de logs"
+msgstr "Volume de logs"
+
+#, php-format
+msgid "Volume de logs sob controle (%s)."
+msgstr "Volume de logs sob controle (%s)."
+
+msgid "Volume e fragmentação do banco"
+msgstr "Volume e fragmentação do banco"
+
+msgid "Vulnerabilidades descobertas no PHP não serão corrigidas, expondo o servidor."
+msgstr "Vulnerabilidades descobertas no PHP não serão corrigidas, expondo o servidor."
+
+msgid "Vínculos com documento inexistente"
+msgstr "Vínculos com documento inexistente"
+
+msgid "Vínculos com grupo inexistente"
+msgstr "Vínculos com grupo inexistente"
+
+msgid "Windows: conceda \"Modificar\" ao usuário do serviço do servidor web nas propriedades de segurança da pasta."
+msgstr "Windows: conceda \"Modificar\" ao usuário do serviço do servidor web nas propriedades de segurança da pasta."
+
+msgid "alerta"
+msgstr "alerta"
+
+msgid "alertas"
+msgstr "alertas"
+
+msgid "aprovadas"
+msgstr "aprovadas"
+
+msgid "crítico"
+msgstr "crítico"
+
+msgid "críticos"
+msgstr "críticos"
+
+msgid "erro(s) de PHP"
+msgstr "erro(s) de PHP"
+
+msgid "erro(s) de SQL"
+msgstr "erro(s) de SQL"
+
+msgid "extensão ausente"
+msgstr "extensão ausente"
+
+msgid "informativas"
+msgstr "informativas"
+
+msgid "não verificadas"
+msgstr "não verificadas"
+
+msgid "php.ini com valores padrão da distribuição."
+msgstr "php.ini com valores padrão da distribuição."
+
+msgid "php.ini de desenvolvimento em uso ou ajustes temporários de depuração não revertidos."
+msgstr "php.ini de desenvolvimento em uso ou ajustes temporários de depuração não revertidos."
+
+msgid "pontos no indicador"
+msgstr "pontos no indicador"
+
+msgid "problema"
+msgstr "problema"
+
+msgid "problemas"
+msgstr "problemas"
+
+msgid "sem problemas"
+msgstr "sem problemas"
+
+msgid "session.cookie_httponly = On"
+msgstr "session.cookie_httponly = On"
+
+msgid "session.cookie_samesite = Lax"
+msgstr "session.cookie_samesite = Lax"
+
+msgid "session.cookie_secure = On (quando o acesso for por HTTPS)"
+msgstr "session.cookie_secure = On (quando o acesso for por HTTPS)"
+
+msgid "Índice esperado"
+msgstr "Índice esperado"
+
+msgid "Índices"
+msgstr "Índices"
+
+msgid "Índices ausentes"
+msgstr "Índices ausentes"
+
+msgid "Índices esperados"
+msgstr "Índices esperados"
+
+msgid "Última coleta"
+msgstr "Última coleta"
+
+msgid "Última execução"
+msgstr "Última execução"
+
+msgid "Última execução (modo CLI)"
+msgstr "Última execução (modo CLI)"
+
+msgid "Última execução (modo GLPI)"
+msgstr "Última execução (modo GLPI)"
+
+msgid "Última falha"
+msgstr "Última falha"
+
+msgid "Última modificação do log"
+msgstr "Última modificação do log"
+
+msgid "Última versão do mesmo ramo"
+msgstr "Última versão do mesmo ramo"
+
+msgid "Última versão estável"
+msgstr "Última versão estável"
+
+msgid "Último"
+msgstr "Último"
+
+msgid "Últimos 7 dias"
+msgstr "Últimos 7 dias"
+
