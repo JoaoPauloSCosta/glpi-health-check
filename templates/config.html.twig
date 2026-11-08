@@ -1,0 +1,122 @@
+{#
+ # Health Check plugin for GLPI - settings
+ #}
+<div class="hc">
+   {{ include('@healthcheck/partials/nav.html.twig', {active: 'config'}) }}
+
+   <form method="post" action="{{ urls.config }}">
+      <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}">
+      <div class="row row-cards">
+         <div class="col-lg-6">
+            <div class="card h-100">
+               <div class="card-header"><h3 class="card-title"><i class="ti ti-world me-1"></i>{{ __('Privacidade e consultas externas', 'healthcheck') }}</h3></div>
+               <div class="card-body">
+                  <p class="text-muted">
+                     {{ __('Todas as verificações locais funcionam offline. Nenhum dado do ambiente, credencial, usuário ou chamado é enviado a servidores externos.', 'healthcheck') }}
+                  </p>
+                  <label class="form-check form-switch mb-1">
+                     <input type="hidden" name="allow_external_checks" value="0">
+                     <input class="form-check-input" type="checkbox" name="allow_external_checks" value="1" {{ settings.allow_external_checks ? 'checked' : '' }} {{ can_run ? '' : 'disabled' }}>
+                     <span class="form-check-label">{{ __('Permitir consultas externas opcionais', 'healthcheck') }}</span>
+                  </label>
+                  <div class="form-hint mb-3">
+                     {{ __('Consulta anônima (GET) da lista pública de versões do GLPI no GitHub, com cache de 24h, e do catálogo do Marketplace do GLPI para atualizações de plugins (usa a chave GLPI Network já configurada). Usa o proxy configurado no GLPI.', 'healthcheck') }}
+                  </div>
+
+                  <label class="form-check form-switch mb-1">
+                     <input type="hidden" name="check_mail_connectivity" value="0">
+                     <input class="form-check-input" type="checkbox" name="check_mail_connectivity" value="1" {{ settings.check_mail_connectivity ? 'checked' : '' }} {{ can_run ? '' : 'disabled' }}>
+                     <span class="form-check-label">{{ __('Testar conexão com os servidores de e-mail configurados', 'healthcheck') }}</span>
+                  </label>
+                  <div class="form-hint">
+                     {{ __('Somente no diagnóstico completo. Abre apenas uma conexão TCP com os servidores SMTP/IMAP já configurados no GLPI, sem autenticar e sem enviar dados.', 'healthcheck') }}
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-lg-6">
+            <div class="card h-100">
+               <div class="card-header"><h3 class="card-title"><i class="ti ti-adjustments me-1"></i>{{ __('Limites e histórico', 'healthcheck') }}</h3></div>
+               <div class="card-body">
+                  <div class="row g-3">
+                     <div class="col-sm-6">
+                        <label class="form-label">{{ __('Alerta de disco livre abaixo de (%)', 'healthcheck') }}</label>
+                        <input type="number" class="form-control" name="disk_warning_percent" min="1" max="90" value="{{ settings.disk_warning_percent }}" {{ can_run ? '' : 'disabled' }}>
+                     </div>
+                     <div class="col-sm-6">
+                        <label class="form-label">{{ __('Crítico de disco livre abaixo de (%)', 'healthcheck') }}</label>
+                        <input type="number" class="form-control" name="disk_critical_percent" min="1" max="90" value="{{ settings.disk_critical_percent }}" {{ can_run ? '' : 'disabled' }}>
+                     </div>
+                     <div class="col-sm-6">
+                        <label class="form-label">{{ __('Alerta com mensagens pendentes na fila a partir de', 'healthcheck') }}</label>
+                        <input type="number" class="form-control" name="queue_warning_count" min="1" value="{{ settings.queue_warning_count }}" {{ can_run ? '' : 'disabled' }}>
+                     </div>
+                     <div class="col-sm-6">
+                        <label class="form-label">{{ __('Crítico com mensagens pendentes na fila a partir de', 'healthcheck') }}</label>
+                        <input type="number" class="form-control" name="queue_critical_count" min="1" value="{{ settings.queue_critical_count }}" {{ can_run ? '' : 'disabled' }}>
+                     </div>
+                     <div class="col-sm-6">
+                        <label class="form-label">{{ __('Manter histórico por (dias)', 'healthcheck') }}</label>
+                        <input type="number" class="form-control" name="history_retention_days" min="1" max="3650" value="{{ settings.history_retention_days }}" {{ can_run ? '' : 'disabled' }}>
+                     </div>
+                     <div class="col-sm-6">
+                        <label class="form-label">{{ __('Número máximo de diagnósticos no histórico', 'healthcheck') }}</label>
+                        <input type="number" class="form-control" name="history_max_runs" min="10" value="{{ settings.history_max_runs }}" {{ can_run ? '' : 'disabled' }}>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-12">
+            <div class="card">
+               <div class="card-header"><h3 class="card-title"><i class="ti ti-clock me-1"></i>{{ __('Agendamento', 'healthcheck') }}</h3></div>
+               <div class="card-body">
+                  <p class="text-muted">
+                     {{ __('Os diagnósticos periódicos são ações automáticas do GLPI. Ajuste frequência, horário e modo em Configurar > Ações automáticas. O diagnóstico leve executa apenas verificações rápidas; o completo inclui comparação do esquema do banco, varreduras de integridade e testes de rede.', 'healthcheck') }}
+                  </p>
+                  {% if tasks is empty %}
+                     <div class="alert alert-warning mb-0">{{ __('As ações automáticas do plugin não foram encontradas. Reinstale o plugin para registrá-las.', 'healthcheck') }}</div>
+                  {% else %}
+                     <div class="table-responsive">
+                        <table class="table table-sm table-vcenter">
+                           <thead>
+                              <tr>
+                                 <th>{{ __('Ação automática', 'healthcheck') }}</th>
+                                 <th>{{ __('Status', 'healthcheck') }}</th>
+                                 <th>{{ __('Modo', 'healthcheck') }}</th>
+                                 <th>{{ __('Frequência', 'healthcheck') }}</th>
+                                 <th>{{ __('Última execução', 'healthcheck') }}</th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              {% for task in tasks %}
+                                 <tr>
+                                    <td>{{ task.label }}</td>
+                                    <td>{{ task.state }}</td>
+                                    <td>{{ task.mode }}</td>
+                                    <td>{{ task.frequency }}</td>
+                                    <td>{{ task.lastrun ? task.lastrun|formatted_datetime : '-' }}</td>
+                                    <td><a href="{{ task.url }}" class="btn btn-sm btn-outline-secondary"><i class="ti ti-pencil me-1"></i>{{ __('Configurar', 'healthcheck') }}</a></td>
+                                 </tr>
+                              {% endfor %}
+                           </tbody>
+                        </table>
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+      </div>
+
+      {% if can_run %}
+         <div class="mt-3">
+            <button type="submit" name="update" value="1" class="btn btn-primary">
+               <i class="ti ti-device-floppy me-1"></i>{{ __('Salvar', 'healthcheck') }}
+            </button>
+         </div>
+      {% endif %}
+   </form>
+</div>

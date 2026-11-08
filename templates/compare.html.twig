@@ -1,0 +1,79 @@
+{#
+ # Health Check plugin for GLPI - comparison of two diagnostics
+ #}
+<div class="hc">
+   {{ include('@healthcheck/partials/nav.html.twig', {active: 'history'}) }}
+
+   <div class="row row-cards mb-3">
+      {% for side in [{label: __('Base', 'healthcheck'), run: old}, {label: __('Comparado', 'healthcheck'), run: new}] %}
+         <div class="col-md-5">
+            <div class="card h-100">
+               <div class="card-status-top bg-{{ side.run.overall_color }}"></div>
+               <div class="card-body">
+                  <div class="text-muted hc-small text-uppercase">{{ side.label }} · #{{ side.run.id }}</div>
+                  <div class="d-flex align-items-baseline gap-2">
+                     <span class="h1 mb-0 text-{{ side.run.overall_color }}">{{ side.run.score }}</span>
+                     <span class="text-{{ side.run.overall_color }}">{{ side.run.overall_label }}</span>
+                  </div>
+                  <div class="hc-small text-muted">
+                     {{ side.run.date_creation|formatted_datetime }} · {{ side.run.mode_label }} · GLPI {{ side.run.glpi_version }}<br>
+                     {{ side.run.nb_ok }} {{ __('aprovadas', 'healthcheck') }} · {{ side.run.nb_warning }} {{ __('alertas', 'healthcheck') }} · {{ side.run.nb_critical }} {{ __('críticos', 'healthcheck') }}
+                  </div>
+                  <a class="hc-small" href="{{ urls.dashboard }}?id={{ side.run.id }}">{{ __('Abrir diagnóstico', 'healthcheck') }}</a>
+               </div>
+            </div>
+         </div>
+         {% if loop.first %}
+            <div class="col-md-2 d-flex align-items-center justify-content-center">
+               {% set delta = new.score - old.score %}
+               <div class="text-center">
+                  <i class="ti ti-arrow-right fs-1"></i>
+                  <div class="badge bg-{{ delta > 0 ? 'success' : (delta < 0 ? 'danger' : 'secondary') }} fs-4">{{ delta > 0 ? '+' : '' }}{{ delta }}</div>
+               </div>
+            </div>
+         {% endif %}
+      {% endfor %}
+   </div>
+
+   {% if old.mode != new.mode %}
+      <div class="alert alert-warning">
+         <i class="ti ti-alert-triangle me-1"></i>{{ __('Os diagnósticos são de tipos diferentes (leve x completo): verificações executadas apenas em um deles aparecem como "Não executada".', 'healthcheck') }}
+      </div>
+   {% endif %}
+
+   <div class="d-flex flex-wrap gap-2 mb-3">
+      {% for change, info in change_labels %}
+         <span class="badge bg-{{ info.color }}-lt fs-5"><i class="{{ info.icon }} me-1"></i>{{ info.label }}: {{ diff[change] }}</span>
+      {% endfor %}
+   </div>
+
+   <div class="card">
+      <div class="table-responsive">
+         <table class="table table-vcenter card-table table-hover">
+            <thead>
+               <tr>
+                  <th>{{ __('Mudança', 'healthcheck') }}</th>
+                  <th>{{ __('Verificação', 'healthcheck') }}</th>
+                  <th>{{ __('Categoria', 'healthcheck') }}</th>
+                  <th>{{ __('Antes', 'healthcheck') }}</th>
+                  <th>{{ __('Depois', 'healthcheck') }}</th>
+                  <th>{{ __('Resultado atual', 'healthcheck') }}</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for row in diff.rows %}
+                  {% set info = change_labels[row.change] %}
+                  <tr class="{{ row.change == 'unchanged' ? 'text-muted' : '' }}">
+                     <td class="text-nowrap"><span class="badge bg-{{ info.color }}-lt"><i class="{{ info.icon }} me-1"></i>{{ info.label }}</span></td>
+                     <td>{{ row.title }}</td>
+                     <td>{{ row.category }}</td>
+                     <td class="text-nowrap"><span class="badge bg-{{ row.old_color }}-lt">{{ row.old_status }}</span>{% if row.old_severity != '-' %} <span class="hc-small">{{ row.old_severity }}</span>{% endif %}</td>
+                     <td class="text-nowrap"><span class="badge bg-{{ row.new_color }}-lt">{{ row.new_status }}</span>{% if row.new_severity != '-' %} <span class="hc-small">{{ row.new_severity }}</span>{% endif %}</td>
+                     <td class="hc-small">{{ row.new_message }}</td>
+                  </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

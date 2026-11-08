@@ -1,0 +1,16 @@
+{#
+ # Health Check plugin for GLPI - "run diagnostic" buttons
+ # Expects: urls, can_run
+ #}
+{% if can_run %}
+   <form method="post" action="{{ urls.run }}" class="hc-run-form">
+      <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}">
+      <button type="submit" name="mode" value="full" class="btn btn-primary">
+         <i class="ti ti-player-play me-1" aria-hidden="true"></i>{{ __('Executar diagnóstico completo', 'healthcheck') }}
+      </button>
+      <button type="submit" name="mode" value="light" class="btn btn-outline-secondary"
+              title="{{ __('Somente verificações rápidas: sem comparação de esquema, varreduras de dados e testes de rede', 'healthcheck') }}">
+         <i class="ti ti-bolt me-1" aria-hidden="true"></i>{{ __('Executar diagnóstico leve', 'healthcheck') }}
+      </button>
+   </form>
+{% endif %}

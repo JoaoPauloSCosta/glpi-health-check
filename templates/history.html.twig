@@ -1,0 +1,140 @@
+{#
+ # Health Check plugin for GLPI - diagnostics history
+ #}
+<div class="hc">
+   {{ include('@healthcheck/partials/nav.html.twig', {active: 'history'}) }}
+
+   {% if trend.points|length > 1 %}
+      <div class="card mb-3">
+         <div class="card-header"><h3 class="card-title"><i class="ti ti-chart-line me-1"></i>{{ __('Evolução do indicador de saúde', 'healthcheck') }}</h3></div>
+         <div class="card-body">
+            <svg viewBox="0 0 {{ trend.width }} {{ trend.height }}" class="w-100" style="max-height: 180px;" role="img"
+                 aria-label="{{ __('Evolução do indicador de saúde', 'healthcheck') }}">
+               {% for line in trend.grid %}
+                  <line x1="0" x2="{{ trend.width }}" y1="{{ line.y }}" y2="{{ line.y }}" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="4 4"></line>
+                  <text x="2" y="{{ line.y - 3 }}" font-size="10" fill="currentColor" fill-opacity="0.5">{{ line.value }}</text>
+               {% endfor %}
+               <polyline fill="none" stroke="var(--tblr-primary, #206bc4)" stroke-width="2" points="{{ trend.polyline }}"></polyline>
+               {% for point in trend.points %}
+                  <a href="{{ urls.dashboard }}?id={{ point.id }}">
+                     <circle cx="{{ point.x }}" cy="{{ point.y }}" r="4" fill="{{ point.color }}">
+                        <title>#{{ point.id }} · {{ point.date }} · {{ point.score }} ({{ point.mode }}) · {{ point.nb_critical }} {{ __('críticos', 'healthcheck') }}, {{ point.nb_warning }} {{ __('alertas', 'healthcheck') }}</title>
+                     </circle>
+                  </a>
+               {% endfor %}
+            </svg>
+         </div>
+      </div>
+   {% endif %}
+
+   <div class="card">
+      <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+         <h3 class="card-title mb-0"><i class="ti ti-history me-1"></i>{{ __('Histórico de diagnósticos', 'healthcheck') }} <span class="badge bg-secondary-lt">{{ total }}</span></h3>
+         <div class="btn-group btn-group-sm">
+            <a class="btn {{ mode is null ? 'btn-primary' : 'btn-outline-primary' }}" href="{{ urls.history }}">{{ __('Todos', 'healthcheck') }}</a>
+            <a class="btn {{ mode == 'full' ? 'btn-primary' : 'btn-outline-primary' }}" href="{{ urls.history }}?mode=full">{{ __('Completos', 'healthcheck') }}</a>
+            <a class="btn {{ mode == 'light' ? 'btn-primary' : 'btn-outline-primary' }}" href="{{ urls.history }}?mode=light">{{ __('Leves', 'healthcheck') }}</a>
+         </div>
+      </div>
+
+      {% if runs is empty %}
+         <div class="card-body text-muted">{{ __('Nenhum diagnóstico registrado.', 'healthcheck') }}</div>
+      {% else %}
+         <form method="get" action="{{ urls.compare }}" id="hc-compare-form">
+            <div class="table-responsive">
+               <table class="table table-hover table-vcenter card-table">
+                  <thead>
+                     <tr>
+                        <th title="{{ __('Diagnóstico de referência', 'healthcheck') }}">{{ __('Base', 'healthcheck') }}</th>
+                        <th title="{{ __('Diagnóstico a comparar', 'healthcheck') }}">{{ __('Comparar', 'healthcheck') }}</th>
+                        <th>#</th>
+                        <th>{{ __('Data e horário', 'healthcheck') }}</th>
+                        <th>{{ __('Resultado geral', 'healthcheck') }}</th>
+                        <th class="text-center">{{ __('Indicador', 'healthcheck') }}</th>
+                        <th class="text-center">{{ __('Aprovadas', 'healthcheck') }}</th>
+                        <th class="text-center">{{ __('Alertas', 'healthcheck') }}</th>
+                        <th class="text-center">{{ __('Críticos', 'healthcheck') }}</th>
+                        <th class="text-center">{{ __('Não verificadas', 'healthcheck') }}</th>
+                        <th>{{ __('Tipo', 'healthcheck') }}</th>
+                        <th>{{ __('Versão do GLPI', 'healthcheck') }}</th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {% for run in runs %}
+                        <tr>
+                           <td><input class="form-check-input" type="radio" name="a" value="{{ run.id }}" {{ loop.index == 2 ? 'checked' : '' }}></td>
+                           <td><input class="form-check-input" type="radio" name="b" value="{{ run.id }}" {{ loop.first ? 'checked' : '' }}></td>
+                           <td><a href="{{ urls.dashboard }}?id={{ run.id }}">{{ run.id }}</a></td>
+                           <td><a href="{{ urls.dashboard }}?id={{ run.id }}">{{ run.date_creation|formatted_datetime }}</a></td>
+                           <td><span class="badge bg-{{ run.overall_color }}">{{ run.overall_label }}</span></td>
+                           <td class="text-center"><strong>{{ run.score }}</strong></td>
+                           <td class="text-center text-success">{{ run.nb_ok }}</td>
+                           <td class="text-center text-warning">{{ run.nb_warning }}</td>
+                           <td class="text-center text-danger">{{ run.nb_critical }}</td>
+                           <td class="text-center text-muted">{{ run.nb_skipped + run.nb_error }}</td>
+                           <td>{{ run.mode_label }}<br><span class="hc-small text-muted">{{ run.trigger_label }}{% if run.user_name != '-' %} · {{ run.user_name }}{% endif %}</span></td>
+                           <td>{{ run.glpi_version }}</td>
+                           <td class="text-nowrap">
+                              <div class="dropdown">
+                                 <button class="btn btn-sm btn-ghost-secondary dropdown-toggle hc-dropdown-fixed" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ti ti-file-export"></i>
+                                 </button>
+                                 <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="{{ urls.export }}?id={{ run.id }}&format=pdf">PDF</a></li>
+                                    <li><a class="dropdown-item" href="{{ urls.export }}?id={{ run.id }}&format=json">JSON</a></li>
+                                    <li><a class="dropdown-item" href="{{ urls.export }}?id={{ run.id }}&format=csv">CSV</a></li>
+                                    {% if can_run %}
+                                       <li><hr class="dropdown-divider"></li>
+                                       <li>
+                                          <button type="submit" form="hc-delete-{{ run.id }}" class="dropdown-item text-danger">
+                                             <i class="ti ti-trash me-1"></i>{{ __('Remover do histórico', 'healthcheck') }}
+                                          </button>
+                                       </li>
+                                    {% endif %}
+                                 </ul>
+                              </div>
+                           </td>
+                        </tr>
+                     {% endfor %}
+                  </tbody>
+               </table>
+            </div>
+            <div class="card-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
+               <button type="submit" class="btn btn-outline-primary" {{ runs|length < 2 and total < 2 ? 'disabled' : '' }}>
+                  <i class="ti ti-arrows-diff me-1"></i>{{ __('Comparar selecionados', 'healthcheck') }}
+               </button>
+               <div class="d-flex align-items-center gap-2">
+                  <span class="text-muted hc-small">{{ start + 1 }}–{{ min(start + limit, total) }} / {{ total }}</span>
+                  {% set mode_param = mode is not null ? '&mode=' ~ mode : '' %}
+                  {% if prev_start is not null %}
+                     <a class="btn btn-sm btn-outline-secondary" href="{{ urls.history }}?start={{ prev_start }}{{ mode_param }}"><i class="ti ti-chevron-left"></i></a>
+                  {% endif %}
+                  {% if next_start is not null %}
+                     <a class="btn btn-sm btn-outline-secondary" href="{{ urls.history }}?start={{ next_start }}{{ mode_param }}"><i class="ti ti-chevron-right"></i></a>
+                  {% endif %}
+               </div>
+            </div>
+         </form>
+
+         {% if can_run %}
+            {% for run in runs %}
+               <form method="post" action="{{ urls.history }}" id="hc-delete-{{ run.id }}" class="d-none"
+                     onsubmit="return confirm('{{ __('Remover este diagnóstico do histórico?', 'healthcheck')|e('js') }}');">
+                  <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="delete_run" value="{{ run.id }}">
+               </form>
+            {% endfor %}
+         {% endif %}
+      {% endif %}
+   </div>
+</div>
+
+<script>
+   // Row menus live inside a scrollable table: position them "fixed" so they are not clipped
+   if (window.bootstrap && bootstrap.Dropdown) {
+      document.querySelectorAll('.hc .hc-dropdown-fixed').forEach(function (toggle) {
+         bootstrap.Dropdown.getOrCreateInstance(toggle, {popperConfig: {strategy: 'fixed'}});
+      });
+   }
+</script>

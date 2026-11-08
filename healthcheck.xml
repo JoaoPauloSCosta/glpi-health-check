@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <name>Health Check</name>
+   <key>healthcheck</key>
+   <state>stable</state>
+   <description>
+      <short>
+         <en>Diagnose, monitor and prevent operational, technical and security problems in your GLPI installation.</en>
+         <pt_BR>Diagnóstico, monitoramento e prevenção de problemas operacionais, técnicos e de segurança na instalação do GLPI.</pt_BR>
+      </short>
+      <long>
+         <en>Health Check analyses the GLPI installation (requirements, database, automatic actions, e-mail, directories, plugins, security, performance and data integrity) and explains each problem with its impact, probable cause, recommendation, step-by-step fix and link to the official documentation. It is strictly advisory: checks are read-only and nothing is changed automatically. Includes a health score, history with comparison, scheduled diagnostics and PDF/JSON/CSV exports. Works offline; external lookups are optional and disabled by default.</en>
+         <pt_BR>O Health Check analisa a instalação do GLPI (requisitos, banco de dados, ações automáticas, e-mail, diretórios, plugins, segurança, desempenho e integridade dos dados) e explica cada problema com impacto, causa provável, recomendação, passo a passo e link para a documentação oficial. É exclusivamente consultivo: as verificações são de leitura e nada é alterado automaticamente. Inclui indicador de saúde, histórico com comparação, diagnósticos agendados e exportação em PDF, JSON e CSV. Funciona offline; consultas externas são opcionais e vêm desativadas.</pt_BR>
+      </long>
+   </description>
+   <homepage>https://github.com/JoaoPauloSCosta/glpi-health-check</homepage>
+   <download>https://github.com/JoaoPauloSCosta/glpi-health-check/releases</download>
+   <issues>https://github.com/JoaoPauloSCosta/glpi-health-check/issues</issues>
+   <readme>https://github.com/JoaoPauloSCosta/glpi-health-check/blob/main/README.md</readme>
+   <authors>
+      <author>João Paulo S. Costa</author>
+   </authors>
+   <versions>
+      <version>
+         <num>1.0.0</num>
+         <compatibility>~10.0.0</compatibility>
+         <download_url>https://github.com/JoaoPauloSCosta/glpi-health-check/releases/download/1.0.0/glpi-healthcheck-1.0.0.tar.bz2</download_url>
+      </version>
+   </versions>
+   <langs>
+      <lang>pt_BR</lang>
+   </langs>
+   <license>GPL v3+</license>
+   <tags>
+      <en>
+         <tag>diagnostic</tag>
+         <tag>monitoring</tag>
+         <tag>security</tag>
+         <tag>performance</tag>
+         <tag>administration</tag>
+      </en>
+      <pt_BR>
+         <tag>diagnóstico</tag>
+         <tag>monitoramento</tag>
+         <tag>segurança</tag>
+         <tag>desempenho</tag>
+         <tag>administração</tag>
+      </pt_BR>
+   </tags>
+</root>

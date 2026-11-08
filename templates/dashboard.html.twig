@@ -1,0 +1,315 @@
+{#
+ # Health Check plugin for GLPI - main dashboard
+ #}
+{% macro anchor(result) %}{{ (result.is_problem ? 'hc-issue-' : 'hc-check-') ~ result.check_key|replace({'.': '-', '_': '-'}) }}{% endmacro %}
+{% import _self as m %}
+
+<div class="hc">
+   {{ include('@healthcheck/partials/nav.html.twig', {active: 'dashboard'}) }}
+
+   {% if dashboard is null %}
+      <section class="hc-panel hc-blank">
+         <i class="ti ti-heart-rate-monitor" aria-hidden="true"></i>
+         <h3>{{ __('Nenhum diagnóstico executado ainda', 'healthcheck') }}</h3>
+         <p>{{ __('O diagnóstico só lê dados: nenhuma configuração, arquivo ou registro do GLPI é alterado. O completo leva cerca de um minuto.', 'healthcheck') }}</p>
+         {% if can_run %}
+            <div class="hc-actions">{{ include('@healthcheck/partials/run_buttons.html.twig') }}</div>
+         {% else %}
+            <p>{{ __('Para executar diagnósticos é preciso o direito de alterar a configuração geral.', 'healthcheck') }}</p>
+         {% endif %}
+      </section>
+   {% else %}
+      {% set run = dashboard.run %}
+      {% set first = dashboard.problems|first %}
+
+      {% if not is_last %}
+         <div class="hc-banner" role="status">
+            <span><i class="ti ti-history me-1" aria-hidden="true"></i>{{ __('Você está vendo o diagnóstico #%s, que não é o mais recente.', 'healthcheck')|format(run.id) }}</span>
+            <a href="{{ urls.dashboard }}" class="btn btn-sm btn-outline-secondary">{{ __('Ver o mais recente', 'healthcheck') }}</a>
+         </div>
+      {% endif %}
+
+      {# ---- Verdict ---- #}
+      <section class="hc-panel hc-verdict hc-s-{{ run.overall }}" aria-labelledby="hc-verdict-label">
+         <div>
+            <div class="hc-score" aria-hidden="true">
+               <span class="hc-score__value">{{ run.score }}</span><span class="hc-score__max">/100</span>
+            </div>
+            <p class="hc-verdict__label" id="hc-verdict-label">
+               <span class="visually-hidden">{{ __('Indicador de saúde %s de 100:', 'healthcheck')|format(run.score) }}</span>
+               {{ run.overall_label }}
+            </p>
+         </div>
+
+         <div>
+            <p class="hc-verdict__meta">
+               {{ __('Diagnóstico', 'healthcheck') }} #{{ run.id }} · {{ run.date_creation|formatted_datetime }}
+               · {{ run.mode_label }} · {{ run.trigger_label }}{% if run.user_name != '-' %} ({{ run.user_name }}){% endif %}
+               · <span class="hc-num">{{ run.duration|round(1) }} s</span>
+            </p>
+            <ul class="hc-tally">
+               <li class="hc-s-critical"><b>{{ run.nb_critical }}</b><span>{{ run.nb_critical == 1 ? __('crítico', 'healthcheck') : __('críticos', 'healthcheck') }}</span></li>
+               <li class="hc-s-warning"><b>{{ run.nb_warning }}</b><span>{{ run.nb_warning == 1 ? __('alerta', 'healthcheck') : __('alertas', 'healthcheck') }}</span></li>
+               <li class="hc-s-ok"><b>{{ run.nb_ok }}</b><span>{{ __('aprovadas', 'healthcheck') }}</span></li>
+               <li class="hc-s-info"><b>{{ run.nb_info }}</b><span>{{ __('informativas', 'healthcheck') }}</span></li>
+               <li class="hc-s-skipped"><b>{{ run.nb_skipped + run.nb_error }}</b><span>{{ __('não verificadas', 'healthcheck') }}</span></li>
+            </ul>
+            {% if first %}
+               <a class="hc-first hc-s-{{ first.status }}" href="#{{ m.anchor(first) }}" data-hc-open>
+                  <span class="hc-first__lead">{{ __('Comece por aqui', 'healthcheck') }}</span>
+                  <span class="hc-first__title">{{ first.title }}</span>
+                  <i class="ti ti-arrow-right" aria-hidden="true"></i>
+               </a>
+            {% else %}
+               <span class="hc-first hc-first--clear">
+                  <i class="ti ti-circle-check" aria-hidden="true"></i>
+                  <span class="hc-first__title">{{ __('Nenhum alerta ou problema crítico.', 'healthcheck') }}</span>
+               </span>
+            {% endif %}
+         </div>
+
+         <div class="hc-actions">
+            {{ include('@healthcheck/partials/run_buttons.html.twig') }}
+            <div class="dropdown">
+               <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="ti ti-file-export me-1" aria-hidden="true"></i>{{ __('Exportar relatório', 'healthcheck') }}
+               </button>
+               <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="{{ urls.export }}&format=pdf"><i class="ti ti-file-type-pdf me-2" aria-hidden="true"></i>{{ __('PDF — relatório completo', 'healthcheck') }}</a></li>
+                  <li><a class="dropdown-item" href="{{ urls.export }}&format=json"><i class="ti ti-json me-2" aria-hidden="true"></i>{{ __('JSON — dados estruturados', 'healthcheck') }}</a></li>
+                  <li><a class="dropdown-item" href="{{ urls.export }}&format=csv"><i class="ti ti-file-spreadsheet me-2" aria-hidden="true"></i>{{ __('CSV — lista de verificações', 'healthcheck') }}</a></li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+      {# ---- Map of checks (one cell per check) ---- #}
+      <section class="hc-panel" aria-labelledby="hc-map-title">
+         <div class="hc-panel__head">
+            <h3 class="hc-panel__title" id="hc-map-title"><i class="ti ti-layout-grid" aria-hidden="true"></i>{{ __('Mapa das verificações', 'healthcheck') }}</h3>
+            <ul class="hc-legend">
+               {% for status in ['critical', 'warning', 'ok', 'info', 'skipped'] %}
+                  <li><span class="hc-cell hc-s-{{ status }}" aria-hidden="true"></span>{{ status_labels[status] }}</li>
+               {% endfor %}
+            </ul>
+         </div>
+         <div class="hc-panel__body">
+            <div class="hc-map">
+               {% for category in dashboard.categories %}
+                  {% set nb_problems = category.counts.critical + category.counts.warning %}
+                  <div class="hc-map__row">
+                     <span class="hc-map__label"><i class="{{ category.icon }}" aria-hidden="true"></i>{{ category.label }}</span>
+                     <span class="hc-map__cells">
+                        {% for result in category.results %}
+                           <a class="hc-cell hc-s-{{ result.status }}" href="#{{ m.anchor(result) }}" data-hc-open
+                              title="{{ result.title }} — {{ result.status_label }}"
+                              aria-label="{{ result.title }}: {{ result.status_label }}"></a>
+                        {% endfor %}
+                     </span>
+                     <span class="hc-map__count {{ category.counts.critical > 0 ? 'hc-s-critical' : (nb_problems > 0 ? 'hc-s-warning' : 'hc-s-ok') }}">
+                        {% if nb_problems > 0 %}
+                           <b>{{ nb_problems }}</b> {{ nb_problems == 1 ? __('problema', 'healthcheck') : __('problemas', 'healthcheck') }} / {{ category.results|length }}
+                        {% else %}
+                           {{ __('sem problemas', 'healthcheck') }} · {{ category.results|length }}
+                        {% endif %}
+                     </span>
+                  </div>
+               {% endfor %}
+            </div>
+         </div>
+      </section>
+
+      <div class="hc-split">
+         {# ---- Problems ---- #}
+         <section class="hc-panel" aria-labelledby="hc-issues-title">
+            <div class="hc-panel__head">
+               <h3 class="hc-panel__title" id="hc-issues-title">
+                  <i class="ti ti-alert-triangle" aria-hidden="true"></i>{{ __('Problemas por prioridade', 'healthcheck') }}
+                  <span class="hc-tag hc-tag--plain hc-num">{{ dashboard.problems|length }}</span>
+               </h3>
+            </div>
+            {% if dashboard.problems is empty %}
+               <p class="hc-empty"><i class="ti ti-circle-check" aria-hidden="true"></i>{{ __('Nenhum alerta ou problema crítico neste diagnóstico.', 'healthcheck') }}</p>
+            {% else %}
+               <div class="hc-list">
+                  {% for result in dashboard.problems %}
+                     <details class="hc-item hc-issue hc-s-{{ result.status }}" id="{{ m.anchor(result) }}">
+                        <summary>
+                           <i class="{{ result.status_icon }} hc-item__glyph" aria-hidden="true"></i>
+                           <span>
+                              <span class="hc-item__top">
+                                 <span class="hc-sev">{{ result.severity_label }}</span>
+                                 <span class="hc-item__title">{{ result.title }}</span>
+                              </span>
+                              <span class="hc-item__msg d-block">{{ result.message }}</span>
+                           </span>
+                           <span class="hc-item__side">
+                              <span class="hc-tag hc-tag--plain">{{ result.category_label }}</span>
+                              <i class="ti ti-chevron-down hc-item__chev" aria-hidden="true"></i>
+                           </span>
+                        </summary>
+                        <div class="hc-item__body">
+                           {{ include('@healthcheck/partials/result_details.html.twig', {result: result}) }}
+                        </div>
+                     </details>
+                  {% endfor %}
+               </div>
+            {% endif %}
+         </section>
+
+         <div class="hc-aside">
+            {# ---- Trend ---- #}
+            <section class="hc-panel hc-trend" aria-labelledby="hc-trend-title">
+               <div class="hc-panel__head">
+                  <h3 class="hc-panel__title" id="hc-trend-title"><i class="ti ti-chart-line" aria-hidden="true"></i>{{ __('Evolução do indicador', 'healthcheck') }}</h3>
+                  <a class="hc-small" href="{{ urls.history }}">{{ __('Histórico', 'healthcheck') }}</a>
+               </div>
+               <div class="hc-panel__body">
+                  {% if trend.points|length > 1 %}
+                     <svg viewBox="0 0 {{ trend.width }} {{ trend.height }}" role="img" aria-label="{{ __('Indicador de saúde dos últimos diagnósticos', 'healthcheck') }}">
+                        {% for line in trend.grid %}
+                           <line class="hc-trend__grid" x1="0" x2="{{ trend.width }}" y1="{{ line.y }}" y2="{{ line.y }}"></line>
+                           <text class="hc-trend__gridlabel" x="2" y="{{ line.y - 3 }}">{{ line.value }}</text>
+                        {% endfor %}
+                        <polyline class="hc-trend__line" points="{{ trend.polyline }}"></polyline>
+                        {% for point in trend.points %}
+                           <a href="{{ urls.dashboard }}?id={{ point.id }}">
+                              <circle cx="{{ point.x }}" cy="{{ point.y }}" r="{{ point.id == run.id ? 7 : 5 }}" fill="{{ point.color }}"
+                                      {% if point.id == run.id %}stroke="currentColor" stroke-width="2"{% endif %}>
+                                 <title>#{{ point.id }} · {{ point.date }} · {{ point.score }} ({{ point.mode }})</title>
+                              </circle>
+                           </a>
+                        {% endfor %}
+                     </svg>
+                  {% else %}
+                     <p class="hc-note">{{ __('A evolução aparece a partir do segundo diagnóstico.', 'healthcheck') }}</p>
+                  {% endif %}
+               </div>
+            </section>
+
+            {# ---- Comparison ---- #}
+            <section class="hc-panel" aria-labelledby="hc-diff-title">
+               <div class="hc-panel__head">
+                  <h3 class="hc-panel__title" id="hc-diff-title"><i class="ti ti-arrows-diff" aria-hidden="true"></i>{{ __('Desde o diagnóstico anterior', 'healthcheck') }}</h3>
+               </div>
+               <div class="hc-panel__body">
+                  {% if dashboard.previous is null %}
+                     <p class="hc-note">{{ __('Ainda não há diagnóstico anterior do mesmo tipo para comparar.', 'healthcheck') }}</p>
+                  {% else %}
+                     {% set delta = run.score - dashboard.previous.score %}
+                     <p class="hc-delta">
+                        {{ dashboard.previous.score }} → {{ run.score }}
+                        <small style="--tone: var({{ delta > 0 ? '--hc-ok' : (delta < 0 ? '--hc-critical' : '--hc-skipped') }})">{{ delta > 0 ? '+' : (delta < 0 ? '−' : '±') }}{{ delta|abs }}</small>
+                     </p>
+                     <ul class="hc-changes">
+                        {% for change, info in change_labels %}
+                           {% if change != 'unchanged' %}
+                              <li class="{{ dashboard.diff[change] == 0 ? 'hc-mutedtext' : '' }}">
+                                 <span><i class="{{ info.icon }} me-1" aria-hidden="true"></i>{{ info.label }}</span>
+                                 <b>{{ dashboard.diff[change] }}</b>
+                              </li>
+                           {% endif %}
+                        {% endfor %}
+                     </ul>
+                     <a class="btn btn-sm btn-outline-secondary" href="{{ urls.compare }}?a={{ dashboard.previous.id }}&b={{ run.id }}">
+                        {{ __('Ver comparação detalhada', 'healthcheck') }}
+                     </a>
+                  {% endif %}
+               </div>
+            </section>
+         </div>
+      </div>
+
+      {# ---- All checks ---- #}
+      <section class="hc-panel" aria-labelledby="hc-all-title">
+         <div class="hc-panel__head">
+            <h3 class="hc-panel__title" id="hc-all-title"><i class="ti ti-list-check" aria-hidden="true"></i>{{ __('Todas as verificações', 'healthcheck') }}</h3>
+            <span class="hc-small hc-mutedtext">{{ __('Problemas também aparecem na lista de prioridades acima.', 'healthcheck') }}</span>
+         </div>
+         {% for category in dashboard.categories %}
+            <div class="hc-group">
+               <div class="hc-group__head">
+                  <span><i class="{{ category.icon }}" aria-hidden="true"></i>{{ category.label }}</span>
+                  <span class="hc-num">{{ category.results|length }}</span>
+               </div>
+               {% for result in category.results %}
+                  <details class="hc-item hc-row hc-s-{{ result.status }}" {% if not result.is_problem %}id="{{ m.anchor(result) }}"{% endif %}>
+                     <summary>
+                        <i class="{{ result.status_icon }} hc-item__glyph" aria-hidden="true"></i>
+                        <span>
+                           <span class="hc-item__title d-block">{{ result.title }}</span>
+                           <span class="hc-item__msg d-block">{{ result.message }}</span>
+                        </span>
+                        <span class="hc-item__side">
+                           <span class="hc-tag">{{ result.status_label }}</span>
+                           <i class="ti ti-chevron-down hc-item__chev" aria-hidden="true"></i>
+                        </span>
+                     </summary>
+                     <div class="hc-item__body">
+                        {{ include('@healthcheck/partials/result_details.html.twig', {result: result}) }}
+                     </div>
+                  </details>
+               {% endfor %}
+            </div>
+         {% endfor %}
+      </section>
+
+      <p class="hc-note">
+         <i class="ti ti-shield-check" aria-hidden="true"></i>
+         <span>
+            {{ __('O Health Check só lê dados e não aplica correções. Tudo é processado neste servidor.', 'healthcheck') }}
+            {% if run.environment.external is defined and run.environment.external %}
+               {{ __('Neste diagnóstico as consultas externas opcionais estavam ligadas.', 'healthcheck') }}
+            {% endif %}
+         </span>
+      </p>
+   {% endif %}
+</div>
+
+<script>
+(function () {
+   // Open the targeted <details> when coming from the map, "start here" link or a URL hash
+   function openTarget(hash, smooth) {
+      if (!hash || hash.length < 2) {
+         return;
+      }
+      var target = document.getElementById(decodeURIComponent(hash.substring(1)));
+      if (!target || target.tagName !== 'DETAILS') {
+         return;
+      }
+      target.open = true;
+      target.classList.remove('hc-flash');
+      void target.offsetWidth;
+      target.classList.add('hc-flash');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({behavior: smooth && !reduce ? 'smooth' : 'auto', block: 'center'});
+      target.querySelector('summary').focus({preventScroll: true});
+   }
+   document.querySelectorAll('.hc [data-hc-open]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+         event.preventDefault();
+         history.replaceState(null, '', link.getAttribute('href'));
+         openTarget(link.getAttribute('href'), true);
+      });
+   });
+   openTarget(window.location.hash, false);
+
+   // Keep the clicked button value and show progress while the diagnostic runs
+   document.querySelectorAll('.hc-run-form').forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+         var submitter = event.submitter;
+         if (submitter && submitter.name) {
+            var hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.name = submitter.name;
+            hidden.value = submitter.value;
+            form.appendChild(hidden);
+         }
+         form.querySelectorAll('button').forEach(function (button) { button.disabled = true; });
+         if (submitter) {
+            submitter.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>{{ __('Executando o diagnóstico…', 'healthcheck')|e('js') }}';
+         }
+      });
+   });
+})();
+</script>

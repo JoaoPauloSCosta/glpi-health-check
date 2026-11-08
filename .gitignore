@@ -1,0 +1,15 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Build artifacts
+/dist/
+*.tar.bz2
+*.zip
+
+
+# IDE / OS
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db

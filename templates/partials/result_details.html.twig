@@ -1,0 +1,86 @@
+{#
+ # Health Check plugin for GLPI - details of a single check result
+ # Expects: result (decorated result array)
+ #}
+{% set d = result.details %}
+<div class="hc-details">
+   {% if d.description is not empty %}
+      <p class="hc-details__desc">{{ d.description }}</p>
+   {% endif %}
+
+   {% set problem = result.is_problem or result.status == 'error' %}
+   {% if d.impact is not empty or d.cause is not empty or d.recommendation is not empty %}
+      <dl class="hc-explain">
+         {% if d.impact is not empty %}
+            <dt>{{ problem ? __('Impacto operacional', 'healthcheck') : __('Observação', 'healthcheck') }}</dt>
+            <dd>{{ d.impact }}</dd>
+         {% endif %}
+         {% if d.cause is not empty %}
+            <dt>{{ problem ? __('Possível causa', 'healthcheck') : __('Motivo', 'healthcheck') }}</dt>
+            <dd>{{ d.cause }}</dd>
+         {% endif %}
+         {% if d.recommendation is not empty %}
+            <dt>{{ __('Recomendação', 'healthcheck') }}</dt>
+            <dd class="hc-explain__fix">{{ d.recommendation }}</dd>
+         {% endif %}
+      </dl>
+   {% endif %}
+
+   {% if d.steps is not empty %}
+      <div>
+         <p class="hc-steps__title">{{ __('Passo a passo', 'healthcheck') }}</p>
+         <ol class="hc-steps">
+            {% for step in d.steps %}
+               <li>{{ step }}</li>
+            {% endfor %}
+         </ol>
+      </div>
+   {% endif %}
+
+   {% if d.doc_url is not empty %}
+      <a class="hc-doc" href="{{ d.doc_url }}" target="_blank" rel="noopener noreferrer">
+         <i class="ti ti-book" aria-hidden="true"></i>{{ __('Documentação oficial', 'healthcheck') }}
+         <i class="ti ti-external-link" aria-hidden="true"></i>
+      </a>
+   {% endif %}
+
+   {% if d.facts is not empty %}
+      <dl class="hc-facts">
+         {% for label, value in d.facts %}
+            <div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+         {% endfor %}
+      </dl>
+   {% endif %}
+
+   {% if d.items is not empty %}
+      <div>
+         <div class="hc-table-wrap">
+            <table class="hc-table">
+               <thead>
+                  <tr>
+                     {% for label in d.columns %}
+                        <th scope="col">{{ label }}</th>
+                     {% endfor %}
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for item in d.items %}
+                     <tr>
+                        {% for key, label in d.columns %}
+                           <td>{{ item[key] ?? '' }}</td>
+                        {% endfor %}
+                     </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+         {% if d.items_total > d.items|length %}
+            <p class="hc-footnote">{{ __('%1$s de %2$s itens exibidos.', 'healthcheck')|format(d.items|length, d.items_total) }}</p>
+         {% endif %}
+      </div>
+   {% endif %}
+
+   <p class="hc-key">
+      {{ result.check_key }} · {{ (result.duration * 1000)|round }} ms{% if result.penalty > 0 %} · −{{ result.penalty }} {{ __('pontos no indicador', 'healthcheck') }}{% endif %}
+   </p>
+</div>

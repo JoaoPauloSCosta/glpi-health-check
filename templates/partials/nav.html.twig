@@ -1,0 +1,15 @@
+{#
+ # Health Check plugin for GLPI - page header and navigation
+ # Expects: active ('dashboard'|'history'|'config'), urls, css_url
+ #}
+<link rel="stylesheet" href="{{ css_url }}">
+<header class="hc-top">
+   <h2 class="hc-brand"><i class="ti ti-heart-rate-monitor" aria-hidden="true"></i>{{ __('Health Check', 'healthcheck') }}</h2>
+   <nav aria-label="{{ __('Health Check', 'healthcheck') }}">
+      <ul class="hc-tabs">
+         <li><a href="{{ urls.dashboard }}" {% if active == 'dashboard' %}aria-current="page"{% endif %}><i class="ti ti-dashboard" aria-hidden="true"></i>{{ __('Painel', 'healthcheck') }}</a></li>
+         <li><a href="{{ urls.history }}" {% if active == 'history' %}aria-current="page"{% endif %}><i class="ti ti-history" aria-hidden="true"></i>{{ __('Histórico', 'healthcheck') }}</a></li>
+         <li><a href="{{ urls.config }}" {% if active == 'config' %}aria-current="page"{% endif %}><i class="ti ti-settings" aria-hidden="true"></i>{{ __('Configurações', 'healthcheck') }}</a></li>
+      </ul>
+   </nav>
+</header>
