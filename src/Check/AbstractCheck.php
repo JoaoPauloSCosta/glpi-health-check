@@ -11,7 +11,7 @@
 namespace GlpiPlugin\Healthcheck\Check;
 
 use DBmysql;
-use QueryExpression;
+use GlpiPlugin\Healthcheck\Compat;
 
 /**
  * Base class of every check.
@@ -126,9 +126,9 @@ abstract class AbstractCheck
      */
     protected function rawRows(string $query): array
     {
-        $result = $this->db()->doQuery($query);
-        if ($result === false || $result === true) {
-            throw new \RuntimeException($this->db()->error());
+        $result = Compat::query($this->db(), $query);
+        if (!($result instanceof \mysqli_result)) {
+            throw new \RuntimeException(Compat::dbError($this->db()));
         }
         $rows = [];
         while ($row = $this->db()->fetchAssoc($result)) {
@@ -160,9 +160,9 @@ abstract class AbstractCheck
         return time();
     }
 
-    protected function expr(string $sql): QueryExpression
+    protected function expr(string $sql)
     {
-        return new QueryExpression($sql);
+        return Compat::expr($sql);
     }
 
     protected function isCli(): bool

@@ -1,7 +1,7 @@
 # Health Check GLPI plugin
 
 [![License](https://img.shields.io/badge/License-GPLv3+-blue.svg)](LICENSE)
-[![GLPI](https://img.shields.io/badge/GLPI-10.0.x-brightgreen.svg)](https://glpi-project.org)
+[![GLPI](https://img.shields.io/badge/GLPI-10.0%20%7C%2011.0%20%7C%2012.0-brightgreen.svg)](https://glpi-project.org)
 [![PHP](https://img.shields.io/badge/PHP-%3E%3D7.4-777bb4.svg)](https://www.php.net)
 
 **English** | [Português (Brasil)](README.pt_BR.md)
@@ -77,11 +77,12 @@ The score starts at 100 and loses points for each problem according to its criti
 
 - Every run is stored with date, type, origin, score and counters, according to the configured retention (default: 180 days / 500 runs).
 - **History > Compare selected** shows, check by check, new problems, solved problems, regressions and improvements.
+- Each run stores the plugin version and a signature of the evaluation rules (registered checks, penalty weights and configured thresholds). When two compared runs were not evaluated with the same rules, the comparison says so, lists checks that were **added** or **removed** apart from real regressions, and splits the score difference into "same checks" and "rule changes".
 - Any run can be exported as **PDF** (full report), **JSON** (structured data for integrations) or **CSV** (spreadsheet, `;` separator, UTF-8).
 
 ## Requirements
 
-- GLPI **>= 10.0.0** and **< 10.0.99**
+- GLPI **10.0.x**, **11.0.x** or **12.0.x** (the same release works on the three branches)
 - PHP **>= 7.4** (within the range supported by your GLPI version)
 - System cron configured for GLPI to run scheduled diagnostics
 
@@ -219,8 +220,9 @@ healthcheck/
 ├── healthcheck.xml         Descriptor for the GLPI plugins catalog
 ├── front/                  Pages: dashboard, run, history, compare, export, config
 ├── templates/              Twig templates (@healthcheck/...)
-├── css/                    Plugin stylesheet
+├── public/css/             Plugin stylesheet (GLPI 11+ only serves the `public/` directory of a plugin)
 └── src/
+    ├── Compat.php          Differences between GLPI 10.0, 11.0 and 12.0, isolated in a single class
     ├── Check/              AbstractCheck, CheckResult, Status, Severity, Category and the checks by area
     ├── Registry.php        List of checks and extension hook
     ├── Runner.php          Runs each check in isolation and stores the run

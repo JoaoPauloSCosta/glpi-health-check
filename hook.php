@@ -8,6 +8,7 @@
  * -------------------------------------------------------------------------
  */
 
+use GlpiPlugin\Healthcheck\Compat;
 use GlpiPlugin\Healthcheck\Cron;
 use GlpiPlugin\Healthcheck\Settings;
 
@@ -54,7 +55,7 @@ function plugin_healthcheck_install()
             KEY `date_creation` (`date_creation`),
             KEY `users_id` (`users_id`)
         ) ENGINE=InnoDB DEFAULT CHARSET={$charset} COLLATE={$collation} ROW_FORMAT=DYNAMIC;";
-        $DB->doQueryOrDie($query, 'Unable to create glpi_plugin_healthcheck_runs');
+        Compat::query($DB, $query);
     }
 
     if (!$DB->tableExists('glpi_plugin_healthcheck_results')) {
@@ -74,7 +75,7 @@ function plugin_healthcheck_install()
             KEY `check_key` (`check_key`),
             KEY `status` (`status`)
         ) ENGINE=InnoDB DEFAULT CHARSET={$charset} COLLATE={$collation} ROW_FORMAT=DYNAMIC;";
-        $DB->doQueryOrDie($query, 'Unable to create glpi_plugin_healthcheck_results');
+        Compat::query($DB, $query);
     }
 
     // Default configuration (existing values are kept on reinstall/upgrade)
@@ -125,7 +126,7 @@ function plugin_healthcheck_uninstall()
 
     foreach (['glpi_plugin_healthcheck_results', 'glpi_plugin_healthcheck_runs'] as $table) {
         if ($DB->tableExists($table)) {
-            $DB->doQueryOrDie("DROP TABLE `$table`", "Unable to drop $table");
+            Compat::query($DB, "DROP TABLE `$table`");
         }
     }
 

@@ -115,15 +115,23 @@ final class ReportView
     /**
      * Compare two runs, check by check.
      *
-     * @return array{rows: array, new: int, resolved: int, worse: int, better: int, unchanged: int}
+     * A check that only exists in one of the runs is a change of the evaluation rules (check added or
+     * removed by a plugin update, or by another plugin), not a change of the GLPI state: it is reported
+     * apart ("added"/"removed") and its effect on the score is isolated in the "rules" entry.
+     *
+     * @return array{rows: array, rules: array, new: int, worse: int, added: int, removed: int, resolved: int, better: int, unchanged: int}
      */
     public static function compare(array $old_run, array $new_run): array
     {
         $old = RunRepository::getResults($old_run['id']);
         $new = RunRepository::getResults($new_run['id']);
 
+        $same_mode = ($old_run['mode'] ?? null) === ($new_run['mode'] ?? null);
+
         $rows = [];
-        $summary = ['new' => 0, 'resolved' => 0, 'worse' => 0, 'better' => 0, 'unchanged' => 0];
+        $summary = ['new' => 0, 'worse' => 0, 'added' => 0, 'removed' => 0, 'resolved' => 0, 'better' => 0, 'unchanged' => 0];
+        $common_old = [];
+        $common_new = [];
         foreach (array_unique(array_merge(array_keys($old), array_keys($new))) as $key) {
             $a = $old[$key] ?? null;
             $b = $new[$key] ?? null;
@@ -133,7 +141,16 @@ final class ReportView
             $old_problem = $a !== null && Status::isProblem($a['status']);
             $new_problem = $b !== null && Status::isProblem($b['status']);
 
-            if (!$old_problem && $new_problem) {
+            if ($a !== null && $b !== null) {
+                $common_old[] = $a;
+                $common_new[] = $b;
+            }
+
+            if ($a === null && self::isExpectedIn($b, $old_run, $same_mode)) {
+                $change = 'added';
+            } elseif ($b === null && self::isExpectedIn($a, $new_run, $same_mode)) {
+                $change = 'removed';
+            } elseif (!$old_problem && $new_problem) {
                 $change = 'new';
             } elseif ($old_problem && !$new_problem && $b !== null) {
                 $change = 'resolved';
@@ -154,7 +171,7 @@ final class ReportView
                 'old_status'   => $a !== null ? Status::getLabel($a['status']) : '-',
                 'old_color'    => $a !== null ? Status::getColor($a['status']) : 'secondary',
                 'old_severity' => $a !== null ? Severity::getLabel((int) $a['severity']) : '-',
-                'new_status'   => $b !== null ? Status::getLabel($b['status']) : __('Não executada', 'healthcheck'),
+                'new_status'   => $b !== null ? Status::getLabel($b['status']) : ($change === 'removed' ? '-' : __('Não executada', 'healthcheck')),
                 'new_color'    => $b !== null ? Status::getColor($b['status']) : 'secondary',
                 'new_severity' => $b !== null ? Severity::getLabel((int) $b['severity']) : '-',
                 'new_message'  => $b['message'] ?? '',
@@ -162,10 +179,70 @@ final class ReportView
             ];
         }
 
-        $order = ['new' => 0, 'worse' => 1, 'resolved' => 2, 'better' => 3, 'unchanged' => 4];
+        $order = array_flip(array_keys($summary));
         usort($rows, static fn ($x, $y) => $order[$x['change']] <=> $order[$y['change']]);
 
-        return ['rows' => $rows] + $summary;
+        $rules = self::compareRules($old_run, $new_run, $summary['added'], $summary['removed']);
+
+        // Score difference restricted to the checks present in both runs
+        $rules['comparable_delta'] = Score::compute($common_new)['score'] - Score::compute($common_old)['score'];
+        // The remaining difference can only be attributed to the rules when both runs are of the same type
+        $rules['rules_delta'] = $same_mode && ($summary['added'] + $summary['removed']) > 0
+            ? ((int) $new_run['score'] - (int) $old_run['score']) - $rules['comparable_delta']
+            : null;
+
+        return ['rows' => $rows, 'rules' => $rules] + $summary;
+    }
+
+    /**
+     * Whether a check found in one run should also have been executed by the other run,
+     * i.e. its absence there is not explained by the run type (light diagnostics skip the heavy checks).
+     */
+    private static function isExpectedIn(array $result, array $other_run, bool $same_mode): bool
+    {
+        if ($same_mode) {
+            return true;
+        }
+        $is_light = (bool) ($result['details']['light'] ?? true);
+        return $is_light || ($other_run['mode'] ?? null) === Runner::MODE_FULL;
+    }
+
+    /**
+     * Describe how the evaluation rules differ between two runs.
+     *
+     * @return array{changed: bool, old_version: ?string, new_version: ?string, details: string[]}
+     */
+    private static function compareRules(array $old_run, array $new_run, int $added, int $removed): array
+    {
+        $old_env = $old_run['environment'] ?? [];
+        $new_env = $new_run['environment'] ?? [];
+
+        $old_version = isset($old_env['plugin_version']) ? (string) $old_env['plugin_version'] : null;
+        $new_version = isset($new_env['plugin_version']) ? (string) $new_env['plugin_version'] : null;
+        // Runs stored before the signature existed cannot be compared on it
+        $old_ruleset = isset($old_env['ruleset']) ? (string) $old_env['ruleset'] : null;
+        $new_ruleset = isset($new_env['ruleset']) ? (string) $new_env['ruleset'] : null;
+
+        $details = [];
+        if ($old_version !== null && $new_version !== null && $old_version !== $new_version) {
+            $details[] = sprintf(__('plugin %1$s → %2$s', 'healthcheck'), $old_version, $new_version);
+        }
+        if ($added > 0) {
+            $details[] = sprintf(__('%d verificação(ões) adicionada(s)', 'healthcheck'), $added);
+        }
+        if ($removed > 0) {
+            $details[] = sprintf(__('%d verificação(ões) removida(s)', 'healthcheck'), $removed);
+        }
+        if (count($details) === 0 && $old_ruleset !== null && $new_ruleset !== null && $old_ruleset !== $new_ruleset) {
+            $details[] = __('limites ou pesos de avaliação alterados', 'healthcheck');
+        }
+
+        return [
+            'changed'     => count($details) > 0,
+            'old_version' => $old_version,
+            'new_version' => $new_version,
+            'details'     => $details,
+        ];
     }
 
     public static function changeLabels(): array
@@ -173,6 +250,8 @@ final class ReportView
         return [
             'new'       => ['label' => __('Novo problema', 'healthcheck'), 'color' => 'danger', 'icon' => 'ti ti-arrow-down-right'],
             'worse'     => ['label' => __('Piorou', 'healthcheck'), 'color' => 'orange', 'icon' => 'ti ti-trending-down'],
+            'added'     => ['label' => __('Verificação adicionada', 'healthcheck'), 'color' => 'azure', 'icon' => 'ti ti-plus'],
+            'removed'   => ['label' => __('Verificação removida', 'healthcheck'), 'color' => 'azure', 'icon' => 'ti ti-minus'],
             'resolved'  => ['label' => __('Resolvido', 'healthcheck'), 'color' => 'success', 'icon' => 'ti ti-check'],
             'better'    => ['label' => __('Melhorou', 'healthcheck'), 'color' => 'teal', 'icon' => 'ti ti-trending-up'],
             'unchanged' => ['label' => __('Sem alteração', 'healthcheck'), 'color' => 'secondary', 'icon' => 'ti ti-equal'],

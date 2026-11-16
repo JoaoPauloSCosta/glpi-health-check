@@ -11,7 +11,6 @@
 namespace GlpiPlugin\Healthcheck;
 
 use CommonGLPI;
-use Plugin;
 use Session;
 
 /**
@@ -43,7 +42,7 @@ class Menu extends CommonGLPI
 
     public static function getFrontUrl(string $page, array $params = []): string
     {
-        $url = Plugin::getWebDir('healthcheck', true) . '/front/' . $page;
+        $url = Compat::webDir(true) . '/front/' . $page;
         return count($params) > 0 ? $url . '?' . http_build_query($params) : $url;
     }
 
@@ -52,7 +51,7 @@ class Menu extends CommonGLPI
         if (!self::canView()) {
             return false;
         }
-        $base = '/' . Plugin::getWebDir('healthcheck', false) . '/front/';
+        $base = '/' . Compat::webDir(false) . '/front/';
         return [
             'title' => self::getMenuName(),
             'page'  => $base . 'dashboard.php',

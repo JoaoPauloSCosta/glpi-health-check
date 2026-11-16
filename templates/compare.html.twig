@@ -16,7 +16,7 @@
                      <span class="text-{{ side.run.overall_color }}">{{ side.run.overall_label }}</span>
                   </div>
                   <div class="hc-small text-muted">
-                     {{ side.run.date_creation|formatted_datetime }} · {{ side.run.mode_label }} · GLPI {{ side.run.glpi_version }}<br>
+                     {{ side.run.date_creation|formatted_datetime }} · {{ side.run.mode_label }} · GLPI {{ side.run.glpi_version }}{% if side.run.environment.plugin_version is defined %} · {{ __('Plugin', 'healthcheck') }} {{ side.run.environment.plugin_version }}{% endif %}<br>
                      {{ side.run.nb_ok }} {{ __('aprovadas', 'healthcheck') }} · {{ side.run.nb_warning }} {{ __('alertas', 'healthcheck') }} · {{ side.run.nb_critical }} {{ __('críticos', 'healthcheck') }}
                   </div>
                   <a class="hc-small" href="{{ urls.dashboard }}?id={{ side.run.id }}">{{ __('Abrir diagnóstico', 'healthcheck') }}</a>
@@ -29,11 +29,25 @@
                <div class="text-center">
                   <i class="ti ti-arrow-right fs-1"></i>
                   <div class="badge bg-{{ delta > 0 ? 'success' : (delta < 0 ? 'danger' : 'secondary') }} fs-4">{{ delta > 0 ? '+' : '' }}{{ delta }}</div>
+                  {% if diff.rules.changed %}
+                     {% set same = diff.rules.comparable_delta %}
+                     <div class="hc-small text-muted mt-2">{{ __('Mesmas verificações: %s', 'healthcheck')|format((same > 0 ? '+' : '') ~ same) }}</div>
+                     {% if diff.rules.rules_delta is not null %}
+                        {% set crit = diff.rules.rules_delta %}
+                        <div class="hc-small text-muted">{{ __('Mudança de critério: %s', 'healthcheck')|format((crit > 0 ? '+' : '') ~ crit) }}</div>
+                     {% endif %}
+                  {% endif %}
                </div>
             </div>
          {% endif %}
       {% endfor %}
    </div>
+
+   {% if diff.rules.changed %}
+      <div class="alert alert-info">
+         <i class="ti ti-info-circle me-1"></i>{{ __('As regras de avaliação mudaram entre os dois diagnósticos (%s): parte da diferença de nota pode não refletir uma mudança real no GLPI.', 'healthcheck')|format(diff.rules.details|join(', ')) }}
+      </div>
+   {% endif %}
 
    {% if old.mode != new.mode %}
       <div class="alert alert-warning">

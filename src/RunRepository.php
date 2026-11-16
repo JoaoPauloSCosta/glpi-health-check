@@ -32,6 +32,10 @@ final class RunRepository
      */
     private static function escapeRow(array $row): array
     {
+        if (!Compat::mustEscapeValues()) {
+            // GLPI 11+ escapes the values itself when building the query
+            return $row;
+        }
         $db = self::db();
         foreach ($row as $key => $value) {
             if (is_string($value)) {
@@ -47,7 +51,7 @@ final class RunRepository
         $db->insert(self::TABLE_RUNS, self::escapeRow($run));
         $run_id = (int) $db->insertId();
         if ($run_id <= 0) {
-            throw new \RuntimeException('Unable to save diagnostic run: ' . $db->error());
+            throw new \RuntimeException('Unable to save diagnostic run: ' . Compat::dbError($db));
         }
         foreach ($results as $result) {
             $result['plugin_healthcheck_runs_id'] = $run_id;

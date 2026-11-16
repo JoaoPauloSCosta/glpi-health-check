@@ -27,11 +27,12 @@
 
 use GlpiPlugin\Healthcheck\Menu;
 
-define('PLUGIN_HEALTHCHECK_VERSION', '1.0.0');
+define('PLUGIN_HEALTHCHECK_VERSION', '1.1.0');
 // Minimal GLPI version, inclusive
 define('PLUGIN_HEALTHCHECK_MIN_GLPI_VERSION', '10.0.0');
-// Maximum GLPI version, exclusive
-define('PLUGIN_HEALTHCHECK_MAX_GLPI_VERSION', '10.0.99');
+// Maximum GLPI version, exclusive (GLPI 10.0, 11.0 and 12.0 are supported by the same code base,
+// version specific code is isolated in GlpiPlugin\Healthcheck\Compat)
+define('PLUGIN_HEALTHCHECK_MAX_GLPI_VERSION', '12.0.99');
 
 define('PLUGIN_HEALTHCHECK_DIR', __DIR__);
 
@@ -58,7 +59,10 @@ function plugin_init_healthcheck()
     /** @var array $PLUGIN_HOOKS */
     global $PLUGIN_HOOKS;
 
-    $PLUGIN_HOOKS['csrf_compliant']['healthcheck'] = true;
+    // Only GLPI 10 needs the plugin to declare itself CSRF compliant (the hook was dropped in GLPI 11)
+    if (version_compare(GLPI_VERSION, '11.0.0', '<')) {
+        $PLUGIN_HOOKS['csrf_compliant']['healthcheck'] = true;
+    }
 
     if (!Plugin::isPluginActive('healthcheck')) {
         return;

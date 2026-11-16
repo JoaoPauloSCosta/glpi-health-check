@@ -14,6 +14,7 @@ use GlpiPlugin\Healthcheck\Check\AbstractCheck;
 use GlpiPlugin\Healthcheck\Check\Category;
 use GlpiPlugin\Healthcheck\Check\CheckResult;
 use GlpiPlugin\Healthcheck\Check\Severity;
+use GlpiPlugin\Healthcheck\Compat;
 
 class ConnectionCheck extends AbstractCheck
 {
@@ -46,7 +47,7 @@ class ConnectionCheck extends AbstractCheck
         $samples = [];
         for ($i = 0; $i < 5; $i++) {
             $start = microtime(true);
-            $db->doQuery('SELECT 1');
+            Compat::query($db, 'SELECT 1');
             $samples[] = (microtime(true) - $start) * 1000;
         }
         $latency = array_sum($samples) / count($samples);
@@ -56,7 +57,7 @@ class ConnectionCheck extends AbstractCheck
             __('Base de dados', 'healthcheck')          => $db->dbdefault,
             __('Versão do servidor', 'healthcheck')     => $db->getVersion(),
             __('Latência média (ms)', 'healthcheck')    => number_format($latency, 2, ',', '.'),
-            __('Réplica SQL configurada', 'healthcheck') => \DBConnection::isDBSlaveActive(),
+            __('Réplica SQL configurada', 'healthcheck') => Compat::isDbReplicaActive(),
         ];
 
         if ($latency > 50) {

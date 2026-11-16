@@ -13,7 +13,6 @@ namespace GlpiPlugin\Healthcheck;
 use Glpi\Application\View\TemplateRenderer;
 use GlpiPlugin\Healthcheck\Check\Status;
 use Html;
-use Plugin;
 use Session;
 
 /**
@@ -62,8 +61,8 @@ final class Page
             'status_labels' => $status_labels,
             'status_colors' => $status_colors,
             'change_labels' => ReportView::changeLabels(),
-            'css_url'       => Plugin::getWebDir('healthcheck', true) . '/css/healthcheck.css?v='
-                . (int) @filemtime(PLUGIN_HEALTHCHECK_DIR . '/css/healthcheck.css'),
+            'css_url'       => Compat::assetUrl('css/healthcheck.css'),
+            'hc_csrf_token' => Compat::csrfToken(),
         ]);
     }
 

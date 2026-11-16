@@ -13,7 +13,11 @@ use GlpiPlugin\Healthcheck\Menu;
 use GlpiPlugin\Healthcheck\Page;
 use GlpiPlugin\Healthcheck\Settings;
 
-include('../../../inc/includes.php');
+// GLPI 10 runs this file directly and needs its bootstrap. Since GLPI 11 the kernel is already
+// booted when the file is loaded, and including inc/includes.php is deprecated (GLPI 12).
+if (!defined('GLPI_ROOT')) {
+    include('../../../inc/includes.php');
+}
 
 Session::checkRight('config', READ);
 

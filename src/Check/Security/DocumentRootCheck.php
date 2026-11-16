@@ -10,8 +10,6 @@
 
 namespace GlpiPlugin\Healthcheck\Check\Security;
 
-use Glpi\System\Requirement\DataDirectoriesProtectedPath;
-use Glpi\System\Requirement\SafeDocumentRoot;
 use Glpi\System\Variables;
 use GlpiPlugin\Healthcheck\Check\AbstractCheck;
 use GlpiPlugin\Healthcheck\Check\Category;
@@ -45,8 +43,7 @@ class DocumentRootCheck extends AbstractCheck
 
     public function run(): CheckResult
     {
-        $data_dirs = new DataDirectoriesProtectedPath(Variables::getDataDirectoriesConstants());
-        $data_safe = $data_dirs->isValidated();
+        [$data_safe, $data_messages] = $this->checkDataDirectories();
 
         $facts = [
             __('Diretório de dados (GLPI_VAR_DIR)', 'healthcheck')   => GLPI_VAR_DIR,
@@ -64,10 +61,10 @@ class DocumentRootCheck extends AbstractCheck
             )->facts($facts);
         }
 
-        $doc_root = new SafeDocumentRoot();
-        $facts[__('Raiz do servidor web em public/', 'healthcheck')] = $doc_root->isValidated();
+        [$root_safe, $root_messages] = $this->checkDocumentRoot();
+        $facts[__('Raiz do servidor web em public/', 'healthcheck')] = $root_safe;
 
-        if ($doc_root->isValidated()) {
+        if ($root_safe) {
             return CheckResult::ok(__('A raiz do servidor web aponta para o diretório "public/": arquivos internos não são acessíveis.', 'healthcheck'))
                 ->facts($facts);
         }
@@ -84,7 +81,7 @@ class DocumentRootCheck extends AbstractCheck
             : CheckResult::warning(__('A raiz do servidor web não aponta para "public/" e os diretórios de dados/configuração estão dentro da área acessível pela web.', 'healthcheck'), Severity::HIGH);
 
         $items = [];
-        foreach (array_merge($doc_root->getValidationMessages(), $data_safe ? [] : $data_dirs->getValidationMessages()) as $message) {
+        foreach (array_merge($root_messages, $data_safe ? [] : $data_messages) as $message) {
             $items[] = ['message' => $message];
         }
         foreach ($htaccess_missing as $dir) {
@@ -104,5 +101,79 @@ class DocumentRootCheck extends AbstractCheck
             ->doc(self::DOC_INSTALL)
             ->facts($facts)
             ->items($items, ['message' => __('Detalhes', 'healthcheck')]);
+    }
+
+    /**
+     * Whether the data directories are located outside the GLPI root directory.
+     *
+     * Relies on the GLPI requirement class when it exists (GLPI 10.0); it was removed in GLPI 11,
+     * where the same evaluation is done here.
+     *
+     * @return array [bool $safe, string[] $messages]
+     */
+    private function checkDataDirectories(): array
+    {
+        $class = 'Glpi\\System\\Requirement\\DataDirectoriesProtectedPath';
+        if (class_exists($class)) {
+            $requirement = new $class(Variables::getDataDirectoriesConstants());
+            return [(bool) $requirement->isValidated(), (array) $requirement->getValidationMessages()];
+        }
+
+        $root      = $this->normalizePath(GLPI_ROOT);
+        $constants = array_unique(array_merge(['GLPI_VAR_DIR'], Variables::getDataDirectoriesConstants()));
+        $messages  = [];
+        foreach ($constants as $constant) {
+            if (!defined($constant)) {
+                continue;
+            }
+            $directory = (string) constant($constant);
+            if (!is_dir($directory)) {
+                continue;
+            }
+            if (strpos($this->normalizePath($directory), $root) === 0) {
+                $messages[] = sprintf('"%s" (%s)', $directory, $constant);
+            }
+        }
+        return [count($messages) === 0, $messages];
+    }
+
+    /**
+     * Whether the web server exposes only the "public" directory of GLPI.
+     *
+     * Relies on the GLPI requirement class when it exists (GLPI 10.0); it was removed in GLPI 11,
+     * where the same evaluation (entry script of the request) is done here.
+     *
+     * @return array [bool $safe, string[] $messages]
+     */
+    private function checkDocumentRoot(): array
+    {
+        $class = 'Glpi\\System\\Requirement\\SafeDocumentRoot';
+        if (class_exists($class)) {
+            $requirement = new $class();
+            return [(bool) $requirement->isValidated(), (array) $requirement->getValidationMessages()];
+        }
+
+        $root     = $this->normalizePath(GLPI_ROOT);
+        $included = get_included_files();
+        $entry    = array_shift($included);
+        // Skip scripts loaded before the application (auto_prepend_file)
+        while ($entry !== null && strpos($this->normalizePath($entry), $root) !== 0) {
+            $entry = array_shift($included);
+        }
+
+        $safe = $entry !== null
+            && $this->normalizePath($entry) === $this->normalizePath(GLPI_ROOT . '/public/index.php');
+
+        return [$safe, []];
+    }
+
+    /**
+     * Real path with forward slashes, and a trailing slash for directories (safe prefix comparisons).
+     */
+    private function normalizePath(string $path): string
+    {
+        $real = realpath($path);
+        $real = str_replace('\\', '/', $real !== false ? $real : $path);
+        return is_dir($path) ? rtrim($real, '/') . '/' : $real;
     }
 }

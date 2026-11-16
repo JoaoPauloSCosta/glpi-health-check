@@ -86,7 +86,10 @@ final class Runner
             'nb_skipped'    => $score['counts'][Status::SKIPPED],
             'nb_error'      => $score['counts'][Status::ERROR],
             'duration'      => round(microtime(true) - $start, 3),
-            'environment'   => json_encode(self::getEnvironment($mode), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            'environment'   => json_encode(
+                self::getEnvironment($mode) + ['ruleset' => Score::rulesSignature(array_keys($checks))],
+                JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+            ),
         ];
 
         $run_id = RunRepository::saveRun($run, $results);

@@ -1,7 +1,7 @@
 # Plugin Health Check para GLPI
 
 [![Licença](https://img.shields.io/badge/Licen%C3%A7a-GPLv3+-blue.svg)](LICENSE)
-[![GLPI](https://img.shields.io/badge/GLPI-10.0.x-brightgreen.svg)](https://glpi-project.org)
+[![GLPI](https://img.shields.io/badge/GLPI-10.0%20%7C%2011.0%20%7C%2012.0-brightgreen.svg)](https://glpi-project.org)
 [![PHP](https://img.shields.io/badge/PHP-%3E%3D7.4-777bb4.svg)](https://www.php.net)
 
 [English](README.md) | **Português (Brasil)**
@@ -75,11 +75,12 @@ O indicador parte de 100 e perde pontos a cada problema, conforme a criticidade.
 
 - Cada execução é registrada com data, tipo, origem, indicador e contadores, respeitando a retenção configurada (padrão: 180 dias / 500 execuções).
 - **Histórico > Comparar selecionados** mostra, verificação por verificação, novos problemas, problemas resolvidos, pioras e melhoras.
+- Cada diagnóstico grava a versão do plugin e uma assinatura das regras de avaliação (verificações registradas, pesos das penalidades e limites configurados). Quando dois diagnósticos comparados não foram avaliados com as mesmas regras, a comparação avisa, lista as verificações **adicionadas** ou **removidas** separadas das regressões reais e divide a diferença de nota em "mesmas verificações" e "mudança de critério".
 - Qualquer execução pode ser exportada em **PDF** (relatório completo), **JSON** (dados estruturados para integração) ou **CSV** (planilha, separador `;`, UTF-8).
 
 ## Requisitos
 
-- GLPI **>= 10.0.0** e **< 10.0.99**
+- GLPI **10.0.x**, **11.0.x** ou **12.0.x** (a mesma release funciona nas três versões)
 - PHP **>= 7.4** (dentro da faixa suportada pela sua versão do GLPI)
 - Cron do sistema configurado para o GLPI, para os diagnósticos agendados
 
@@ -217,8 +218,9 @@ healthcheck/
 ├── healthcheck.xml         Descritor para o catálogo de plugins do GLPI
 ├── front/                  Páginas: painel, execução, histórico, comparação, exportação, configurações
 ├── templates/              Templates Twig (@healthcheck/...)
-├── css/                    Folha de estilo do plugin
+├── public/css/             Folha de estilo do plugin (o GLPI 11+ só serve o diretório `public/` de um plugin)
 └── src/
+    ├── Compat.php          Diferenças entre o GLPI 10.0, 11.0 e 12.0, isoladas em uma única classe
     ├── Check/              AbstractCheck, CheckResult, Status, Severity, Category e as verificações por área
     ├── Registry.php        Lista de verificações e hook de extensão
     ├── Runner.php          Executa cada verificação isoladamente e grava a execução

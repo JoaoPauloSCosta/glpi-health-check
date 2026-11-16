@@ -11,7 +11,6 @@
 namespace GlpiPlugin\Healthcheck;
 
 use Glpi\Toolbox\VersionParser;
-use Toolbox;
 
 /**
  * Knowledge about available GLPI releases.
@@ -119,7 +118,7 @@ final class ReleaseInfo
     private static function fetchStableTags(?string &$error = null): ?array
     {
         $error = null;
-        $content = Toolbox::getURLContent(self::RELEASES_URL, $error);
+        $content = Compat::fetchUrl(self::RELEASES_URL, $error);
         if (empty($content)) {
             $error = $error ?: __('Resposta vazia do serviço de versões.', 'healthcheck');
             return null;

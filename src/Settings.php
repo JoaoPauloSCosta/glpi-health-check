@@ -37,6 +37,14 @@ final class Settings
     ];
 
     /** @var array<string, string>|null */
+    /** Settings that change how a result is evaluated (part of the rules signature of a run). */
+    public const THRESHOLDS = [
+        'disk_warning_percent',
+        'disk_critical_percent',
+        'queue_warning_count',
+        'queue_critical_count',
+    ];
+
     private static ?array $values = null;
 
     public static function all(): array

@@ -27,6 +27,27 @@ final class Score
         Status::CRITICAL => [Severity::HIGH => 12, Severity::CRITICAL => 20],
     ];
 
+    /**
+     * Signature of the evaluation rules: registered checks, penalty table and configured thresholds.
+     *
+     * Two runs with different signatures were not evaluated with the same criteria, so part of
+     * their score difference may not reflect any change in GLPI itself.
+     *
+     * @param string[] $check_keys Keys of all registered checks (whatever the run mode)
+     */
+    public static function rulesSignature(array $check_keys): string
+    {
+        $check_keys = array_values(array_unique(array_map('strval', $check_keys)));
+        sort($check_keys);
+
+        $thresholds = [];
+        foreach (Settings::THRESHOLDS as $name) {
+            $thresholds[$name] = (string) Settings::get($name);
+        }
+
+        return substr(sha1((string) json_encode([$check_keys, self::PENALTIES, $thresholds])), 0, 12);
+    }
+
     public static function penalty(string $status, int $severity): int
     {
         return self::PENALTIES[$status][$severity] ?? 0;

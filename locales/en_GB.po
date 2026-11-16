@@ -3522,3 +3522,39 @@ msgstr "Last"
 msgid "Últimos 7 dias"
 msgstr "Last 7 days"
 
+msgid "Verificação adicionada"
+msgstr "Check added"
+
+msgid "Verificação removida"
+msgstr "Check removed"
+
+#, php-format
+msgid "plugin %1$s → %2$s"
+msgstr "plugin %1$s → %2$s"
+
+#, php-format
+msgid "%d verificação(ões) adicionada(s)"
+msgstr "%d check(s) added"
+
+#, php-format
+msgid "%d verificação(ões) removida(s)"
+msgstr "%d check(s) removed"
+
+msgid "limites ou pesos de avaliação alterados"
+msgstr "evaluation thresholds or weights changed"
+
+#, php-format
+msgid "Mesmas verificações: %s"
+msgstr "Same checks: %s"
+
+#, php-format
+msgid "Mudança de critério: %s"
+msgstr "Rule changes: %s"
+
+#, php-format
+msgid "As regras de avaliação mudaram entre os dois diagnósticos (%s): parte da diferença de nota pode não refletir uma mudança real no GLPI."
+msgstr "The evaluation rules changed between the two diagnostics (%s): part of the score difference may not reflect an actual change in GLPI."
+
+#, php-format
+msgid "As regras de avaliação mudaram desde o diagnóstico anterior (%s)."
+msgstr "The evaluation rules changed since the previous diagnostic (%s)."

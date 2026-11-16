@@ -3522,3 +3522,39 @@ msgstr ""
 msgid "Últimos 7 dias"
 msgstr ""
 
+msgid "Verificação adicionada"
+msgstr ""
+
+msgid "Verificação removida"
+msgstr ""
+
+#, php-format
+msgid "plugin %1$s → %2$s"
+msgstr ""
+
+#, php-format
+msgid "%d verificação(ões) adicionada(s)"
+msgstr ""
+
+#, php-format
+msgid "%d verificação(ões) removida(s)"
+msgstr ""
+
+msgid "limites ou pesos de avaliação alterados"
+msgstr ""
+
+#, php-format
+msgid "Mesmas verificações: %s"
+msgstr ""
+
+#, php-format
+msgid "Mudança de critério: %s"
+msgstr ""
+
+#, php-format
+msgid "As regras de avaliação mudaram entre os dois diagnósticos (%s): parte da diferença de nota pode não refletir uma mudança real no GLPI."
+msgstr ""
+
+#, php-format
+msgid "As regras de avaliação mudaram desde o diagnóstico anterior (%s)."
+msgstr ""

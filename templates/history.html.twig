@@ -121,7 +121,7 @@
             {% for run in runs %}
                <form method="post" action="{{ urls.history }}" id="hc-delete-{{ run.id }}" class="d-none"
                      onsubmit="return confirm('{{ __('Remover este diagnóstico do histórico?', 'healthcheck')|e('js') }}');">
-                  <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}">
+                  {% if hc_csrf_token %}<input type="hidden" name="_glpi_csrf_token" value="{{ hc_csrf_token }}">{% endif %}
                   <input type="hidden" name="delete_run" value="{{ run.id }}">
                </form>
             {% endfor %}

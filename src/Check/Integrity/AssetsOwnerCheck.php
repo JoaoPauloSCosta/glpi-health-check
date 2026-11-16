@@ -73,6 +73,10 @@ class AssetsOwnerCheck extends AbstractCheck
                 }
             }
             $without = $this->countRows($table, $where);
+            if ($without > 0 && !$this->fieldExists($table, 'groups_id')) {
+                // GLPI 11+: owner and technical groups are linked through glpi_groups_items
+                $without = max(0, $without - $this->countWithGroup($itemtype, $table, $where));
+            }
             $total_assets  += $total;
             $total_orphans += $without;
             if ($without > 0) {
@@ -118,5 +122,35 @@ class AssetsOwnerCheck extends AbstractCheck
                 'without' => __('Sem responsável', 'healthcheck'),
                 'pct'     => __('%', 'healthcheck'),
             ]);
+    }
+
+    /**
+     * Number of assets matching the given criteria that are linked to at least one group
+     * through the glpi_groups_items table (GLPI 11+).
+     */
+    private function countWithGroup(string $itemtype, string $table, array $where): int
+    {
+        $link = 'glpi_groups_items';
+        if (!$this->tableExists($link)) {
+            return 0;
+        }
+
+        $db = $this->db();
+        $criteria = [];
+        foreach ($where as $field => $value) {
+            $criteria[$table . '.' . $field] = $value;
+        }
+        $criteria[$link . '.itemtype'] = $itemtype;
+
+        $row = $db->request([
+            'SELECT'     => [$this->expr('COUNT(DISTINCT ' . $db->quoteName($table . '.id') . ') AS cpt')],
+            'FROM'       => $table,
+            'INNER JOIN' => [
+                $link => ['ON' => [$table => 'id', $link => 'items_id']],
+            ],
+            'WHERE'      => $criteria,
+        ])->current();
+
+        return (int) ($row['cpt'] ?? 0);
     }
 }

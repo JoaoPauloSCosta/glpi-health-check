@@ -5,7 +5,7 @@
    {{ include('@healthcheck/partials/nav.html.twig', {active: 'config'}) }}
 
    <form method="post" action="{{ urls.config }}">
-      <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}">
+      {% if hc_csrf_token %}<input type="hidden" name="_glpi_csrf_token" value="{{ hc_csrf_token }}">{% endif %}
       <div class="row row-cards">
          <div class="col-lg-6">
             <div class="card h-100">

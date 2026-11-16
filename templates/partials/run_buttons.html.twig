@@ -4,7 +4,7 @@
  #}
 {% if can_run %}
    <form method="post" action="{{ urls.run }}" class="hc-run-form">
-      <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}">
+      {% if hc_csrf_token %}<input type="hidden" name="_glpi_csrf_token" value="{{ hc_csrf_token }}">{% endif %}
       <button type="submit" name="mode" value="full" class="btn btn-primary">
          <i class="ti ti-player-play me-1" aria-hidden="true"></i>{{ __('Executar diagnóstico completo', 'healthcheck') }}
       </button>

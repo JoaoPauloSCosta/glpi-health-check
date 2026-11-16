@@ -211,6 +211,9 @@
                            {% endif %}
                         {% endfor %}
                      </ul>
+                     {% if dashboard.diff.rules.changed %}
+                        <p class="hc-note mb-2"><i class="ti ti-info-circle" aria-hidden="true"></i><span>{{ __('As regras de avaliação mudaram desde o diagnóstico anterior (%s).', 'healthcheck')|format(dashboard.diff.rules.details|join(', ')) }}</span></p>
+                     {% endif %}
                      <a class="btn btn-sm btn-outline-secondary" href="{{ urls.compare }}?a={{ dashboard.previous.id }}&b={{ run.id }}">
                         {{ __('Ver comparação detalhada', 'healthcheck') }}
                      </a>
