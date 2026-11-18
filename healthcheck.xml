@@ -3,6 +3,7 @@
    <name>Health Check</name>
    <key>healthcheck</key>
    <state>stable</state>
+   <logo>https://raw.githubusercontent.com/JoaoPauloSCosta/glpi-health-check/main/healthcheck.png</logo>
    <description>
       <short>
          <en>Diagnose, monitor and prevent operational, technical and security problems in your GLPI installation.</en>
