@@ -15,6 +15,7 @@ use GlpiPlugin\Healthcheck\Check\Category;
 use GlpiPlugin\Healthcheck\Check\CheckResult;
 use GlpiPlugin\Healthcheck\Check\Severity;
 use GlpiPlugin\Healthcheck\Check\Status;
+use GlpiPlugin\Healthcheck\Compat;
 use GlpiPlugin\Healthcheck\Format;
 
 class LogVolumeCheck extends AbstractCheck
@@ -136,7 +137,10 @@ class LogVolumeCheck extends AbstractCheck
             ->steps([
                 __('Leia as últimas linhas de php-errors.log e sql-errors.log para identificar a origem dos erros.', 'healthcheck'),
                 __('Ative a ação automática "circularlogs" (rotação dos arquivos de log).', 'healthcheck'),
-                __('Configure a purga do histórico em Configurar > Geral > Logs (ação automática "PurgeLogs").', 'healthcheck'),
+                // GLPI 12 moved the "Logs purge" tab to "Setup > Data and Privacy > Historical logs"
+                Compat::isAtLeast('12.0.0')
+                    ? __('Configure a purga do histórico em Configurar > Dados e Privacidade > Logs históricos (ação automática "PurgeLogs").', 'healthcheck')
+                    : __('Configure a purga do histórico em Configurar > Geral > Logs (ação automática "PurgeLogs").', 'healthcheck'),
                 __('Compacte ou remova arquivos de log antigos já analisados.', 'healthcheck'),
             ])
             ->doc(self::DOC_USER)

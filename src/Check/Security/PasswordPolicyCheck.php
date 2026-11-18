@@ -15,6 +15,7 @@ use GlpiPlugin\Healthcheck\Check\Category;
 use GlpiPlugin\Healthcheck\Check\CheckResult;
 use GlpiPlugin\Healthcheck\Check\Severity;
 use GlpiPlugin\Healthcheck\Check\Status;
+use GlpiPlugin\Healthcheck\Compat;
 
 class PasswordPolicyCheck extends AbstractCheck
 {
@@ -79,7 +80,10 @@ class PasswordPolicyCheck extends AbstractCheck
             ->cause(__('Configuração padrão da instalação.', 'healthcheck'))
             ->recommendation(__('Ative a política de senhas com no mínimo 12 caracteres, ou centralize a autenticação em LDAP/SSO.', 'healthcheck'))
             ->steps([
-                __('Acesse Configurar > Geral > Segurança.', 'healthcheck'),
+                // GLPI 12 moved the password policy from "Setup > General" to "Setup > Security"
+                Compat::isAtLeast('12.0.0')
+                    ? __('Acesse Configurar > Segurança.', 'healthcheck')
+                    : __('Acesse Configurar > Geral > Segurança.', 'healthcheck'),
                 __('Ative "Política de segurança de senha" e defina o tamanho mínimo.', 'healthcheck'),
             ])
             ->doc(self::DOC_USER)

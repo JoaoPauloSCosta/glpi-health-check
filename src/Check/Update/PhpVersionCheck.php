@@ -14,6 +14,7 @@ use GlpiPlugin\Healthcheck\Check\AbstractCheck;
 use GlpiPlugin\Healthcheck\Check\Category;
 use GlpiPlugin\Healthcheck\Check\CheckResult;
 use GlpiPlugin\Healthcheck\Check\Severity;
+use GlpiPlugin\Healthcheck\Compat;
 
 class PhpVersionCheck extends AbstractCheck
 {
@@ -50,11 +51,27 @@ class PhpVersionCheck extends AbstractCheck
         $branch = PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;
         $eol    = self::PHP_EOL_DATES[$branch] ?? null;
 
+        // GLPI 10: GLPI_MAX_PHP is an exclusive version ("8.4.0" = up to 8.3.x).
+        // GLPI 11+: GLPI_MAX_PHP is the last supported branch, inclusive ("8.5" = up to 8.5.x).
+        $max_inclusive = Compat::isAtLeast('11.0.0');
+        if ($max_inclusive) {
+            $max_branch = implode('.', array_slice(explode('.', (string) GLPI_MAX_PHP), 0, 2));
+            $too_new    = version_compare($branch, $max_branch, '>');
+            $max_label  = __('Máximo suportado', 'healthcheck');
+            $max_value  = $max_branch . '.x';
+            $range      = sprintf(__('suportado: de %1$s até %2$s', 'healthcheck'), GLPI_MIN_PHP, $max_value);
+        } else {
+            $too_new    = version_compare(PHP_VERSION, GLPI_MAX_PHP, '>=');
+            $max_label  = __('Máximo suportado (exclusivo)', 'healthcheck');
+            $max_value  = GLPI_MAX_PHP;
+            $range      = sprintf(__('suportado: >= %1$s e < %2$s', 'healthcheck'), GLPI_MIN_PHP, GLPI_MAX_PHP);
+        }
+
         $facts = [
             __('Versão do PHP', 'healthcheck')                  => PHP_VERSION,
             __('Interface (SAPI)', 'healthcheck')               => PHP_SAPI,
             __('Mínimo suportado pelo GLPI', 'healthcheck')     => GLPI_MIN_PHP,
-            __('Máximo suportado (exclusivo)', 'healthcheck')   => GLPI_MAX_PHP,
+            $max_label                                          => $max_value,
             __('Fim do suporte de segurança do PHP', 'healthcheck') => $eol ?? __('Desconhecido', 'healthcheck'),
         ];
 
@@ -62,13 +79,12 @@ class PhpVersionCheck extends AbstractCheck
             ? __('Observação: este diagnóstico foi executado em CLI. O PHP usado pelo servidor web pode ser diferente.', 'healthcheck')
             : '';
 
-        if (version_compare(PHP_VERSION, GLPI_MIN_PHP, '<') || version_compare(PHP_VERSION, GLPI_MAX_PHP, '>=')) {
+        if (version_compare(PHP_VERSION, GLPI_MIN_PHP, '<') || $too_new) {
             return CheckResult::critical(
                 sprintf(
-                    __('O PHP %1$s não é suportado por esta versão do GLPI (suportado: >= %2$s e < %3$s).', 'healthcheck'),
+                    __('O PHP %1$s não é suportado por esta versão do GLPI (%2$s).', 'healthcheck'),
                     PHP_VERSION,
-                    GLPI_MIN_PHP,
-                    GLPI_MAX_PHP
+                    $range
                 ),
                 Severity::CRITICAL
             )

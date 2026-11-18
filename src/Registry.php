@@ -32,7 +32,7 @@ final class Registry
      */
     private static function getCoreClasses(): array
     {
-        return [
+        $classes = [
             // 1. Update and requirements
             Check\Update\GlpiVersionCheck::class,
             Check\Update\PhpVersionCheck::class,
@@ -94,6 +94,14 @@ final class Registry
             Check\Integrity\RulesCheck::class,
             Check\Integrity\DocumentFilesCheck::class,
         ];
+
+        // GLPI 12+: automatic actions blocked in the ERROR state (placed after the stuck tasks check)
+        if (Check\Cron\ErroredTasksCheck::isSupported()) {
+            $position = array_search(Check\Cron\StuckTasksCheck::class, $classes, true);
+            array_splice($classes, $position === false ? count($classes) : $position + 1, 0, [Check\Cron\ErroredTasksCheck::class]);
+        }
+
+        return $classes;
     }
 
     /**

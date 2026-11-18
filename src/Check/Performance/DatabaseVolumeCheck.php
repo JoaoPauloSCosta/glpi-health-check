@@ -15,6 +15,7 @@ use GlpiPlugin\Healthcheck\Check\Category;
 use GlpiPlugin\Healthcheck\Check\CheckResult;
 use GlpiPlugin\Healthcheck\Check\Severity;
 use GlpiPlugin\Healthcheck\Check\Status;
+use GlpiPlugin\Healthcheck\Compat;
 use GlpiPlugin\Healthcheck\Format;
 
 /**
@@ -128,7 +129,10 @@ class DatabaseVolumeCheck extends AbstractCheck
             ->cause(__('Rotinas de limpeza desativadas ou tempo de retenção muito longo, e grandes exclusões sem reorganização das tabelas.', 'healthcheck'))
             ->recommendation(__('Reduza a retenção de logs técnicos e reorganize as tabelas fragmentadas em janela de manutenção.', 'healthcheck'))
             ->steps([
-                __('Ajuste o tempo de retenção dos logs nas ações automáticas ("logs", "queuednotificationclean") e em Configurar > Geral > Logs.', 'healthcheck'),
+                // GLPI 12 moved the "Logs purge" tab to "Setup > Data and Privacy > Historical logs"
+                Compat::isAtLeast('12.0.0')
+                    ? __('Ajuste o tempo de retenção dos logs nas ações automáticas ("logs", "queuednotificationclean") e em Configurar > Dados e Privacidade > Logs históricos.', 'healthcheck')
+                    : __('Ajuste o tempo de retenção dos logs nas ações automáticas ("logs", "queuednotificationclean") e em Configurar > Geral > Logs.', 'healthcheck'),
                 __('Após backup, execute "OPTIMIZE TABLE nome_da_tabela" para as tabelas fragmentadas (bloqueia a tabela durante a execução).', 'healthcheck'),
             ])
             ->doc(self::DOC_USER)

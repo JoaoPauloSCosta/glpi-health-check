@@ -81,7 +81,15 @@ msgid "%d ação(ões) automática(s) ativa(s) em modo GLPI (dependem de usuári
 msgstr ""
 
 #, php-format
+msgid "%d ação(ões) automática(s) bloqueada(s) no status \"Erro\" após falhas consecutivas."
+msgstr ""
+
+#, php-format
 msgid "%d ação(ões) automática(s) com execuções acima de 5 minutos."
+msgstr ""
+
+#, php-format
+msgid "%d ação(ões) automática(s) falhando e sendo reexecutada(s) com espera progressiva."
 msgstr ""
 
 #, php-format
@@ -205,6 +213,14 @@ msgid "%d usuários ativos podem alterar a configuração geral do GLPI."
 msgstr ""
 
 #, php-format
+msgid "%d verificação(ões) adicionada(s)"
+msgstr ""
+
+#, php-format
+msgid "%d verificação(ões) removida(s)"
+msgstr ""
+
+#, php-format
 msgid "%d índice(s) esperado(s) ausente(s)."
 msgstr ""
 
@@ -229,6 +245,9 @@ msgid "A URL configurada (%1$s) difere da URL usada para acessar o GLPI (%2$s): 
 msgstr ""
 
 msgid "A URL configurada usa HTTPS, mas esta página foi acessada por HTTP: falta redirecionamento HTTP → HTTPS."
+msgstr ""
+
+msgid "A ação terminou com erro fatal, falta de memória ou tempo limite excedido em 5 execuções seguidas, geralmente por problema de configuração, de serviço externo ou de plugin."
 msgstr ""
 
 msgid "A configuração de envio de e-mails está adequada."
@@ -349,6 +368,9 @@ msgstr ""
 msgid "Acesse Configurar > Plugins."
 msgstr ""
 
+msgid "Acesse Configurar > Segurança."
+msgstr ""
+
 msgid "Acesso administrativo"
 msgstr ""
 
@@ -388,6 +410,9 @@ msgid "Ajuste dono e permissões para que o usuário do servidor web tenha leitu
 msgstr ""
 
 msgid "Ajuste memory_limit no php.ini (web e CLI) e avalie aumentar a memória do servidor."
+msgstr ""
+
+msgid "Ajuste o tempo de retenção dos logs nas ações automáticas (\"logs\", \"queuednotificationclean\") e em Configurar > Dados e Privacidade > Logs históricos."
 msgstr ""
 
 msgid "Ajuste o tempo de retenção dos logs nas ações automáticas (\"logs\", \"queuednotificationclean\") e em Configurar > Geral > Logs."
@@ -482,6 +507,9 @@ msgstr ""
 msgid "Após backup, execute \"OPTIMIZE TABLE nome_da_tabela\" para as tabelas fragmentadas (bloqueia a tabela durante a execução)."
 msgstr ""
 
+msgid "Após corrigir a causa, altere o status da tarefa para \"Agendada\"."
+msgstr ""
+
 msgid "Após corrigir, o contador de erros é zerado na próxima coleta bem-sucedida."
 msgstr ""
 
@@ -535,6 +563,14 @@ msgid "As configurações de desempenho do PHP estão adequadas."
 msgstr ""
 
 msgid "As funções dessas tarefas (alertas, limpezas, SLAs, notificações) não estão sendo processadas no prazo."
+msgstr ""
+
+#, php-format
+msgid "As regras de avaliação mudaram desde o diagnóstico anterior (%s)."
+msgstr ""
+
+#, php-format
+msgid "As regras de avaliação mudaram entre os dois diagnósticos (%s): parte da diferença de nota pode não refletir uma mudança real no GLPI."
 msgstr ""
 
 msgid "As senhas das contas criadas pela instalação nunca foram alteradas."
@@ -621,7 +657,8 @@ msgstr ""
 msgid "Atualize o servidor MySQL/MariaDB seguindo a documentação do fornecedor."
 msgstr ""
 
-msgid "Atualize o servidor de banco para uma versão suportada (MySQL >= 5.7 ou MariaDB >= 10.2, preferencialmente uma versão LTS atual)."
+#, php-format
+msgid "Atualize o servidor de banco para uma versão suportada (MySQL >= %1$s ou MariaDB >= %2$s, preferencialmente uma versão LTS atual)."
 msgstr ""
 
 msgid "Atualize os plugins para versões compatíveis antes de atualizar o GLPI; desative os que não tiverem versão compatível."
@@ -660,6 +697,9 @@ msgstr ""
 msgid "Ação automática \"queuednotification\" parada ou atrasada, cron do sistema inativo, falha de autenticação/conexão SMTP ou volume de envio acima da capacidade."
 msgstr ""
 
+msgid "Ações automáticas bloqueadas em erro"
+msgstr ""
+
 msgid "Ações automáticas lentas"
 msgstr ""
 
@@ -695,6 +735,9 @@ msgid "Base"
 msgstr ""
 
 msgid "Base de dados"
+msgstr ""
+
+msgid "Bloqueada (status \"Erro\")"
 msgstr ""
 
 msgid "Bloqueios (lock)"
@@ -928,6 +971,9 @@ msgstr ""
 msgid "Configurações salvas."
 msgstr ""
 
+msgid "Configure a purga do histórico em Configurar > Dados e Privacidade > Logs históricos (ação automática \"PurgeLogs\")."
+msgstr ""
+
 msgid "Configure a purga do histórico em Configurar > Geral > Logs (ação automática \"PurgeLogs\")."
 msgstr ""
 
@@ -1003,6 +1049,9 @@ msgstr ""
 msgid "Consulte files/_log/mail-error.log para ver o erro retornado pelo servidor SMTP."
 msgstr ""
 
+msgid "Consulte files/_log/php-errors.log e cron.log próximo do horário da última execução."
+msgstr ""
+
 msgid "Consulte files/_log/php-errors.log e cron.log próximo do horário indicado."
 msgstr ""
 
@@ -1019,6 +1068,9 @@ msgid "Contexto"
 msgstr ""
 
 msgid "Cookies de sessão podem ser roubados por scripts (XSS), enviados por HTTP sem criptografia ou usados em requisições de outros sites (CSRF)."
+msgstr ""
+
+msgid "Corrija a causa da falha antes de reativar a ação; caso contrário ela voltará ao status \"Erro\"."
 msgstr ""
 
 msgid "Corrija a configuração SMTP e envie um e-mail de teste."
@@ -1135,6 +1187,9 @@ msgid "Desconhecido"
 msgstr ""
 
 msgid "Descrição"
+msgstr ""
+
+msgid "Desde o GLPI 12, uma ação automática que falha 5 vezes seguidas fica no status \"Erro\" e só volta a executar após intervenção manual."
 msgstr ""
 
 msgid "Desde o diagnóstico anterior"
@@ -1394,6 +1449,9 @@ msgstr ""
 msgid "Esta verificação depende do contexto web e não pode ser avaliada quando o diagnóstico é executado pelo cron (CLI). Execute o diagnóstico manualmente pelo navegador."
 msgstr ""
 
+msgid "Esta versão do GLPI não possui o status \"Erro\" para ações automáticas."
+msgstr ""
+
 msgid "Estado das tabelas"
 msgstr ""
 
@@ -1506,10 +1564,16 @@ msgstr ""
 msgid "Falha na consulta externa: %s"
 msgstr ""
 
+msgid "Falhando, em nova tentativa"
+msgstr ""
+
 msgid "Falhas"
 msgstr ""
 
 msgid "Falhas ao anexar documentos, gerar cache, gravar sessões (usuários deslogados), registrar logs ou executar o cron."
+msgstr ""
+
+msgid "Falhas consecutivas"
 msgstr ""
 
 msgid "Falhas de autenticação"
@@ -1938,6 +2002,10 @@ msgstr ""
 msgid "Mensagens pendentes de envio"
 msgstr ""
 
+#, php-format
+msgid "Mesmas verificações: %s"
+msgstr ""
+
 msgid "Metadados de versionamento/ambiente no diretório da aplicação: podem expor código e segredos se acessíveis pela web."
 msgstr ""
 
@@ -1984,6 +2052,13 @@ msgid "Mova backups e dumps para um diretório fora da raiz web, com acesso rest
 msgstr ""
 
 msgid "Mudança"
+msgstr ""
+
+#, php-format
+msgid "Mudança de critério: %s"
+msgstr ""
+
+msgid "Máximo suportado"
 msgstr ""
 
 msgid "Máximo suportado (exclusivo)"
@@ -2053,6 +2128,9 @@ msgid "Nenhuma ação automática demorou mais de 5 minutos nos últimos 7 dias.
 msgstr ""
 
 msgid "Nenhuma ação automática está ativa."
+msgstr ""
+
+msgid "Nenhuma ação automática está em erro."
 msgstr ""
 
 msgid "Nenhuma ação automática terminou com erro no período."
@@ -2239,7 +2317,7 @@ msgid "O PHP %1$s não recebe mais correções de segurança desde %2$s."
 msgstr ""
 
 #, php-format
-msgid "O PHP %1$s não é suportado por esta versão do GLPI (suportado: >= %2$s e < %3$s)."
+msgid "O PHP %1$s não é suportado por esta versão do GLPI (%2$s)."
 msgstr ""
 
 #, php-format
@@ -3172,6 +3250,9 @@ msgstr ""
 msgid "Uma API aberta permite tentativas de autenticação e acesso automatizado a partir de qualquer rede."
 msgstr ""
 
+msgid "Uma ação no status \"Erro\" não é mais executada: a função que ela realiza (envio de e-mails, coleta, limpezas...) fica parada até a intervenção manual."
+msgstr ""
+
 msgid "Uma tarefa marcada como em execução não é iniciada novamente até ser desbloqueada; sua função fica parada."
 msgstr ""
 
@@ -3292,8 +3373,14 @@ msgstr ""
 msgid "Verificação"
 msgstr ""
 
+msgid "Verificação adicionada"
+msgstr ""
+
 #, php-format
 msgid "Verificação externa inválida: %s"
+msgstr ""
+
+msgid "Verificação removida"
 msgstr ""
 
 msgid "Verifique a faixa de versões aceita pelo GLPI (dados abaixo)."
@@ -3450,6 +3537,9 @@ msgstr ""
 msgid "informativas"
 msgstr ""
 
+msgid "limites ou pesos de avaliação alterados"
+msgstr ""
+
 msgid "não verificadas"
 msgstr ""
 
@@ -3457,6 +3547,10 @@ msgid "php.ini com valores padrão da distribuição."
 msgstr ""
 
 msgid "php.ini de desenvolvimento em uso ou ajustes temporários de depuração não revertidos."
+msgstr ""
+
+#, php-format
+msgid "plugin %1$s → %2$s"
 msgstr ""
 
 msgid "pontos no indicador"
@@ -3478,6 +3572,14 @@ msgid "session.cookie_samesite = Lax"
 msgstr ""
 
 msgid "session.cookie_secure = On (quando o acesso for por HTTPS)"
+msgstr ""
+
+#, php-format
+msgid "suportado: >= %1$s e < %2$s"
+msgstr ""
+
+#, php-format
+msgid "suportado: de %1$s até %2$s"
 msgstr ""
 
 msgid "Índice esperado"
@@ -3520,41 +3622,4 @@ msgid "Último"
 msgstr ""
 
 msgid "Últimos 7 dias"
-msgstr ""
-
-msgid "Verificação adicionada"
-msgstr ""
-
-msgid "Verificação removida"
-msgstr ""
-
-#, php-format
-msgid "plugin %1$s → %2$s"
-msgstr ""
-
-#, php-format
-msgid "%d verificação(ões) adicionada(s)"
-msgstr ""
-
-#, php-format
-msgid "%d verificação(ões) removida(s)"
-msgstr ""
-
-msgid "limites ou pesos de avaliação alterados"
-msgstr ""
-
-#, php-format
-msgid "Mesmas verificações: %s"
-msgstr ""
-
-#, php-format
-msgid "Mudança de critério: %s"
-msgstr ""
-
-#, php-format
-msgid "As regras de avaliação mudaram entre os dois diagnósticos (%s): parte da diferença de nota pode não refletir uma mudança real no GLPI."
-msgstr ""
-
-#, php-format
-msgid "As regras de avaliação mudaram desde o diagnóstico anterior (%s)."
 msgstr ""

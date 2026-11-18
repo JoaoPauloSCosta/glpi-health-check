@@ -119,6 +119,12 @@ class EssentialTasksCheck extends AbstractCronCheck
                 $problem = __('Não registrada', 'healthcheck');
             } elseif ((int) $task['state'] === CronTask::STATE_DISABLE) {
                 $problem = __('Desativada', 'healthcheck');
+            } elseif (
+                // GLPI 12+: blocked after repeated failures, does not run until manually rescheduled
+                defined(CronTask::class . '::STATE_ERROR')
+                && (int) $task['state'] === (int) constant(CronTask::class . '::STATE_ERROR')
+            ) {
+                $problem = __('Bloqueada (status "Erro")', 'healthcheck');
             } else {
                 continue;
             }

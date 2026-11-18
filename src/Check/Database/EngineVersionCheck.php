@@ -15,6 +15,7 @@ use GlpiPlugin\Healthcheck\Check\AbstractCheck;
 use GlpiPlugin\Healthcheck\Check\Category;
 use GlpiPlugin\Healthcheck\Check\CheckResult;
 use GlpiPlugin\Healthcheck\Check\Severity;
+use GlpiPlugin\Healthcheck\Compat;
 
 class EngineVersionCheck extends AbstractCheck
 {
@@ -80,7 +81,10 @@ class EngineVersionCheck extends AbstractCheck
         if (!$requirement->isValidated()) {
             return CheckResult::critical(implode(' ', $requirement->getValidationMessages()), Severity::CRITICAL)
                 ->impact(__('Versões de banco não suportadas causam erros de SQL e impedem atualizações do GLPI.', 'healthcheck'))
-                ->recommendation(__('Atualize o servidor de banco para uma versão suportada (MySQL >= 5.7 ou MariaDB >= 10.2, preferencialmente uma versão LTS atual).', 'healthcheck'))
+                ->recommendation(sprintf(
+                    __('Atualize o servidor de banco para uma versão suportada (MySQL >= %1$s ou MariaDB >= %2$s, preferencialmente uma versão LTS atual).', 'healthcheck'),
+                    ...self::minimumVersions()
+                ))
                 ->steps([
                     __('Faça backup completo (dump) do banco de dados.', 'healthcheck'),
                     __('Atualize o servidor MySQL/MariaDB seguindo a documentação do fornecedor.', 'healthcheck'),
@@ -104,5 +108,21 @@ class EngineVersionCheck extends AbstractCheck
 
         return CheckResult::ok(sprintf(__('%1$s %2$s é compatível com o GLPI.', 'healthcheck'), $server, $version))
             ->facts($facts);
+    }
+
+    /**
+     * Minimum MySQL and MariaDB versions of the running GLPI (same values as Glpi\System\Requirement\DbEngine).
+     *
+     * @return array{0: string, 1: string} [MySQL, MariaDB]
+     */
+    private static function minimumVersions(): array
+    {
+        if (Compat::isAtLeast('12.0.0')) {
+            return ['8.0', '10.11'];
+        }
+        if (Compat::isAtLeast('11.0.0')) {
+            return ['8.0', '10.6'];
+        }
+        return ['5.7', '10.2'];
     }
 }
