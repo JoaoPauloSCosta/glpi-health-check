@@ -59,9 +59,11 @@ final class Exporter
 
     private function sendFile(string $content, string $content_type, string $filename): void
     {
-        // Drop any stray output buffered earlier in the request so it does not corrupt the file
-        while (ob_get_level() > 0) {
-            ob_end_clean();
+        // Drop any stray output buffered earlier in the request so it does not corrupt the file.
+        // The buffer is emptied, not closed: since GLPI 11 the legacy file loader wraps this script
+        // in its own buffer and turns its content into the response.
+        if (ob_get_level() > 0) {
+            ob_clean();
         }
         header('Content-Type: ' . $content_type);
         header('Content-Disposition: attachment; filename="' . $filename . '"');
@@ -177,7 +179,9 @@ final class Exporter
     public function toPdf(): GLPIPDF
     {
         $title = sprintf(__('Relatório Health Check — %s', 'healthcheck'), $this->run['date_creation']);
-        $pdf = new GLPIPDF(['font_size' => 9, 'margin_top' => 18], null, $title);
+        // Always pass a count: on GLPI 12, GLPIPDF declares `private int $total_count` without a default
+        // and reads it in Footer(), so passing null crashes with "must not be accessed before initialization".
+        $pdf = new GLPIPDF(['font_size' => 9, 'margin_top' => 18], count($this->results), $title);
         $pdf->SetAuthor('GLPI Health Check');
         $pdf->writeHTML($this->buildPdfHtml(), true, false, true, false, '');
         return $pdf;
