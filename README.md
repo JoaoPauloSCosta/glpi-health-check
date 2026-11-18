@@ -89,8 +89,10 @@ The score starts at 100 and loses points for each problem according to its criti
 | GLPI branch | PHP required by GLPI | Health Check 1.1.0 tested on |
 |---|---|---|
 | 10.0.x | 7.4 – 8.3 (GLPI 10.0.18) | GLPI 10.0.18, PHP 8.3 |
-| 11.0.x | 8.2 – 8.5 (GLPI 11.0.13) | see the release notes |
-| 12.0.x | 8.3 – 8.5 (GLPI 12.0.2) | GLPI 12.0.2, PHP 8.5 |
+| 11.0.x | 8.2 – 8.5 (GLPI 11.0.13) | GLPI 11.0.13, PHP 8.3 |
+| 12.0.x | 8.3 – 8.5 (GLPI 12.0.2) | GLPI 12.0.2, PHP 8.3 (web) and 8.5 (CLI) |
+
+Tests performed with MariaDB 10.11: installation, activation, light and full diagnostics (automatic actions and browser), history, comparison, PDF/JSON/CSV exports, settings and uninstallation. The PHP syntax of the plugin is also checked with PHP 7.4.
 
 Other patch versions of these branches are expected to work, as the plugin only relies on APIs stable within a branch, but have not all been tested. Please report any problem in the [issue tracker](https://github.com/JoaoPauloSCosta/glpi-health-check/issues).
 

@@ -307,6 +307,10 @@ if (!$check_urls) {
             CURLOPT_TIMEOUT        => 30,
             CURLOPT_USERAGENT      => 'healthcheck-release-validator',
         ]);
+        // CA bundle for PHP builds without curl.cainfo
+        if (($ca = getenv('CURL_CA_BUNDLE')) !== false && is_file($ca)) {
+            curl_setopt($ch, CURLOPT_CAINFO, $ca);
+        }
         curl_exec($ch);
         $status = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
         $error  = curl_error($ch);

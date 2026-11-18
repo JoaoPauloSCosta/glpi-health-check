@@ -71,6 +71,8 @@ The archive name and the tag must match the `download_url` of `healthcheck.xml` 
 php tools/validate-package.php dist/glpi-healthcheck-x.y.z.tar.bz2 --check-urls
 ```
 
+If PHP has no CA bundle configured, point `CURL_CA_BUNDLE` to one (e.g. the `ca-bundle.crt` shipped with Git).
+
 ## 5. Plugins catalog
 
 The catalog reads `healthcheck.xml` from the default branch:
