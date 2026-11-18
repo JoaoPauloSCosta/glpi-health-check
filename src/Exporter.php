@@ -42,26 +42,32 @@ final class Exporter
     {
         switch ($format) {
             case 'json':
-                $this->sendHeaders('application/json; charset=UTF-8', $this->getFilename('json'));
-                echo $this->toJson();
+                $this->sendFile($this->toJson(), 'application/json; charset=UTF-8', $this->getFilename('json'));
                 return;
             case 'csv':
-                $this->sendHeaders('text/csv; charset=UTF-8', $this->getFilename('csv'));
-                echo $this->toCsv();
+                $this->sendFile($this->toCsv(), 'text/csv; charset=UTF-8', $this->getFilename('csv'));
                 return;
             case 'pdf':
-                $pdf = $this->toPdf();
-                $pdf->Output($this->getFilename('pdf'), 'D');
+                // Build in memory ('S') instead of TCPDF's download mode ('D'): 'D' aborts when anything
+                // was already buffered (displayed notices, debug output, BOMs from other files...).
+                $content = $this->toPdf()->Output($this->getFilename('pdf'), 'S');
+                $this->sendFile($content, 'application/pdf', $this->getFilename('pdf'));
                 return;
         }
         throw new \InvalidArgumentException('Unknown format');
     }
 
-    private function sendHeaders(string $content_type, string $filename): void
+    private function sendFile(string $content, string $content_type, string $filename): void
     {
+        // Drop any stray output buffered earlier in the request so it does not corrupt the file
+        while (ob_get_level() > 0) {
+            ob_end_clean();
+        }
         header('Content-Type: ' . $content_type);
         header('Content-Disposition: attachment; filename="' . $filename . '"');
+        header('Content-Length: ' . strlen($content));
         header('Cache-Control: no-store');
+        echo $content;
     }
 
     public function toArray(): array

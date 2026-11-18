@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GLPI 12: fatal errors when loading the plugin menu class, caused by the native types added to `CommonGLPI` (`$rightname` redeclaration and `canView()` return type).
 - PHP version check: on GLPI 11 and later, the highest supported PHP branch (e.g. PHP 8.5) was wrongly reported as unsupported, as `GLPI_MAX_PHP` became inclusive.
 - Database version check: the recommendation now shows the minimum MySQL/MariaDB versions of the running GLPI (GLPI 11: MySQL 8.0/MariaDB 10.6, GLPI 12: MySQL 8.0/MariaDB 10.11).
+- PDF export: the download silently failed (`TCPDF ERROR: Some data has already been output`) when anything had been output earlier in the request, such as PHP notices shown in debug mode. The PDF is now built in memory and any pending output is discarded before sending the file; JSON and CSV exports use the same path.
 - On GLPI 12, instructions point to the new menu locations of the password policy (*Setup > Security*) and of the logs purge (*Setup > Data and Privacy > Historical logs*).
 
 ## [1.1.0] - 2026-11-15
