@@ -5,11 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.1.0] - 2026-11-18
 
 ### Added
 
+- Compatibility with GLPI 11.0 and GLPI 12.0, in addition to GLPI 10.0. The same release runs on the three branches; version specific code is isolated in `GlpiPlugin\Healthcheck\Compat`.
+- Each run stores a signature of the evaluation rules (registered checks, penalty weights and configured thresholds), next to the plugin version.
+- Comparison: checks that exist in only one of the two runs are reported as "Check added" / "Check removed" instead of new or solved problems, a notice tells when the rules changed between the runs, and the score difference is split into "same checks" and "rule changes". The dashboard shows the same notice for the previous run.
 - Automatic actions check for GLPI 12 and later: actions blocked in the new "Error" status after repeated failures, and actions currently failing and being retried. The essential tasks check also reports essential actions blocked in this status.
+
+### Changed
+
+- The stylesheet moved from `css/` to `public/css/`, the only plugin directory served by GLPI 11 and later.
+- Asset ownership check: on GLPI 11 and later, groups linked through `glpi_groups_items` are taken into account.
+- Web server document root check: evaluated by the plugin itself on GLPI 11 and later, where the GLPI requirement classes it relied on no longer exist.
+- SQL replica detection and external release lookup no longer depend on APIs removed in GLPI 12.
+- The English (en_GB, en_US) translation is declared in the plugin descriptor and documented.
 
 ### Fixed
 
@@ -20,22 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GLPI 12: PDF export crashed with "Typed property GLPIPDF::$total_count must not be accessed before initialization", as the report was created without an item count. The number of checks is now passed, and the PDF footer shows it.
 - On GLPI 12, instructions point to the new menu locations of the password policy (*Setup > Security*) and of the logs purge (*Setup > Data and Privacy > Historical logs*).
 
-## [1.1.0] - 2026-11-15
-
-### Added
-
-- Compatibility with GLPI 11.0 and GLPI 12.0, in addition to GLPI 10.0. The same release runs on the three branches; version specific code is isolated in `GlpiPlugin\Healthcheck\Compat`.
-- Each run stores a signature of the evaluation rules (registered checks, penalty weights and configured thresholds), next to the plugin version.
-- Comparison: checks that exist in only one of the two runs are reported as "Check added" / "Check removed" instead of new or solved problems, a notice tells when the rules changed between the runs, and the score difference is split into "same checks" and "rule changes". The dashboard shows the same notice for the previous run.
-
-### Changed
-
-- The stylesheet moved from `css/` to `public/css/`, the only plugin directory served by GLPI 11 and later.
-- Asset ownership check: on GLPI 11 and later, groups linked through `glpi_groups_items` are taken into account.
-- Web server document root check: evaluated by the plugin itself on GLPI 11 and later, where the GLPI requirement classes it relied on no longer exist.
-- SQL replica detection and external release lookup no longer depend on APIs removed in GLPI 12.
-
 ## [1.0.0] - 2026-11-07
+
+Internal version, not published as a release archive.
 
 ### Added
 

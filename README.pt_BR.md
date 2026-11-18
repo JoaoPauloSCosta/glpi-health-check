@@ -10,6 +10,8 @@ O Health Check é um plugin gratuito e open source para **diagnóstico, monitora
 
 Ele analisa a instalação, identifica configurações inadequadas, falhas e riscos operacionais e explica cada problema com orientações claras de correção. O plugin é **exclusivamente consultivo**: nunca altera arquivos, banco de dados ou configurações do GLPI. As únicas escritas são o próprio histórico de diagnósticos e a sua configuração.
 
+> A interface está disponível em português do Brasil (pt_BR) e inglês (en_GB, en_US), conforme o idioma do usuário no GLPI. Todos os textos passam pelas funções de tradução do GLPI (domínio `healthcheck`) e podem ser traduzidos para outros idiomas.
+
 ## Sumário
 
 - [Funcionalidades](#funcionalidades)
@@ -81,16 +83,32 @@ O indicador parte de 100 e perde pontos a cada problema, conforme a criticidade.
 ## Requisitos
 
 - GLPI **10.0.x**, **11.0.x** ou **12.0.x** (a mesma release funciona nas três versões)
-- PHP **>= 7.4** (dentro da faixa suportada pela sua versão do GLPI)
+- PHP dentro da faixa suportada pela sua versão do GLPI (o plugin em si funciona a partir do PHP 7.4)
 - Cron do sistema configurado para o GLPI, para os diagnósticos agendados
+
+| Versão do GLPI | PHP exigido pelo GLPI | Health Check 1.1.0 testado em |
+|---|---|---|
+| 10.0.x | 7.4 – 8.3 (GLPI 10.0.18) | GLPI 10.0.18, PHP 8.3 |
+| 11.0.x | 8.2 – 8.5 (GLPI 11.0.13) | ver as notas da release |
+| 12.0.x | 8.3 – 8.5 (GLPI 12.0.2) | GLPI 12.0.2, PHP 8.5 |
+
+Outras versões de correção dessas linhas devem funcionar, pois o plugin usa apenas APIs estáveis dentro de cada versão, mas nem todas foram testadas. Relate qualquer problema no [rastreador de issues](https://github.com/JoaoPauloSCosta/glpi-health-check/issues).
 
 ## Instalação
 
 ### A partir de uma release
 
-1. Baixe o arquivo mais recente na [página de releases](https://github.com/JoaoPauloSCosta/glpi-health-check/releases).
-2. Extraia no diretório `plugins/` (ou `marketplace/`) do GLPI. O diretório **deve** se chamar `healthcheck`.
+1. Baixe `glpi-healthcheck-<versão>.tar.bz2` na [página de releases](https://github.com/JoaoPauloSCosta/glpi-health-check/releases).
+2. Extraia no diretório `plugins/` do GLPI. O arquivo já contém o diretório `healthcheck/`, que **deve** manter esse nome:
+
+   ```sh
+   cd /caminho/do/glpi/plugins
+   tar -xjf glpi-healthcheck-1.1.0.tar.bz2
+   ```
+
 3. Acesse **Configurar > Plugins**, instale e ative o **Health Check**.
+
+Para atualizar, substitua o diretório `healthcheck/` pela nova versão e clique em **Atualizar** em **Configurar > Plugins**. O histórico de diagnósticos e as configurações são mantidos.
 
 ### A partir do código-fonte
 
@@ -235,7 +253,6 @@ healthcheck/
 
 ## Limitações conhecidas
 
-- A interface está disponível apenas em português do Brasil por enquanto.
 - Em servidores Windows, ACLs NTFS não são avaliadas; somente o acesso efetivo de leitura e escrita.
 - As datas de fim de suporte do PHP e do MySQL/MariaDB vêm de uma tabela interna; versões fora dela não geram alerta de fim de suporte.
 - Falhas de autenticação SMTP/IMAP são inferidas dos logs e do contador de erros dos coletores; o plugin nunca autentica.
